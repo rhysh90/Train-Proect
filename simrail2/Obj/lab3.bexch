@@ -1,0 +1,42 @@
+[GENERATED OBJECT FILE]
+b__lab3.o
+[PROJECT FILES]
+D:\RTP\TrainProject\simrail2\skeleton.gpr
+20160422070128
+[BOUND OBJECT FILES]
+D:\RTP\TrainProject\simrail2\Obj\Adagraph.o
+D:\RTP\TrainProject\simrail2\Obj\logger_ada.o
+D:\RTP\TrainProject\simrail2\Obj\Unsigned_Types.o
+D:\RTP\TrainProject\simrail2\Obj\raildefs.o
+D:\RTP\TrainProject\simrail2\Obj\dda06defs.o
+D:\RTP\TrainProject\simrail2\Obj\dac_driver.o
+D:\RTP\TrainProject\simrail2\Obj\dio192defs.o
+D:\RTP\TrainProject\simrail2\Obj\block_driver.o
+D:\RTP\TrainProject\simrail2\Obj\int32defs.o
+D:\RTP\TrainProject\simrail2\Obj\simdefs2.o
+D:\RTP\TrainProject\simrail2\Obj\halls2.o
+D:\RTP\TrainProject\simrail2\Obj\simtrack2.o
+D:\RTP\TrainProject\simrail2\Obj\simtrack2-display.o
+D:\RTP\TrainProject\simrail2\Obj\simrail2.o
+D:\RTP\TrainProject\simrail2\Obj\Swindows.o
+D:\RTP\TrainProject\simrail2\Obj\turnout_driver.o
+D:\RTP\TrainProject\simrail2\Obj\slogger.o
+D:\RTP\TrainProject\simrail2\Obj\Io_ports.o
+D:\RTP\TrainProject\simrail2\Obj\interrupt_hdlr.o
+D:\RTP\TrainProject\simrail2\Obj\lab3.o
+[GENERATED SOURCE FILES]
+b__lab3.ads
+b__lab3.adb
+b__lab3.ali
+[RESULTING OPTIONS]
+-LD:\RTP\TrainProject\simrail2\Obj\
+-LD:\RTP\TrainProject\simrail2\Obj\
+-LD:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/
+-static
+-static-libgcc
+-ladagraph
+D:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/libgnarl.a
+D:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/libgnat.a
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads

@@ -1,0 +1,22 @@
+[MAPPING FILE]
+D:\RTP\TrainProject\simrail2\Obj\GNAT-TEMP-000001.TMP
+[TOOLCHAIN VERSION]
+ada
+GNAT 2015
+[MAIN BASE NAME]
+block_driver
+[COMPILER PATH]
+d:\gnat\2015\bin\gcc.exe
+[COMPILER LEADING SWITCHES]
+-c
+-x
+ada
+-gnatA
+[MAIN DEPENDENCY FILE]
+D:\RTP\TrainProject\simrail2\Obj\block_driver.ali
+[DEPENDENCY FILES]
+[BINDING OPTIONS]
+gnatbind_prefix=
+[PROJECT FILES]
+D:\RTP\TrainProject\simrail2\skeleton.gpr
+20160422070128

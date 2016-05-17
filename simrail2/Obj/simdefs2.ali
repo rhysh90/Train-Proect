@@ -1,0 +1,68 @@
+V "GNAT Lib v2012"
+A -gnatA
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnvnvnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnvnnnnnnnnnnnnnn
+
+U simdefs2%s		simdefs2.ads		eb62b144 NE OO PK
+W raildefs%s		raildefs.ads		raildefs.ali
+
+D interfac.ads		20120510125814 129923ea
+D raildefs.ads		20160421093136 bff1902e
+D simdefs2.ads		20160421093136 5493216a
+D system.ads		20120510125846 6daf90c4
+D unsigned_types.ads	20160421093136 ea348493
+X 2 raildefs.ads
+23K9*Raildefs 86e13 3|20w6 20r21
+35I9*Block_Idx<short_short_integer>
+36I12*Block_Id{35I9} 3|86r14
+57E9*Polarity_Type 59e19 3|76r30 103r22
+58n8*Normal_Pol{57E9} 3|103r39
+63I9*Turnout_Idx<short_short_integer> 3|90r20
+65i4*No_Turnout{63I9} 3|90r35
+X 3 simdefs2.ads
+22K9*Simdefs2 108l5 108e13
+25f4*Max_Train_Speed{float} 27r37
+26N4*Max_Coast_Distance 27r59
+27N4*Drag_Deceleration 34r41
+34N4*Max_Acceleration
+36f4*Max_Cab_Voltage{float}
+38f4*Volt_Zero_Speed{float}
+41f4*Reflector_Width{float}
+42f4*Turnout_Tolerance{float}
+46R9*Point 50e17 55r19 61r39 65r16
+48f10*X{float}
+49f10*Y{float}
+52R9*Arc_Type 59e17
+54f10*Radius{float}
+55r10*Centre{46R9}
+56f10*Start{float}
+57f10*Finish{float}
+58f10*Length{float}
+61A9*Point_Pair(46R9)<integer> 63r16
+62R9*Straight_Line_Type 66e14
+63a7*Points{61A9}
+64f7*Length{float}
+65r7*Normal{46R9}
+68i4*Max_Segment_Sensors{integer}
+73N4*Max_Segments 75r33
+75I9*Seg_Index<short_short_integer> 76r48 94r26 100r18
+76A9*Next_Array(75I9)<2|57E9> 89r20
+78E9*Segment_Kind 81e20 83r25
+79n11*Aline{78E9} 83r41 88r15
+80n11*Anarc{78E9} 88r21
+81n11*Aturnout{78E9} 91r15
+83R9*Segment 83d18 96e14
+83e18*Kind{78E9} 87r12
+85i7*Id{integer}
+86i7*Blok{2|36I12}
+89a13*Next{76A9}
+90i13*Tnid{2|63I9}
+92b13*Converging{boolean}
+93i13*Seg_St{75I9}
+94i13*Seg_Tu{75I9}
+98R9*Train_Position 104e17
+100i10*Segno{75I9}
+101f10*Mm{float}
+103e10*To_Front{2|57E9}
+106N4*Random_Chance
+
