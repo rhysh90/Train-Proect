@@ -24,6 +24,7 @@ with Raildefs;                                 use Raildefs;
 with dac_driver;
 with block_driver;
 with turnout_driver;
+with Sound_Manager;
 with Dio192defs, Int32defs, Halls2;
 with Interrupt_Hdlr;  -- 2.1
 with Slogger;  -- 2.2
@@ -269,6 +270,40 @@ procedure Lab3 is
       Oval(Polarity);
    end o_command;
 
+   -------- Bell_Command ------------------------
+   -- User syntax:  nB
+   -- where n is already read
+
+   -- calls the Sound_Bell function
+   ----------------------------------------------
+   procedure Bell_command is
+   begin
+      if Number in 1..4 then
+         Sound_Manager.Sound_Bell(Cab_Type(Number));
+      else
+         Put_Line (W_In, "command ignored");     --COMAND IGNORED
+         delay 1.0;
+      end if;
+      Number := 0;
+   end Bell_command;
+
+   -------- Horn_Command ------------------------
+   -- User syntax:  nH
+   -- where n is already read
+
+   -- calls the Sound_Horn function
+   ----------------------------------------------
+   procedure Horn_command is
+   begin
+      if Number in 1..4 then
+         Sound_Manager.Sound_Horn(Cab_Type(Number));
+      else
+         Put_Line (W_In, "command ignored");     --COMAND IGNORED
+         delay 1.0;
+      end if;
+      Number := 0;
+   end Horn_command;
+
    procedure Dialog_Loop is
       C : Character;
    begin
@@ -302,6 +337,12 @@ procedure Lab3 is
 
             when 'o' =>
                o_command;
+
+            when 'B' =>
+               Bell_command;
+
+            when 'H' =>
+               Horn_command;
 
             when others =>
                null;
