@@ -1,0 +1,53 @@
+V "GNAT Lib v2015"
+A -gnatA
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U sound_manager%b	sound_manager.adb	1a44f244 NE OO PK
+W das08defs%s		das08defs.ads		das08defs.ali
+W io_ports%s		io_ports.adb		io_ports.ali
+W unsigned_types%s	unsigned_types.ads	unsigned_types.ali
+
+U sound_manager%s	sound_manager.ads	fd3b26de EE NE OO PK KM
+W das08defs%s		das08defs.ads		das08defs.ali
+W raildefs%s		raildefs.ads		raildefs.ali
+W unsigned_types%s	unsigned_types.ads	unsigned_types.ali
+
+D das08defs.ads		20160518024934 ad4a2296 das08defs%s
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D io_ports.ads		20160421093136 841e5c76 io_ports%s
+D raildefs.ads		20160421093136 bff1902e raildefs%s
+D sound_manager.ads	20160518024934 05b410f5 sound_manager%s
+D sound_manager.adb	20160518024934 dc9018c2 sound_manager%b
+D system.ads		20150518132150 f4ce8c3a system%s
+D unsigned_types.ads	20160421093136 ea348493 unsigned_types%s
+X 1 das08defs.ads
+10K9*Das08defs 22e14 5|1w32 6|1w22 9r11 17r11
+20N4*Pa_Addr 6|13r30 21r30
+X 2 interfac.ads
+62M9*Unsigned_8
+X 3 io_ports.ads
+35K9*IO_Ports 56e13 6|1w33 13r7 21r7
+42U14*Write_IO_Port 6|13s16 21s16
+X 4 raildefs.ads
+23K9*Raildefs 86e13 5|1w6 5r35 7r35 6|8r35 16r35
+30M9*Cab_Type 5|5r44 7r44 6|8r44 16r44
+X 5 sound_manager.ads
+3K9*Sound_Manager 9l5 9e18 6|4b14 24l5 24t18
+5U14*Sound_Horn 5>26 6|8b14 14l8 14t18
+5m26 Cab{4|30M9} 6|8b26 10r58
+7U14*Sound_Bell 7>26 6|16b14 22l8 22t18
+7m26 Cab{4|30M9} 6|16b26 18r58
+X 6 sound_manager.adb
+6m4 Sound_Byte{8|4M9} 12m7 12r21 13r39 20m7 20r21 21r39
+10m7 Value{8|4M9} 12r36
+18m7 Value{8|4M9} 20r36
+X 8 unsigned_types.ads
+3K9*Unsigned_Types 5|1w16 6|1w6 2r5 8|11e19
+4M9*Unsigned_8<2|62M9> 6|6r17 10r20 10r34 18r20 18r34
+

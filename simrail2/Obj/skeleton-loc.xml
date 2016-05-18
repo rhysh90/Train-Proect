@@ -1,10 +1,33 @@
 <?xml version="1.0"?>
 <Locations >
   <Project >
-    <vfs_file >C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_file>
-    <file_marker current="true" column=" 1" line=" 1">
-      <vfs_project  />
-      <vfs_file >C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skel2.adb</vfs_file>
+    <file_marker column=" 44" line=" 8" >
+      <vfs_project>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Widget.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 20" line=" 1" >
+      <vfs_project>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Projdefs.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 15" >
+      <vfs_project>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\TestWid.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 5" >
+      <vfs_project>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Widget.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\TestWid.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 48" >
+      <vfs_project>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Widget.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 29" line=" 45" >
+      <vfs_project>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Widget.adb</vfs_file>
     </file_marker>
   </Project>
   <Project >
@@ -349,17 +372,17 @@
     </file_marker>
   </Project>
   <Project >
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skel2.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skel2.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 40" line=" 4" >
-      <vfs_project>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Widget.adb</vfs_file>
+    <file_marker column=" 40" line=" 4">
+      <vfs_project >C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Widget.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 1" line=" 1" >
-      <vfs_project>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\real_time_ex.adb</vfs_file>
+    <file_marker current="true" column=" 1" line=" 1">
+      <vfs_project >C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\real_time_ex.adb</vfs_file>
     </file_marker>
   </Project>
   <Project >

@@ -52,7 +52,8 @@ package body ada_main is
    E120 : Short_Integer; pragma Import (Ada, E120, "simrail2_E");
    E178 : Short_Integer; pragma Import (Ada, E178, "simtrack2_E");
    E185 : Short_Integer; pragma Import (Ada, E185, "simtrack2__display_E");
-   E257 : Short_Integer; pragma Import (Ada, E257, "turnout_driver_E");
+   E257 : Short_Integer; pragma Import (Ada, E257, "sound_manager_E");
+   E260 : Short_Integer; pragma Import (Ada, E260, "turnout_driver_E");
    E237 : Short_Integer; pragma Import (Ada, E237, "slogger_E");
 
    Local_Priority_Specific_Dispatching : constant String := "";
@@ -66,7 +67,7 @@ package body ada_main is
          procedure F1;
          pragma Import (Ada, F1, "turnout_driver__finalize_body");
       begin
-         E257 := E257 - 1;
+         E260 := E260 - 1;
          F1;
       end;
       declare
@@ -322,8 +323,9 @@ package body ada_main is
       E120 := E120 + 1;
       Swindows'Elab_Body;
       E247 := E247 + 1;
-      turnout_driver'elab_body;
       E257 := E257 + 1;
+      turnout_driver'elab_body;
+      E260 := E260 + 1;
       Slogger'Elab_Spec;
       Slogger'Elab_Body;
       E237 := E237 + 1;
@@ -368,6 +370,7 @@ package body ada_main is
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Adagraph.o
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\logger_ada.o
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Unsigned_Types.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\das08defs.o
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\raildefs.o
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dda06defs.o
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dac_driver.o
@@ -380,6 +383,7 @@ package body ada_main is
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simtrack2-display.o
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simrail2.o
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Swindows.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\sound_manager.o
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\turnout_driver.o
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\slogger.o
    --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Io_ports.o

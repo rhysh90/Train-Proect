@@ -5,6 +5,8 @@ with Projdefs;  use Projdefs;
 package Widget is
 
    procedure Start(
-      Request: in Request_Type );
+                   Request: in Request_Type );
+   
+   procedure Init_Time_Stamp;
       
 end Widget;

@@ -1,0 +1,27 @@
+V "GNAT Lib v2015"
+A -gnatA
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U das08defs%s		das08defs.ads		477ea605 NE OO PK
+W unsigned_types%s	unsigned_types.ads	unsigned_types.ali
+
+D das08defs.ads		20160518024934 ad4a2296 das08defs%s
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D unsigned_types.ads	20160421093136 ea348493 unsigned_types%s
+X 1 das08defs.ads
+10K9*Das08defs 22l5 22e14
+16N4*Base_Address 17r31 18r31 19r31 20r31
+17N4*Adlo_Addr
+18N4*Adhi_Addr
+19N4*Cs_Addr
+20N4*Pa_Addr
+X 4 unsigned_types.ads
+3K9*Unsigned_Types 1|8w6 12r8 4|11e19
+

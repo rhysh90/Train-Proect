@@ -35,7 +35,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#39b4559b#;
+   u00001 : constant Version_32 := 16#aca65fe6#;
    pragma Export (C, u00001, "lab3B");
    u00002 : constant Version_32 := 16#fbff4c67#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -545,10 +545,16 @@ package ada_main is
    pragma Export (C, u00254, "system__memoryB");
    u00255 : constant Version_32 := 16#adb3ea0e#;
    pragma Export (C, u00255, "system__memoryS");
-   u00256 : constant Version_32 := 16#587e0610#;
-   pragma Export (C, u00256, "turnout_driverB");
-   u00257 : constant Version_32 := 16#23f2d4e8#;
-   pragma Export (C, u00257, "turnout_driverS");
+   u00256 : constant Version_32 := 16#1a44f244#;
+   pragma Export (C, u00256, "sound_managerB");
+   u00257 : constant Version_32 := 16#fd3b26de#;
+   pragma Export (C, u00257, "sound_managerS");
+   u00258 : constant Version_32 := 16#477ea605#;
+   pragma Export (C, u00258, "das08defsS");
+   u00259 : constant Version_32 := 16#587e0610#;
+   pragma Export (C, u00259, "turnout_driverB");
+   u00260 : constant Version_32 := 16#23f2d4e8#;
+   pragma Export (C, u00260, "turnout_driverS");
    --  BEGIN ELABORATION ORDER
    --  ada%s
    --  interfaces%s
@@ -782,6 +788,7 @@ package ada_main is
    --  swindows%s
    --  interrupt_hdlr%s
    --  unsigned_types%s
+   --  das08defs%s
    --  io_ports%s
    --  raildefs%s
    --  dda06defs%s
@@ -800,6 +807,8 @@ package ada_main is
    --  simtrack2.display%b
    --  simrail2%b
    --  swindows%b
+   --  sound_manager%s
+   --  sound_manager%b
    --  turnout_driver%s
    --  turnout_driver%b
    --  slogger%s

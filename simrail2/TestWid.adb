@@ -5,6 +5,7 @@ use Projdefs;
 procedure TestWid is
 
 begin
+   Widget.Init_Time_Stamp;
       for I in 1..30 loop
          Widget.Start(Request_Type'Val(I));
          delay 0.8;

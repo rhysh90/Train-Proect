@@ -2,11 +2,12 @@
 b__lab3.o
 [PROJECT FILES]
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr
-20160518011552
+20160518030940
 [BOUND OBJECT FILES]
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Adagraph.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\logger_ada.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Unsigned_Types.o
+C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\das08defs.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\raildefs.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dda06defs.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dac_driver.o
@@ -19,6 +20,7 @@ C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simtrack2.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simtrack2-display.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simrail2.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Swindows.o
+C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\sound_manager.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\turnout_driver.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\slogger.o
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Io_ports.o

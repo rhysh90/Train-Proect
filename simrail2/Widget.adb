@@ -5,7 +5,7 @@ with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO;
 use Projdefs, Ada.Real_Time;
 package body Widget is
    
-   T0 : Time := Clock;
+   T0 : Time;
 
    protected Buffer is
       procedure Start(
@@ -38,16 +38,21 @@ package body Widget is
       Dt := Clock - T0;
       D := To_Duration(Dt);
       Tf := Float(D);
-      Ada.Float_Text_IO.Put(time_stamp, Tf, 3, 6);
+      Ada.Float_Text_IO.Put(time_stamp, Tf, 6, 0);
       return time_stamp;
    end Time_Stamp;
+   
+   procedure Init_Time_Stamp is
+   begin
+      T0 := Clock;
+   end Init_Time_Stamp;
    
    procedure Sporadic_Op(Request : in Request_Type) is
    begin
       Ada.Text_IO.Put(Time_Stamp);
-      Ada.Text_Io.Put_Line(" Req=" & Request'Img);
+      Ada.Text_Io.Put_Line(" Req=" & Request'Img & " starting");
       Exec_Load.Eat(1.0);
-      Ada.Text_IO.Put(Time_Stamp);
+      Ada.Text_IO.Put_Line(Time_Stamp & " complete");
    end Sporadic_Op;
        
    --------- 
@@ -83,7 +88,7 @@ package body Widget is
       loop
          Buffer.Wait_Start(Request=>Req, Over_Run=>Oops);
          if Oops then
-            Ada.Text_Io.Put_Line(" Over_Run=" & Oops'Img);
+           Ada.Text_Io.Put_Line(Time_Stamp & " Over_Run=" & Oops'Img);
          end if;
          Sporadic_Op(Req);
          --delay 1.0;
