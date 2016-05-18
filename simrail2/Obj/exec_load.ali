@@ -1,0 +1,79 @@
+V "GNAT Lib v2015"
+A -gnatA
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_FIXED_POINT
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U exec_load%b		exec_load.adb		aae0185d OO PK
+W calendar%s		calendar.ads		calendar.ali
+W text_io%s		text_io.ads		text_io.ali
+
+U exec_load%s		exec_load.ads		482fa4fb EE NE OO PK
+
+D ada.ads		20150518132148 3ffc8e18 ada%s
+D a-calend.ads		20150518132148 d986d312 ada.calendar%s
+D a-except.ads		20150518132148 5250cb69 ada.exceptions%s
+D a-ioexce.ads		20150518132148 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20150518132148 119b8fb3 ada.streams%s
+D a-tags.ads		20150518132148 dc4d0634 ada.tags%s
+D a-textio.ads		20150518132148 386df5d4 ada.text_io%s
+D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
+D calendar.ads		20150518132148 2cb525cd calendar%s
+D exec_load.ads		20040501145524 482fa4fb exec_load%s
+D exec_load.adb		20040501145524 8bacbfa2 exec_load%b
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D i-cstrea.ads		20150518132148 e53d8b8e interfaces.c_streams%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D s-crtl.ads		20150518132148 0ebbdb71 system.crtl%s
+D s-exctab.ads		20150518132148 54135002 system.exception_table%s
+D s-ficobl.ads		20150518132148 078245e4 system.file_control_block%s
+D s-parame.ads		20150518132150 7e2a0d7f system.parameters%s
+D s-soflin.ads		20150518132150 aa763b52 system.soft_links%s
+D s-stache.ads		20150518132150 a37c21ec system.stack_checking%s
+D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
+D s-stoele.ads		20150518132150 2dc34a04 system.storage_elements%s
+D s-traent.ads		20150518132150 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
+D s-wchcon.ads		20150518132150 1b7d22d2 system.wch_con%s
+D text_io.ads		20150518132150 45d626c9 text_io%s
+X 2 a-calend.ads
+38I9*Time<200I9> 11|67r33
+52V13*Clock{38I9} 11|75s26 77s24
+97V14*"-"{duration} 11|78s33
+200I9 Time_Rep<long_long_integer>
+X 7 a-textio.ads
+166U14*New_Line 11|95s4
+242U14*Put 11|93s4
+X 9 calendar.ads
+18K9*Calendar=18:30 11|42w6 42r20
+X 10 exec_load.ads
+42K9*Exec_Load 47l5 47e14 11|44b14 96l5 96t14
+44U14*Eat 44>19 11|51b14 64l8 64t11 76s10
+44o19 For_Seconds{duration} 11|51b19 53r65
+X 11 exec_load.adb
+46I9 Number_Of_Loops<integer> 48r23 52r18 53r17 54r18 83r15
+48i4 Loops_Per_Second{46I9} 53r39 80m13 80r33 82m13 83r37
+52i7 End_Loop{46I9} 56r21
+54i7 J{46I9} 57m10 57r15 58r13 59m13 59r22 61m13 61r18
+56i11 I<integer> 58r17 59r18 61r22
+66U14 Non_Interactive_Adjust 66b14 90l8 90t30 94s4
+67i7 Initial_Time{2|38I9} 75m10 78r35
+67i20 Final_Time{2|38I9} 77m10 78r22
+68o7 Interval{duration} 78m10 79r13 84r56 88r16
+69i7 Number_Of_Tries{integer} 86m10 86r27 87r20
+71o7 Adjust_Time{duration} 76r14 84r37 88r25 88r46
+72i7 Max_Tries{integer} 87r36
+X 26 text_io.ads
+24K9*Text_IO=24:29 11|41w6 41r19
+

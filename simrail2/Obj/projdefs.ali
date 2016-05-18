@@ -1,0 +1,19 @@
+V "GNAT Lib v2015"
+A -gnatA
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U projdefs%s		projdefs.ads		6d055b07 NE OO PK
+
+D projdefs.ads		20160518014452 6d055b07 projdefs%s
+D system.ads		20150518132150 f4ce8c3a system%s
+X 1 projdefs.ads
+1K9*Projdefs 5l5 5e13
+2I9*Widget_Id<short_short_integer>
+3I9*Speed_Type<short_short_integer>
+4I12*Request_Type{integer}
+

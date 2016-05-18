@@ -1,0 +1,39 @@
+V "GNAT Lib v2015"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_DELAY
+RV NO_FIXED_POINT
+RV NO_RELATIVE_DELAY
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U testwid%b		testwid.adb		126e248e NE OO SU
+W ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
+W projdefs%s		projdefs.ads		projdefs.ali
+W widget%s		widget.adb		widget.ali
+
+D ada.ads		20150518132148 3ffc8e18 ada%s
+D a-calend.ads		20150518132148 d986d312 ada.calendar%s
+D a-caldel.ads		20150518132148 9f20b83d ada.calendar.delays%s
+D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
+D projdefs.ads		20160518014452 6d055b07 projdefs%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D s-exctab.ads		20150518132148 54135002 system.exception_table%s
+D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
+D testwid.adb		20160518020542 1ad4779e testwid%b
+D widget.ads		20070401121428 65bf0817 widget%s
+X 5 projdefs.ads
+1K9*Projdefs 5e13 9|3w6 4r5
+4I12*Request_Type{integer} 9|9r23
+X 9 testwid.adb
+5U11*TestWid 5b11 15l5 15t12
+8i11 I{integer} 9r40 11r14
+X 10 widget.ads
+5K9*Widget 9|3w16 9r10 10|10e11
+7U14*Start 9|9s17
+

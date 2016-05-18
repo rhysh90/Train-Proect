@@ -5,10 +5,13 @@ use Projdefs;
 procedure TestWid is
 
 begin
-   for I in 1..10 loop
-      Widget.Start(Request_Type'Val(I mod 2));
-      delay 0.8;
-   end loop;
+      for I in 1..30 loop
+         Widget.Start(Request_Type'Val(I));
+         delay 0.8;
+         if (I rem 10 = 0) then
+           delay 5.0;
+         end if;
+      end loop;
 end TestWid;
 --example output:
 -- Req=STOP Over_Run=FALSE

@@ -1,0 +1,25 @@
+[GENERATED OBJECT FILE]
+b__testwid.o
+[PROJECT FILES]
+C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr
+20160518020918
+[BOUND OBJECT FILES]
+C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\exec_load.o
+C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Projdefs.o
+C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Widget.o
+C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\TestWid.o
+[GENERATED SOURCE FILES]
+b__testwid.ads
+b__testwid.adb
+b__testwid.ali
+[RESULTING OPTIONS]
+-LC:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\
+-LC:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\
+-LC:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/
+-static
+-static-libgcc
+C:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/libgnarl.a
+C:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/libgnat.a
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads

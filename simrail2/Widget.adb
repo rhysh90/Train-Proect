@@ -1,9 +1,11 @@
 -- Widget : an example Sporadic for RTP lecture
 -- It has single-item buffer and a worker that delays 1 second.
 -- R K Allen, Swinburne Univ Tech.  orig 25-Mar-01 revised 13-May-03
-with Projdefs, Ada.Text_Io;
-use Projdefs;
+with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO;
+use Projdefs, Ada.Real_Time;
 package body Widget is
+   
+   T0 : Time := Clock;
 
    protected Buffer is
       procedure Start(
@@ -26,7 +28,28 @@ package body Widget is
    begin
       Buffer.Start(Request);
    end Start;
-
+   
+   function Time_Stamp return String is
+      Dt : Time_Span;
+      D : Duration;
+      Tf : Float;
+      time_stamp : String(1..10); 
+   begin
+      Dt := Clock - T0;
+      D := To_Duration(Dt);
+      Tf := Float(D);
+      Ada.Float_Text_IO.Put(time_stamp, Tf, 3, 6);
+      return time_stamp;
+   end Time_Stamp;
+   
+   procedure Sporadic_Op(Request : in Request_Type) is
+   begin
+      Ada.Text_IO.Put(Time_Stamp);
+      Ada.Text_Io.Put_Line(" Req=" & Request'Img);
+      Exec_Load.Eat(1.0);
+      Ada.Text_IO.Put(Time_Stamp);
+   end Sporadic_Op;
+       
    --------- 
    protected body Buffer is
       procedure Start(
@@ -59,9 +82,11 @@ package body Widget is
    begin
       loop
          Buffer.Wait_Start(Request=>Req, Over_Run=>Oops);
-         Ada.Text_Io.Put_Line(" Req=" & Req'Img
-                                & " Over_Run=" & Oops'Img);
-         delay 1.0;
+         if Oops then
+            Ada.Text_Io.Put_Line(" Over_Run=" & Oops'Img);
+         end if;
+         Sporadic_Op(Req);
+         --delay 1.0;
          -- NB the above delay statement is for test/demo ONLY.
          -- Normal sporadics do NOT have delays in their bodies.
          -- The relative time intervals between here and the test harness

@@ -349,9 +349,17 @@
     </file_marker>
   </Project>
   <Project >
-    <file_marker current="true" column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project />
       <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skel2.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 40" line=" 4" >
+      <vfs_project>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Widget.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\real_time_ex.adb</vfs_file>
     </file_marker>
   </Project>
   <Project >
