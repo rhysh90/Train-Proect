@@ -13,6 +13,7 @@
 --
 -- Copyright: Dr R. K Allen, Faculty of Sc Eng Tech, Swinburne Uni Tech
 --
+with Ada.Text_IO;
 with Ada.Integer_Text_Io;
 with Swindows;  use Swindows;
 with Unsigned_Types;  use Unsigned_Types;
@@ -41,6 +42,9 @@ package body Interrupt_Hdlr is
       -- this procedure conforms to Raildefs.Proc4_Access
 
    private
+
+      Previous_Sensor_Reg1 : Raildefs.Four_Registers := (0, 0, 0, 0, 0);
+      Previous_Sensor_Reg2 : Raildefs.Four_Registers := (0, 0, 0, 0, 0);
 
       Number : Natural := 1;  -- a serial number
       Line_Number : Natural := 1;  -- within the Swindows window
@@ -86,6 +90,10 @@ package body Interrupt_Hdlr is
          --
          use Int32defs;
 
+         Previous_Reg : Unsigned_8;
+         Current_Reg : Unsigned_8;
+         Changed_Val : Unsigned_8;
+
          procedure Increment_Line is -- v1.4
             -- provides rolling colour change (much more efficient than
             -- scrolling)
@@ -102,6 +110,47 @@ package body Interrupt_Hdlr is
          end Increment_Line;
 
       begin
+
+
+         -------------------------TRAIN PROJECT---------------------------------
+         if Offset < 32 then
+            null;
+            --check what changed in reg1
+            for i in 0..3 loop
+               Current_Reg := Value(i);
+               Previous_Reg := Previous_Sensor_Reg1(i);
+               --compare unsigned_8 with each other
+               if (Current_Reg XOR Previous_Reg) /= 0 then
+                  Changed_Val := Current_Reg XOR Previous_Reg;
+               end if;
+            end loop;
+
+         else
+            null;
+            --check what changed in reg2
+            for i in 0..3 loop
+               Current_Reg := Value(i);
+               Previous_Reg := Previous_Sensor_Reg2(i);
+               --compare unsigned_8 with each other
+               if (Current_Reg XOR Previous_Reg) /= 0 then
+                  Changed_Val := Current_Reg XOR Previous_Reg;
+               end if;
+            end loop;
+        end if;
+
+         --create ASER operation in train controller
+         Ada.Integer_Text_IO.Put(Integer(Changed_Val));
+
+         --update the previous sensor registers with current for next interrupt
+        if Offset < 32 then
+            Previous_Sensor_Reg1 := Value;
+        else
+            Previous_Sensor_Reg2 := Value;
+        end if;
+         -----------------------------------------------------------------------
+
+
+
          -- if logging is enabled (it is by default) write an 'I' event.
          -- This could be suppressed entirely, as Simrail2 v2.2.1 and HW Halls2 v2.6
          -- send 'i' events.  'i' to 'I' measures interrupt queue latency, but
