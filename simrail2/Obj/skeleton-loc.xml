@@ -1,226 +1,233 @@
 <?xml version="1.0"?>
 <Locations >
   <Project>
-    <vfs_file>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_file>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 19" line=" 183" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\raildefs.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 183" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\Io_ports.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 10" line=" 187" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
+    <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr</vfs_file>
+    <file_marker current="true" column=" 1" line=" 1" >
       <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\</vfs_file>
+      <vfs_file>C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skel2.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\dac_driver.adb</vfs_file>
+  </Project>
+  <Project >
+    <vfs_file >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\</vfs_file>
+    <file_marker column=" 19" line=" 183">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\dac_driver.ads</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\raildefs.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 4" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.ads</vfs_file>
+    <file_marker column=" 1" line=" 183">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 41" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\Io_ports.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 3" line=" 22" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 10" line=" 187">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 22" line=" 25" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\dac_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 19" line=" 192" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\</vfs_file>
     </file_marker>
-    <file_marker column=" 10" line=" 187" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\dac_driver.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 27" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 4">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\block_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 41">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 41" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 3" line=" 22">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\dio192defs.ads</vfs_file>
+    <file_marker column=" 22" line=" 25">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 18" line=" 10" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 32" line=" 13" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 19" line=" 192">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 9" line=" 16" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 10" line=" 187">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\lab3.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 32" line=" 13" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 27">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 31" line=" 3" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\block_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 32" line=" 13" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 41">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 17" line=" 22" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\dio192defs.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 5" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 18" line=" 10">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 7" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 32" line=" 13">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 9" line=" 16" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 9" line=" 16">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 20" line=" 40" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 32" line=" 13">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 5" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 31" line=" 3">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 41" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 32" line=" 13">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 17" line=" 22">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 17" line=" 8" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\block_driver.adb</vfs_file>
+    <file_marker column=" 4" line=" 5">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
-      <vfs_file>D:\RTP\TrainProject\simrail2\block_driver.adb</vfs_file>
+    <file_marker column=" 4" line=" 7">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 22" line=" 25" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 9" line=" 16">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 9" line=" 16" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 20" line=" 40">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 7" line=" 29" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 4" line=" 5">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 45" line=" 15" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 41">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 23" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 58" line=" 15" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 17" line=" 8">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\block_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 41" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\RTP\TrainProject\simrail2\skeleton.gpr</vfs_project>
+      <vfs_file >D:\RTP\TrainProject\simrail2\block_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 7" line=" 29" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 22" line=" 25">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 27" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 9" line=" 16">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 7" line=" 34" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 7" line=" 29">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 12" line=" 21" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 45" line=" 15">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 21" line=" 34" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 23">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 22" line=" 25" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 58" line=" 15">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 21" line=" 34" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 41">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 22" line=" 24" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 7" line=" 29">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 22" line=" 34" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 1" line=" 27">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 47" line=" 17" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 7" line=" 34">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 25" line=" 34" >
-      <vfs_project />
-      <vfs_file>D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    <file_marker column=" 12" line=" 21">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 21" line=" 34">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 25">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 21" line=" 34">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 24">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 34">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 47" line=" 17">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 25" line=" 34">
+      <vfs_project  />
+      <vfs_file >D:\RTP\TrainProject\simrail2\turnout_driver.adb</vfs_file>
     </file_marker>
   </Project>
   <Project >
