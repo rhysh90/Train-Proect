@@ -35,7 +35,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#8ab48df6#;
+   u00001 : constant Version_32 := 16#39b4559b#;
    pragma Export (C, u00001, "lab3B");
    u00002 : constant Version_32 := 16#fbff4c67#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -253,9 +253,9 @@ package ada_main is
    pragma Export (C, u00108, "system__val_lluB");
    u00109 : constant Version_32 := 16#13647f88#;
    pragma Export (C, u00109, "system__val_lluS");
-   u00110 : constant Version_32 := 16#2d6bbb19#;
+   u00110 : constant Version_32 := 16#ef6b6121#;
    pragma Export (C, u00110, "block_driverB");
-   u00111 : constant Version_32 := 16#a23cd030#;
+   u00111 : constant Version_32 := 16#08bebdf0#;
    pragma Export (C, u00111, "block_driverS");
    u00112 : constant Version_32 := 16#6126b02c#;
    pragma Export (C, u00112, "dio192defsS");
@@ -545,7 +545,7 @@ package ada_main is
    pragma Export (C, u00254, "system__memoryB");
    u00255 : constant Version_32 := 16#adb3ea0e#;
    pragma Export (C, u00255, "system__memoryS");
-   u00256 : constant Version_32 := 16#9ea1999d#;
+   u00256 : constant Version_32 := 16#587e0610#;
    pragma Export (C, u00256, "turnout_driverB");
    u00257 : constant Version_32 := 16#23f2d4e8#;
    pragma Export (C, u00257, "turnout_driverS");

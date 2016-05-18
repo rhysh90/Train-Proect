@@ -64,52 +64,59 @@ package body ada_main is
    begin
       declare
          procedure F1;
-         pragma Import (Ada, F1, "swindows__finalize_body");
+         pragma Import (Ada, F1, "turnout_driver__finalize_body");
       begin
-         E247 := E247 - 1;
+         E257 := E257 - 1;
          F1;
       end;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "simrail2__finalize_body");
+         pragma Import (Ada, F2, "swindows__finalize_body");
+      begin
+         E247 := E247 - 1;
+         F2;
+      end;
+      declare
+         procedure F3;
+         pragma Import (Ada, F3, "simrail2__finalize_body");
       begin
          E120 := E120 - 1;
-         F2;
+         F3;
       end;
       E213 := E213 - 1;
       declare
-         procedure F3;
-         pragma Import (Ada, F3, "system__tasking__protected_objects__entries__finalize_spec");
-      begin
-         F3;
-      end;
-      E059 := E059 - 1;
-      declare
          procedure F4;
-         pragma Import (Ada, F4, "ada__text_io__finalize_spec");
+         pragma Import (Ada, F4, "system__tasking__protected_objects__entries__finalize_spec");
       begin
          F4;
       end;
+      E059 := E059 - 1;
       declare
          procedure F5;
-         pragma Import (Ada, F5, "system__file_io__finalize_body");
+         pragma Import (Ada, F5, "ada__text_io__finalize_spec");
+      begin
+         F5;
+      end;
+      declare
+         procedure F6;
+         pragma Import (Ada, F6, "system__file_io__finalize_body");
       begin
          E080 := E080 - 1;
-         F5;
+         F6;
       end;
       E249 := E249 - 1;
       E253 := E253 - 1;
       declare
-         procedure F6;
-         pragma Import (Ada, F6, "system__pool_global__finalize_spec");
-      begin
-         F6;
-      end;
-      declare
          procedure F7;
-         pragma Import (Ada, F7, "system__finalization_masters__finalize_spec");
+         pragma Import (Ada, F7, "system__pool_global__finalize_spec");
       begin
          F7;
+      end;
+      declare
+         procedure F8;
+         pragma Import (Ada, F8, "system__finalization_masters__finalize_spec");
+      begin
+         F8;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -315,6 +322,7 @@ package body ada_main is
       E120 := E120 + 1;
       Swindows'Elab_Body;
       E247 := E247 + 1;
+      turnout_driver'elab_body;
       E257 := E257 + 1;
       Slogger'Elab_Spec;
       Slogger'Elab_Body;
@@ -357,29 +365,29 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   D:\RTP\TrainProject\simrail2\Obj\Adagraph.o
-   --   D:\RTP\TrainProject\simrail2\Obj\logger_ada.o
-   --   D:\RTP\TrainProject\simrail2\Obj\Unsigned_Types.o
-   --   D:\RTP\TrainProject\simrail2\Obj\raildefs.o
-   --   D:\RTP\TrainProject\simrail2\Obj\dda06defs.o
-   --   D:\RTP\TrainProject\simrail2\Obj\dac_driver.o
-   --   D:\RTP\TrainProject\simrail2\Obj\dio192defs.o
-   --   D:\RTP\TrainProject\simrail2\Obj\block_driver.o
-   --   D:\RTP\TrainProject\simrail2\Obj\int32defs.o
-   --   D:\RTP\TrainProject\simrail2\Obj\simdefs2.o
-   --   D:\RTP\TrainProject\simrail2\Obj\halls2.o
-   --   D:\RTP\TrainProject\simrail2\Obj\simtrack2.o
-   --   D:\RTP\TrainProject\simrail2\Obj\simtrack2-display.o
-   --   D:\RTP\TrainProject\simrail2\Obj\simrail2.o
-   --   D:\RTP\TrainProject\simrail2\Obj\Swindows.o
-   --   D:\RTP\TrainProject\simrail2\Obj\turnout_driver.o
-   --   D:\RTP\TrainProject\simrail2\Obj\slogger.o
-   --   D:\RTP\TrainProject\simrail2\Obj\Io_ports.o
-   --   D:\RTP\TrainProject\simrail2\Obj\interrupt_hdlr.o
-   --   D:\RTP\TrainProject\simrail2\Obj\lab3.o
-   --   -LD:\RTP\TrainProject\simrail2\Obj\
-   --   -LD:\RTP\TrainProject\simrail2\Obj\
-   --   -LD:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Adagraph.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\logger_ada.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Unsigned_Types.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\raildefs.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dda06defs.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dac_driver.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dio192defs.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\block_driver.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\int32defs.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simdefs2.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\halls2.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simtrack2.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simtrack2-display.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simrail2.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Swindows.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\turnout_driver.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\slogger.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Io_ports.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\interrupt_hdlr.o
+   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\lab3.o
+   --   -LC:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\
+   --   -LC:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\
+   --   -LC:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/
    --   -static
    --   -ladagraph
    --   -lgnarl

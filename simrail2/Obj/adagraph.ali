@@ -1,7 +1,21 @@
-V "GNAT Lib v2012"
+V "GNAT Lib v2015"
 A -gnatA
+A -mtune=generic
+A -march=pentiumpro
 P SS ZX
-R nnnnnnnnnnvnnnnnnnnnnvnnnnnnnnnnnnnnvnnnnvnnvnnnnnnnnvnnnnvnnnnvnnnvnnvnnnnnnnnnnnv1+nn
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTIONS
+RV NO_PROTECTED_TYPES
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+RV MAX_ENTRY_QUEUE_LENGTH=1+
 
 U adagraph%b		adagraph.adb		00b1d196 OO PK
 W ada.exceptions%s	a-except.adb		a-except.ali
@@ -18,34 +32,33 @@ W system%s		system.ads		system.ali
 W system.exception_table%s  s-exctab.adb	s-exctab.ali
 W system.standard_library%s  s-stalib.adb	s-stalib.ali
 
-D ada.ads		20120510125802 3ffc8e18
-D a-except.ads		20120510125752 ec1b44c1
-D a-unccon.ads		20120510125800 f9eb8f06
-D adagraph.ads		20160421093136 0b1102d2
-D adagraph.adb		20160421093136 5f81c2df
-D interfac.ads		20120510125814 129923ea
-D i-c.ads		20120510125814 5421119b
-D i-cstrin.ads		20120510125814 341d0ddf
-D system.ads		20120510125846 6daf90c4
-D s-atacco.ads		20120510125818 4c36d12f
-D s-exctab.ads		20120510125824 66e51330
-D s-multip.ads		20120510125828 38ac9f73
-D s-osinte.ads		20120510125828 ecf1fbfd
-D s-parame.ads		20120510125832 b6e20cc0
-D s-secsta.ads		20120510125832 eea35a36
-D s-soflin.ads		20120510125832 24c8153c
-D s-stache.ads		20120510125834 596fc1b4
-D s-stausa.ads		20120510125834 017a0a05
-D s-stalib.ads		20120510125834 f78bcf95
-D s-stoele.ads		20120510125834 facd7d98
-D s-stoele.adb		20120510125834 afc5dc80
-D s-tasinf.ads		20120510125836 859198ad
-D s-taspri.ads		20120510125836 196697f7
-D s-taskin.ads		20120510125836 5e24fb30
-D s-taprob.ads		20120510125834 502249e3
-D s-traent.ads		20120510125838 5221ee41
-D s-unstyp.ads		20120510125838 6ae15c76
-D s-win32.ads		20120510125840 07238fa2
+D ada.ads		20150518132148 3ffc8e18 ada%s
+D a-except.ads		20150518132148 5250cb69 ada.exceptions%s
+D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
+D adagraph.ads		20160421093136 0b1102d2 adagraph%s
+D adagraph.adb		20160421093136 5f81c2df adagraph%b
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D i-c.ads		20150518132148 5421119b interfaces.c%s
+D i-cstrin.ads		20150518132148 341d0ddf interfaces.c.strings%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D s-atacco.ads		20150518132148 4c36d12f system.address_to_access_conversions%s
+D s-exctab.ads		20150518132148 54135002 system.exception_table%s
+D s-multip.ads		20150518132150 38ac9f73 system.multiprocessors%s
+D s-osinte.ads		20150518132150 2e5b26a9 system.os_interface%s
+D s-parame.ads		20150518132150 7e2a0d7f system.parameters%s
+D s-secsta.ads		20150518132150 86a2856d system.secondary_stack%s
+D s-soflin.ads		20150518132150 aa763b52 system.soft_links%s
+D s-stache.ads		20150518132150 a37c21ec system.stack_checking%s
+D s-stausa.ads		20150518132150 017a0a05 system.stack_usage%s
+D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
+D s-stoele.ads		20150518132150 2dc34a04 system.storage_elements%s
+D s-tasinf.ads		20150518132150 601f6b72 system.task_info%s
+D s-taspri.ads		20150518132150 6c1d93d4 system.task_primitives%s
+D s-taskin.ads		20150518132150 339749f0 system.tasking%s
+D s-taprob.ads		20150518132150 502249e3 system.tasking.protected_objects%s
+D s-traent.ads		20150518132150 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
+D s-win32.ads		20150518132150 b7f96285 system.win32%s
 X 4 adagraph.ads
 25K9*Adagraph 198l5 198e13 5|28b14 814l5 814t13
 31E9*Event_Type 31e78 35r15
@@ -125,7 +138,7 @@ X 4 adagraph.ads
 94U14*Destroy_Graph_Window 5|113b14 116l8 116t28
 96V13*Is_Open{boolean} 5|242b13 247l8 247t15
 98U14*Set_Window_Title 98>32 5|262b14 265l8 265t24
-98s32 Title{string} 5|262b32 264r30
+98a32 Title{string} 5|262b32 264r30
 105V13*Key_Hit{boolean} 5|497b13 505l8 505t15
 107V13*Get_Key{character} 5|508b13 516l8 516t15
 109V13*Mouse_Event{boolean} 5|519b13 527l8 527t19
@@ -173,7 +186,7 @@ X 4 adagraph.ads
 141U14*Display_Text 141>28 141>31 142>7 143>7 5|122b14 130l8 130t20
 141i28 X{integer} 5|123b7 129r7
 141i31 Y{integer} 5|123b10 129r10
-142s7 Text{string} 5|124b7 129r13
+142a7 Text{string} 5|124b7 129r13
 143e7 Hue{40E9} 5|125b7 129r19
 150V13*Where_X{integer} 5|271b13 276l8 276t15
 152V13*Where_Y{integer} 5|282b13 287l8 287t15
@@ -244,7 +257,7 @@ X 5 adagraph.adb
 44U14 Is_Open 44<23 245s12 567b14 577l8 577t15
 44b23 Result{boolean} 567b23 572m25 573m25
 45U14 Set_Window_Title 45>32 264s12 664b14 671l8 671t24
-45s32 Title{string} 664b31 667r47
+45a32 Title{string} 664b31 667r47
 46U14 Clear_Window 46>28 79s12 654b14 661l8 661t20
 46e28 Hue{4|40E9} 654b28 657r52
 47U14 Get_Pixel 47>25 47>28 47<44 225s12 674b14 682l8 682t17
@@ -289,7 +302,7 @@ X 5 adagraph.adb
 61U14 Display_Text 61>28 61>31 62>7 63>7 128s12 752b14 761l8 761t20
 61i28 X{integer} 752b28 757r36
 61i31 Y{integer} 752b31 757r39
-62s7 Text{string} 753b10 757r50
+62a7 Text{string} 753b10 757r50
 63e7 Hue{4|40E9} 754b10 757r73
 64U14 Where_X 64<23 274s12 764b14 772l8 772t15
 64i23 Result{integer} 764b23 771m7
@@ -302,10 +315,10 @@ X 5 adagraph.adb
 67i23 X{integer} 796b23 799r31
 67i26 Y{integer} 796b26 799r34
 67e42 Hue{4|40E9} 796b42 799r53
-223e7 C{4|40E9} 225m29 225r29 226r14
-243b7 Op{boolean} 245m20 245r20 246r14
-272i7 X{integer} 274m20 274r20 275r14
-283i7 Y{integer} 285m20 285r20 286r14
+223e7 C{4|40E9} 225m29 226r14
+243b7 Op{boolean} 245m20 246r14
+272i7 X{integer} 274m20 275r14
+283i7 Y{integer} 285m20 286r14
 300K12 C=300:33 389r37 404r49 667r39 757r42
 306i4 No_Errors{integer} 428r18 476r25 490r25 501r25 512r25 523r25 537r25
 . 585r25 606r25 628r25 648r25 658r25 668r25 678r25 689r25 700r25 712r25 724r25
@@ -443,10 +456,13 @@ X 5 adagraph.adb
 787i7 Return_Value{integer} 789m7 790r10 791r26
 797i7 Return_Value{integer} 799m7 800r10 801r26
 X 6 interfac.ads
-36K9*Interfaces 5|26r6 300r22 6|175e15
+38K9*Interfaces 5|26r6 300r22 6|178e15
 X 7 i-c.ads
 18K20*C 5|26w17 300r33 7|230e17
 72E9*char<character>
 79A9*char_array(72E9)<60M9> 5|389r39 404r51
 84V13*To_C{79A9} 5|667s41 757s44
+X 18 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
 

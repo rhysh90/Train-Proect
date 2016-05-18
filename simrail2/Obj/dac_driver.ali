@@ -1,7 +1,12 @@
-V "GNAT Lib v2012"
+V "GNAT Lib v2015"
 A -gnatA
+A -mtune=generic
+A -march=pentiumpro
 P ZX
-R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnvnnnnnnnnnnnnnn
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
 
 U dac_driver%b		dac_driver.adb		792d926a NE OO PK IL
 W dda06defs%s		dda06defs.ads		dda06defs.ali
@@ -13,15 +18,15 @@ W dda06defs%s		dda06defs.ads		dda06defs.ali
 W raildefs%s		raildefs.ads		raildefs.ali
 W unsigned_types%s	unsigned_types.ads	unsigned_types.ali
 
-D dac_driver.ads	20160421093136 b267bd32
-D dac_driver.adb	20160421093136 4a584828
-D dda06defs.ads		20160421093136 ef38bf95
-D interfac.ads		20120510125814 129923ea
-D io_ports.ads		20160421093136 841e5c76
-D raildefs.ads		20160421093136 bff1902e
-D system.ads		20120510125846 6daf90c4
-D unchconv.ads		20120510125846 ca2f9e18
-D unsigned_types.ads	20160421093136 ea348493
+D dac_driver.ads	20160421093136 b267bd32 dac_driver%s
+D dac_driver.adb	20160421093136 4a584828 dac_driver%b
+D dda06defs.ads		20160421093136 ef38bf95 dda06defs%s
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D io_ports.ads		20160421093136 841e5c76 io_ports%s
+D raildefs.ads		20160421093136 bff1902e raildefs%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D unchconv.ads		20150518132150 ca2f9e18 unchecked_conversion%s
+D unsigned_types.ads	20160421093136 ea348493 unsigned_types%s
 X 1 dac_driver.ads
 3K9*dac_driver 7l5 7e15 2|3b14 25l5 25t15
 5U14*Set_Voltage 5>27 5>51 2|9b14 23l8 23t19
@@ -35,10 +40,10 @@ X 3 dda06defs.ads
 44a4*Dalo_Addr(9|5M9) 2|20r31
 46a4*Dahi_Addr(9|5M9) 2|21r31
 X 4 interfac.ads
-55M9*Unsigned_8
-58M9*Unsigned_16
-67V13*Shift_Left{55M9} 2|17s32
-71V13*Shift_Right{55M9} 2|18s32
+62M9*Unsigned_8
+65M9*Unsigned_16
+75V13*Shift_Left{62M9} 2|17s32
+79V13*Shift_Right{62M9} 2|18s32
 X 5 io_ports.ads
 35K9*IO_Ports 2|1w33 20r7 21r7 5|56e13
 42U14*Write_IO_Port 2|20s16 21s16
@@ -48,6 +53,6 @@ X 6 raildefs.ads
 31M12*Dac_Id{30M9} 1|5r43 2|9r42
 X 9 unsigned_types.ads
 3K9*Unsigned_Types 1|1w16 5r62 2|1w6 2r5 9r61 17r17 18r17 9|11e19
-4M9*Unsigned_8<4|55M9> 1|5r77 2|9r76 12r16 13r16
-5M9*Unsigned_16<4|58M9>
+4M9*Unsigned_8<4|62M9> 1|5r77 2|9r76 12r16 13r16
+5M9*Unsigned_16<4|65M9>
 

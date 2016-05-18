@@ -1,7 +1,14 @@
-V "GNAT Lib v2012"
+V "GNAT Lib v2015"
 A -gnatA
+A -mtune=generic
+A -march=pentiumpro
 P ZX
-R nnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnvnnvnnnnnnnnnnnnnn
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
 
 U simtrack2%s		simtrack2.ads		04c9db66 EE OO PK
 W ada%s			ada.ads			ada.ali
@@ -10,19 +17,19 @@ W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
 W raildefs%s		raildefs.ads		raildefs.ali
 W simdefs2%s		simdefs2.ads		simdefs2.ali
 
-D ada.ads		20120510125802 3ffc8e18
-D a-numeri.ads		20120510125754 bb51c45a
-D a-nuelfu.ads		20120510125754 03e83d1c
-D a-ngelfu.ads		20120510125754 243903c9
-D a-unccon.ads		20120510125800 f9eb8f06
-D interfac.ads		20120510125814 129923ea
-D raildefs.ads		20160421093136 bff1902e
-D simdefs2.ads		20160421093136 5493216a
-D simtrack2.ads		20160421093136 57129364
-D system.ads		20120510125846 6daf90c4
-D s-exctab.ads		20120510125824 66e51330
-D s-stalib.ads		20120510125834 f78bcf95
-D unsigned_types.ads	20160421093136 ea348493
+D ada.ads		20150518132148 3ffc8e18 ada%s
+D a-numeri.ads		20150518132148 bb51c45a ada.numerics%s
+D a-nuelfu.ads		20150518132148 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20150518132148 b8fdcb46 ada.numerics.generic_elementary_functions%s
+D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D raildefs.ads		20160421093136 bff1902e raildefs%s
+D simdefs2.ads		20160421093136 5493216a simdefs2%s
+D simtrack2.ads		20160421093136 57129364 simtrack2%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D s-exctab.ads		20150518132148 54135002 system.exception_table%s
+D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
+D unsigned_types.ads	20160421093136 ea348493 unsigned_types%s
 X 1 ada.ads
 16K9*Ada 19e8 9|28r6 29r5 30r6 31r5
 X 2 a-numeri.ads
@@ -33,8 +40,8 @@ X 3 a-nuelfu.ads
 18K22*Elementary_Functions[4|39] 9|30w19 31r18
 X 4 a-ngelfu.ads
 42V13*Sqrt{float} 9|144s7[3|18] 150s33[3|18]
-68V13*Sin{float} 9|255s47[3|18] 260s53[3|18] 262s53[3|18] 264s53[3|18]
-78V13*Cos{float} 9|254s44[3|18] 261s53[3|18] 263s53[3|18] 265s53[3|18]
+81V13*Sin{float} 9|255s47[3|18] 260s53[3|18] 262s53[3|18] 264s53[3|18]
+89V13*Cos{float} 9|254s44[3|18] 261s53[3|18] 263s53[3|18] 265s53[3|18]
 X 7 raildefs.ads
 23K9*Raildefs 86e13 9|25w6 25r21
 34N4*Num_Blocks 9|407r29

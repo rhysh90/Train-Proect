@@ -1,18 +1,24 @@
-V "GNAT Lib v2012"
+V "GNAT Lib v2015"
 A -gnatA
+A -mtune=generic
+A -march=pentiumpro
 P ZX
-R nnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnvnnnnnnvnnnnnnnnnnnnnn
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
 
 U raildefs%s		raildefs.ads		55c514bd NE OO PK
 W system%s		system.ads		system.ali
 W unsigned_types%s	unsigned_types.ads	unsigned_types.ali
 
-D interfac.ads		20120510125814 129923ea
-D raildefs.ads		20160421093136 bff1902e
-D system.ads		20120510125846 6daf90c4
-D unsigned_types.ads	20160421093136 ea348493
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D raildefs.ads		20160421093136 bff1902e raildefs%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D unsigned_types.ads	20160421093136 ea348493 unsigned_types%s
 X 1 interfac.ads
-55M9*Unsigned_8
+62M9*Unsigned_8
 X 2 raildefs.ads
 23K9*Raildefs 86l5 86e13
 25N4*Max_Trains 26r33 27r43 31r40 32r37
@@ -54,10 +60,10 @@ X 2 raildefs.ads
 72n11*Middle{69E9}
 73A9*Tn_State_Array(69E9)<63I9>
 79A9*Four_Registers(4|4M9)<integer> 83r39
-82P9*Proc4_Access
+82P9*Proc4_Access 83>8 83>32
 83i8 Offset{45I9}
 83a32 R{79A9}
 X 4 unsigned_types.ads
 3K9*Unsigned_Types 2|21w6 79r43 4|11e19
-4M9*Unsigned_8<1|55M9> 2|79r58
+4M9*Unsigned_8<1|62M9> 2|79r58
 

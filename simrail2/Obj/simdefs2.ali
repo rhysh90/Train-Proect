@@ -1,16 +1,24 @@
-V "GNAT Lib v2012"
+V "GNAT Lib v2015"
 A -gnatA
+A -mtune=generic
+A -march=pentiumpro
 P ZX
-R nnnnnnnnnnnnnnnnnnnnnnnnvnvnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnvnnnnnnnnnnnnnn
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_IMPLICIT_LOOPS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
 
 U simdefs2%s		simdefs2.ads		eb62b144 NE OO PK
 W raildefs%s		raildefs.ads		raildefs.ali
 
-D interfac.ads		20120510125814 129923ea
-D raildefs.ads		20160421093136 bff1902e
-D simdefs2.ads		20160421093136 5493216a
-D system.ads		20120510125846 6daf90c4
-D unsigned_types.ads	20160421093136 ea348493
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D raildefs.ads		20160421093136 bff1902e raildefs%s
+D simdefs2.ads		20160421093136 5493216a simdefs2%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D unsigned_types.ads	20160421093136 ea348493 unsigned_types%s
 X 2 raildefs.ads
 23K9*Raildefs 86e13 3|20w6 20r21
 35I9*Block_Idx<short_short_integer>

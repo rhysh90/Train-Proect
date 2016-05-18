@@ -1,7 +1,15 @@
-V "GNAT Lib v2012"
+V "GNAT Lib v2015"
 A -gnatA
+A -mtune=generic
+A -march=pentiumpro
 P ZX
-R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnvnnnnnnnnvnnnvnnvnnnnnnnnnnnnnn
+
+RN
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_CONVERSION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
 
 U dio192defs%s		dio192defs.ads		6126b02c EE OO PK
 W raildefs%s		raildefs.ads		raildefs.ali
@@ -9,13 +17,13 @@ W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
 W unchecked_conversion%s
 W unsigned_types%s	unsigned_types.ads	unsigned_types.ali
 
-D dio192defs.ads	20160421093136 fecc3a89
-D interfac.ads		20120510125814 129923ea
-D raildefs.ads		20160421093136 bff1902e
-D system.ads		20120510125846 6daf90c4
-D s-unstyp.ads		20120510125838 6ae15c76
-D unchconv.ads		20120510125846 ca2f9e18
-D unsigned_types.ads	20160421093136 ea348493
+D dio192defs.ads	20160421093136 fecc3a89 dio192defs%s
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D raildefs.ads		20160421093136 bff1902e raildefs%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
+D unchconv.ads		20150518132150 ca2f9e18 unchecked_conversion%s
+D unsigned_types.ads	20160421093136 ea348493 unsigned_types%s
 X 1 dio192defs.ads
 27K9*Dio192defs 204l5 204e15
 52N4*Base_Address1 53r29 54r29 55r29 56r29 57r29 58r29 59r29 60r29
@@ -82,8 +90,8 @@ X 1 dio192defs.ads
 196V13*Unsigned_8_To_Turnout_Drive_Register[6|20]{150A9}
 200V13*Unsigned[6|20]{7|4M9}
 X 2 interfac.ads
-55M9*Unsigned_8
-58M9*Unsigned_16
+62M9*Unsigned_8
+65M9*Unsigned_16
 X 3 raildefs.ads
 23K9*Raildefs 1|24w6 25r5 3|86e13
 30M9*Cab_Type 1|114r20 120r17
@@ -97,7 +105,7 @@ X 6 unchconv.ads
 20v10*Unchecked_Conversion 1|21w6 178r29 182r29 186r58 192r49 196r57 200r29
 X 7 unsigned_types.ads
 3K9*Unsigned_Types 1|22w6 29r8 7|11e19
-4M9*Unsigned_8<2|55M9> 1|102r25 103r28 104r28 106r27 107r27 108r27 109r27
+4M9*Unsigned_8<2|62M9> 1|102r25 103r28 104r28 106r27 107r27 108r27 109r27
 . 180r17 184r17 187r21 193r21 197r21 202r17
-5M9*Unsigned_16<2|58M9> 1|74r59 91r65 94r65
+5M9*Unsigned_16<2|65M9> 1|74r59 91r65 94r65
 

@@ -1,8 +1,20 @@
-V "GNAT Lib v2012"
+V "GNAT Lib v2015"
 M P W=b
 A -gnatA
+A -mtune=generic
+A -march=pentiumpro
 P SS ZX
-R nnnnnnnnnvnnnnnnnnnnnnnvnvnnnnnnnnnnnnnvnvnnvnnnnnnnnnnnnnvnnnnvnnnnnnvnnnnnnnnnnnnnn
+
+RN
+RV NO_DELAY
+RV NO_FIXED_POINT
+RV NO_IO
+RV NO_RELATIVE_DELAY
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
 
 U lab3%b		lab3.adb		39b4559b NE OO SU
 W ada%s			ada.ads			ada.ali
@@ -27,72 +39,71 @@ W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 W turnout_driver%s	turnout_driver.adb	turnout_driver.ali
 W unsigned_types%s	unsigned_types.ads	unsigned_types.ali
 
-D ada.ads		20120510125802 3ffc8e18
-D a-calend.ads		20120510125748 d86d6c8c
-D a-caldel.ads		20120510125748 9f20b83d
-D a-except.ads		20120510125752 ec1b44c1
-D a-finali.ads		20120510125752 52ecdc1b
-D a-inteio.ads		20120510125752 f64b89a4
-D a-ioexce.ads		20120510125752 8b9de6cd
-D a-reatim.ads		20120510125754 63f07669
-D a-stream.ads		20120510125756 2ca4ee37
-D a-tags.ads		20120510125758 6c0509d0
-D a-textio.ads		20120510125800 386df5d4
-D a-tiinio.ads		20120510125800 aa04e5d6
-D a-unccon.ads		20120510125800 f9eb8f06
-D block_driver.ads	20160512014544 a3b793c4
-D dac_driver.ads	20160421093136 b267bd32
-D dda06defs.ads		20160421093136 ef38bf95
-D dio192defs.ads	20160421093136 fecc3a89
-D halls2.ads		20160421093136 5308d55d
-D int32defs.ads		20160421093136 dfad4756
-D interfac.ads		20120510125814 129923ea
-D i-c.ads		20120510125814 5421119b
-D i-cstrin.ads		20120510125814 341d0ddf
-D i-cstrea.ads		20120510125814 1bd72c32
-D interrupt_hdlr.ads	20160421093136 493c907b
-D io_ports.ads		20160421093136 841e5c76
-D lab3.adb		20160512022516 dadc7d75
-D logger_ada.ads	20160421093136 52f590a4
-D raildefs.ads		20160421093136 bff1902e
-D simrail2.ads		20160421093136 6c13e450
-D slogger.ads		20160421093136 857a547d
-D swindows.ads		20160421093136 a676c5b7
-D system.ads		20120510125846 6daf90c4
-D s-atacco.ads		20120510125818 4c36d12f
-D s-conca2.ads		20120510125822 fbd0f2fc
-D s-crtl.ads		20120510125824 ac77b159
-D s-exctab.ads		20120510125824 66e51330
-D s-ficobl.ads		20120510125824 443b9d66
-D s-finmas.ads		20120510125824 b95bb341
-D s-finroo.ads		20120510125824 4ff27390
-D s-multip.ads		20120510125828 38ac9f73
-D s-osinte.ads		20120510125828 ecf1fbfd
-D s-parame.ads		20120510125832 b6e20cc0
-D s-pooglo.ads		20120510125832 542f33d0
-D s-secsta.ads		20120510125832 eea35a36
-D s-soflin.ads		20120510125832 24c8153c
-D s-stache.ads		20120510125834 596fc1b4
-D s-stausa.ads		20120510125834 017a0a05
-D s-stalib.ads		20120510125834 f78bcf95
-D s-stoele.ads		20120510125834 facd7d98
-D s-stoele.adb		20120510125834 afc5dc80
-D s-stopoo.ads		20120510125834 7b8fbeee
-D s-tasinf.ads		20120510125836 859198ad
-D s-taspri.ads		20120510125836 196697f7
-D s-taprop.ads		20120510125834 1dd2e1b6
-D s-taskin.ads		20120510125836 5e24fb30
-D s-traent.ads		20120510125838 5221ee41
-D s-unstyp.ads		20120510125838 6ae15c76
-D s-wchcon.ads		20120510125840 bfeb2e3d
-D s-win32.ads		20120510125840 07238fa2
-D turnout_driver.ads	20160422065952 990f7fc0
-D unchconv.ads		20120510125846 ca2f9e18
-D unsigned_types.ads	20160421093136 ea348493
+D ada.ads		20150518132148 3ffc8e18 ada%s
+D a-calend.ads		20150518132148 d986d312 ada.calendar%s
+D a-caldel.ads		20150518132148 9f20b83d ada.calendar.delays%s
+D a-except.ads		20150518132148 5250cb69 ada.exceptions%s
+D a-finali.ads		20150518132148 69f99942 ada.finalization%s
+D a-inteio.ads		20150518132148 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20150518132148 e4a01f64 ada.io_exceptions%s
+D a-reatim.ads		20150518132148 a5838d5a ada.real_time%s
+D a-stream.ads		20150518132148 119b8fb3 ada.streams%s
+D a-tags.ads		20150518132148 dc4d0634 ada.tags%s
+D a-textio.ads		20150518132148 386df5d4 ada.text_io%s
+D a-tiinio.ads		20150518132148 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
+D block_driver.ads	20160512014544 a3b793c4 block_driver%s
+D dac_driver.ads	20160421093136 b267bd32 dac_driver%s
+D dda06defs.ads		20160421093136 ef38bf95 dda06defs%s
+D dio192defs.ads	20160421093136 fecc3a89 dio192defs%s
+D halls2.ads		20160421093136 5308d55d halls2%s
+D int32defs.ads		20160421093136 dfad4756 int32defs%s
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D i-c.ads		20150518132148 5421119b interfaces.c%s
+D i-cstrin.ads		20150518132148 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20150518132148 e53d8b8e interfaces.c_streams%s
+D interrupt_hdlr.ads	20160421093136 493c907b interrupt_hdlr%s
+D io_ports.ads		20160421093136 841e5c76 io_ports%s
+D lab3.adb		20160512022516 dadc7d75 lab3%b
+D logger_ada.ads	20160421093136 52f590a4 logger_ada%s
+D raildefs.ads		20160421093136 bff1902e raildefs%s
+D simrail2.ads		20160421093136 6c13e450 simrail2%s
+D slogger.ads		20160421093136 857a547d slogger%s
+D swindows.ads		20160421093136 a676c5b7 swindows%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D s-atacco.ads		20150518132148 4c36d12f system.address_to_access_conversions%s
+D s-conca2.ads		20150518132148 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20150518132148 0ebbdb71 system.crtl%s
+D s-exctab.ads		20150518132148 54135002 system.exception_table%s
+D s-ficobl.ads		20150518132148 078245e4 system.file_control_block%s
+D s-finmas.ads		20150518132148 814daec4 system.finalization_masters%s
+D s-finroo.ads		20150518132148 4ff27390 system.finalization_root%s
+D s-multip.ads		20150518132150 38ac9f73 system.multiprocessors%s
+D s-osinte.ads		20150518132150 2e5b26a9 system.os_interface%s
+D s-parame.ads		20150518132150 7e2a0d7f system.parameters%s
+D s-pooglo.ads		20150518132150 542f33d0 system.pool_global%s
+D s-secsta.ads		20150518132150 86a2856d system.secondary_stack%s
+D s-soflin.ads		20150518132150 aa763b52 system.soft_links%s
+D s-stache.ads		20150518132150 a37c21ec system.stack_checking%s
+D s-stausa.ads		20150518132150 017a0a05 system.stack_usage%s
+D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
+D s-stoele.ads		20150518132150 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20150518132150 b16154c2 system.storage_pools%s
+D s-tasinf.ads		20150518132150 601f6b72 system.task_info%s
+D s-taspri.ads		20150518132150 6c1d93d4 system.task_primitives%s
+D s-taprop.ads		20150518132150 1dd2e1b6 system.task_primitives.operations%s
+D s-taskin.ads		20150518132150 339749f0 system.tasking%s
+D s-traent.ads		20150518132150 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
+D s-wchcon.ads		20150518132150 1b7d22d2 system.wch_con%s
+D s-win32.ads		20150518132150 b7f96285 system.win32%s
+D turnout_driver.ads	20160422065952 990f7fc0 turnout_driver%s
+D unchconv.ads		20150518132150 ca2f9e18 unchecked_conversion%s
+D unsigned_types.ads	20160421093136 ea348493 unsigned_types%s
 X 1 ada.ads
 16K9*Ada 19e8 26|18r6 18r19 33r24 284r16 315r4
 X 6 a-inteio.ads
-18K13*Integer_Text_IO[12|45] 26|18w23 33r28
+18K13*Integer_Text_IO[12|46] 26|18w23 33r28
 X 11 a-textio.ads
 49K13*Text_IO 471e16 26|18w10 284r20 315r8
 263U14*Put_Line 26|284s28 315s16
@@ -109,23 +120,23 @@ X 17 dio192defs.ads
 60N4*Qctl1_Addr 26|55r31 75r31
 66N4*Pctl2_Addr 26|56r31 76r31
 70N4*Qctl2_Addr 26|57r31 77r31
-74a4*Block_Addr(62|5M9) 26|64r34
-103m4*Output_Init2{62|4M9} 26|74r43 75r43 76r43 77r43
-104m4*Output_Init1{62|4M9} 26|54r43 55r43 56r43 57r43
+74a4*Block_Addr(61|5M9) 26|64r34
+103m4*Output_Init2{61|4M9} 26|74r43 75r43 76r43 77r43
+104m4*Output_Init1{61|4M9} 26|54r43 55r43 56r43 57r43
 128A9*Block_Register(118R9)<28|35I9> 26|40r61
 137a4*Zero_Normal{128A9} 26|63r28
 146E9*Turnout_Drive_Bit 146e48 26|90r26
 147e4*Straighten{146E9} 26|96r22
 148e4*Turn{146E9} 26|98r22
-178V13*Unsigned[61|20]{62|4M9} 26|64s50
+178V13*Unsigned[60|20]{61|4M9} 26|64s50
 X 18 halls2.ads
 13K9*Halls2 68e11 26|27w29 323r4
 16U14*Initialize 26|323s11
 X 19 int32defs.ads
 20K9*Int32defs 84e14 26|27w18
 X 20 interfac.ads
-55M9*Unsigned_8
-58M9*Unsigned_16
+62M9*Unsigned_8
+65M9*Unsigned_16
 X 24 interrupt_hdlr.ads
 12K9*Interrupt_Hdlr 18e19 26|28w6 319r4 324r4
 14U14*Init 26|319s19
@@ -156,11 +167,11 @@ X 26 lab3.adb
 143i4 Number{integer} 155r10 156r24 169m7 183r10 184r28 191m13 209m7 220r10
 . 221r32 227m7 238r10 239r32 245m7 263m9 268m7 280m16 280r26 285m16 289m16
 150U14 Dac_Command 150b14 170l8 170t19 292s16
-151e7 C{character} 157m26 157r26 158r13 159r45
+151e7 C{character} 157m26 158r13 159r45
 152m7 Dac{28|30M9} 156m10 160r37 162m13 165r10
-153m7 V{62|4M9} 159m13 160r42
+153m7 V{61|4M9} 159m13 160r42
 177U14 b_command 177b14 210l8 210t17 295s16
-178e7 C{character} 185m26 185r26 186r13 188r16 196m26 196r26 197r13 198r44
+178e7 C{character} 185m26 186r13 188r16 196m26 197r13 198r44
 179i7 Block{28|36I12} 184m10 199r34 200r39
 180e7 Polarity{28|57E9} 187m13 189m13 200r46
 181m7 Cab{28|30M9} 198m13 199r41
@@ -170,9 +181,9 @@ X 26 lab3.adb
 236i7 Turnout{28|64I12} 239m10 240r38
 253U14 o_command 253b14 270l8 270t17 304s16
 254e7 Polarity{28|57E9} 259m9 261m9 269r12
-255e7 C{character} 257m23 257r23 258r10 260r13
+255e7 C{character} 257m23 258r10 260r13
 272U14 Dialog_Loop 272b14 311l8 311t19 326s4
-273e7 C{character} 277m26 277r26 278r15 280r53
+273e7 C{character} 277m26 278r15 280r53
 X 28 raildefs.ads
 23K9*Raildefs 26|23w6 23r52 40r13 83r16 84r16 88r15 89r15 117r35 118r35 119r35
 . 120r35 121r35 122r35 123r35 124r35 28|86e13
@@ -202,20 +213,22 @@ X 30 slogger.ads
 97U14*Finalize 26|283s24
 X 31 swindows.ads
 17K9*Swindows 26|21w6 21r52 35r33 317r4 318r4 31|90e13
-19P9*Window(88+9) 26|35r42
+19P9*Window 26|35r42
 27U14*Open 26|317s13 318s13
 39U14*Clear 26|309s10
 42U14*Put_Line 26|166s10 192s13 202s13 206s10 224s10 242s10 264s9 276s10
 61U14*Get_Char 26|157s10 185s10 196s10 257s7 277s10
-88+9*Window_Struct
-X 60 turnout_driver.ads
+X 47 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+X 59 turnout_driver.ads
 3K9*turnout_driver 26|26w6 117r7 118r7 119r7 120r7 121r7 122r7 123r7 124r7
-. 222r10 240r10 60|8e19
+. 222r10 240r10 59|8e19
 5U14*Set_Turn 26|222s25
 6U14*Set_Straight 26|117s22 118s22 119s22 120s22 121s22 122s22 123s22 124s22
 . 240s25
-X 62 unsigned_types.ads
-3K9*Unsigned_Types 26|22w6 22r52 62|11e19
-4M9*Unsigned_8<20|55M9> 26|153r13 159r18
-5M9*Unsigned_16<20|58M9>
+X 61 unsigned_types.ads
+3K9*Unsigned_Types 26|22w6 22r52 61|11e19
+4M9*Unsigned_8<20|62M9> 26|153r13 159r18
+5M9*Unsigned_16<20|65M9>
 

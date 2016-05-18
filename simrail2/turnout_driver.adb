@@ -33,14 +33,22 @@ package body turnout_driver is
    procedure Set_Turn (T : in Raildefs.Turnout_Id) is
       use Raildefs, Dio192defs;
       Index      : Turnout_Idx := Turnout_Idx((T-1)/8);
-      Value      : Unsigned_8 := Unsigned_8(2**(Integer(T rem 8)-1));
+      Value      : Unsigned_8;
+      Turn_Pos   : Raildefs.Turnout_Id;
    begin
-      S.Acquire;
+      Turn_Pos := T;
+      if (T>16) then
+         Turn_Pos := T-8;
+      end if;
+
+      if (T>8) then
+         Turn_Pos := Turn_Pos-8;
+      end if;
+      Value := Unsigned_8(2**(Integer(Turn_Pos)-1));
       Tn_Drives := Turnout_Drive_Array(Index);
       Value := Value OR Tn_Drives;
       Turnout_Drive_Array(Index) := Value;
       IO_Ports.Write_IO_Port(Turnout_Drive_Addr(Index), Turnout_Drive_Array(Index));
-      S.Release;
    end Set_Turn;
 
    ------------------
@@ -50,14 +58,22 @@ package body turnout_driver is
    procedure Set_Straight (T : in Raildefs.Turnout_Id) is
       use Raildefs, Dio192defs;
       Index      : Turnout_Idx := Turnout_Idx((T-1)/8);
-      Value      : Unsigned_8 := NOT Unsigned_8(2**(Integer(T rem 8)-1));
+      Value      : Unsigned_8;
+      Turn_Pos   : Raildefs.Turnout_Id;
    begin
-      S.Acquire;
+      Turn_Pos := T;
+      if (Turn_Pos>16) then
+         Turn_Pos := Turn_Pos-8;
+      end if;
+
+      if (Turn_Pos>8) then
+         Turn_Pos := Turn_Pos-8;
+      end if;
+      Value := NOT Unsigned_8(2**(Integer(Turn_Pos)-1));
       Tn_Drives := Turnout_Drive_Array(Index);
       Value := Value AND Tn_Drives;
       Turnout_Drive_Array(Index) := Value;
       IO_Ports.Write_IO_Port(Turnout_Drive_Addr(Index), Turnout_Drive_Array(Index));
-      S.Release;
    end Set_Straight;
 
 end turnout_driver;
