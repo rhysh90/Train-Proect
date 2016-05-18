@@ -7,6 +7,7 @@ P ZX
 RN
 RV NO_EXCEPTION_HANDLERS
 RV NO_EXCEPTIONS
+RV NO_IO
 RV NO_IMPLICIT_LOOPS
 RV NO_PROTECTED_TYPES
 RV NO_DEFAULT_INITIALIZATION
@@ -14,10 +15,11 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U interrupt_hdlr%b	interrupt_hdlr.adb	166b9811 OO PK
+U interrupt_hdlr%b	interrupt_hdlr.adb	fae66b3c OO PK
 W ada%s			ada.ads			ada.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
 W halls2%s		halls2.adb		halls2.ali
 W int32defs%s		int32defs.ads		int32defs.ali
 W raildefs%s		raildefs.ads		raildefs.ali
@@ -50,7 +52,7 @@ D i-c.ads		20150518132148 5421119b interfaces.c%s
 D i-cstrin.ads		20150518132148 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20150518132148 e53d8b8e interfaces.c_streams%s
 D interrupt_hdlr.ads	20160421093136 493c907b interrupt_hdlr%s
-D interrupt_hdlr.adb	20160421093136 537096b2 interrupt_hdlr%b
+D interrupt_hdlr.adb	20160518050152 8790904b interrupt_hdlr%b
 D logger_ada.ads	20160421093136 52f590a4 logger_ada%s
 D raildefs.ads		20160421093136 bff1902e raildefs%s
 D slogger.ads		20160421093136 857a547d slogger%s
@@ -84,69 +86,80 @@ D s-win32.ads		20150518132150 b7f96285 system.win32%s
 D unchconv.ads		20150518132150 ca2f9e18 unchecked_conversion%s
 D unsigned_types.ads	20160421093136 ea348493 unsigned_types%s
 X 1 ada.ads
-16K9*Ada 19e8 19|16r6 32r24
+16K9*Ada 19e8 19|16r6 17r6 33r24 142r10
 X 4 a-inteio.ads
-18K13*Integer_Text_IO[10|46] 19|16w10 32r28
+18K13*Integer_Text_IO[10|46] 19|17w10 33r28 142r14
+X 9 a-textio.ads
+49K13*Text_IO 471e16 19|16w10
 X 10 a-tiinio.ads
-76U14*Put 19|114s14[4|18] 131s17[4|18]
+66U14*Put 19|142s30[4|18]
+76U14*Put 19|163s14[4|18] 180s17[4|18]
 X 12 halls2.ads
-13K9*Halls2 68e11 19|22w4 67r7
-31U14*Install_Int_Handling 19|67s14
+13K9*Halls2 68e11 19|23w4 71r7
+31U14*Install_Int_Handling 19|71s14
 X 13 int32defs.ads
-20K9*Int32defs 84e14 19|21w4 87r14 156r14
-66A9*Sensor_Register(21|51E9)<21|45I9> 19|157r19
-80V13*Unsigned_8_To_Sensor_Register[50|20]{66A9} 19|157s38
+20K9*Int32defs 84e14 19|22w4 91r14 205r14
+66A9*Sensor_Register(21|51E9)<21|45I9> 19|206r19
+80V13*Unsigned_8_To_Sensor_Register[50|20]{66A9} 19|206s38
 X 14 interfac.ads
 62M9*Unsigned_8
 X 18 interrupt_hdlr.ads
-12K9*Interrupt_Hdlr 18l5 18e19 19|26b14 171l5 171t19
-14U14*Init 14>19 19|59b14 63l8 63t12
-14p19 Win{23|19P9} 19|60b10 62r23
-16U14*Install 19|65b14 68l8 68t15
+12K9*Interrupt_Hdlr 18l5 18e19 19|27b14 220l5 220t19
+14U14*Init 14>19 19|63b14 67l8 67t12
+14p19 Win{23|19P9} 19|64b10 66r23
+16U14*Install 19|69b14 72l8 72t15
 X 19 interrupt_hdlr.adb
-28p4 W_Interrupts{23|19P9} 62m7 134r19 140r22 143r22 146r22
-30i4 W_Height{natural} 93r45
-32K12 Iio=32:28 114r10 131r13
-34A12 String8{string}<integer> 55r17 153r20 158r19
-36w14 Interrupt 67r35 70b19 169l8 169t17
-38U17 Analyze 39>10 40>10 67r45 83b17 148l11 148t18
-39i10 Offset{21|45I9} 84b13 110r45 116r13
-40a10 Value{21|79A9} 85b13 110r54 117r46 118r46 119r46 120r46 122r46 123r46
-. 124r46 125r46 130r13 131r50
-45i7 Number{natural} 114r37 135r10 135r21
-46i7 Line_Number{natural} 93r13 93r29 94r16 134r46 140r54 143r51 146r50
-48e7 Fg{23|20E9} 96r19 97r19 99r19 134r71
-49a7 Sensor_Line{string} 114r18 117r13 118r13 119r13 120r13 122r13 123r13
-. 124r13 125r13 131r21 134r33
-52V16 To_String{34A12} 53>13 54>13 117s36 118s36 119s36 120s36 122s36 123s36
-. 124s36 125s36 150b16 167l11 167t20
-53m13 Val{51|4M9} 151b13 157r69
-54i13 LSB_Sensor{21|45I9} 152b13 163r50
-89U20 Increment_Line 89b20 102l14 102t28 136s10 141s13 144s13 147s13
-157a10 V{13|66A9} 161r16
-158a10 Result{34A12} 162m16 166r17
-160i14 I<short_short_integer> 161r18 162r31 163r46
+29p4 W_Interrupts{23|19P9} 66m7 183r19 189r22 192r22 195r22
+31i4 W_Height{natural} 101r45
+33K12 Iio=33:28 163r10 180r13
+35A12 String8{string}<integer> 59r17 202r20 207r19
+37w14 Interrupt 71r35 74b19 218l8 218t17
+39U17 Analyze 40>10 41>10 71r45 87b17 197l11 197t18
+40i10 Offset{21|45I9} 88b13 116r13 145r12 159r45 165r13
+41a10 Value{21|79A9} 89b13 120r31 132r31 146r37 148r37 159r54 166r46 167r46
+. 168r46 169r46 171r46 172r46 173r46 174r46 179r13 180r50
+46a7 Previous_Sensor_Reg1{21|79A9} 121r32 146r13
+47a7 Previous_Sensor_Reg2{21|79A9} 133r32 148r13
+49i7 Number{natural} 163r37 184r10 184r21
+50i7 Line_Number{natural} 101r13 101r29 102r16 183r46 189r54 192r51 195r50
+52e7 Fg{23|20E9} 104r19 105r19 107r19 183r71
+53a7 Sensor_Line{string} 163r18 166r13 167r13 168r13 169r13 171r13 172r13
+. 173r13 174r13 180r21 183r33
+56V16 To_String{35A12} 57>13 58>13 166s36 167s36 168s36 169s36 171s36 172s36
+. 173s36 174s36 199b16 216l11 216t20
+57m13 Val{51|4M9} 200b13 206r69
+58i13 LSB_Sensor{21|45I9} 201b13 212r50
+93m10 Previous_Reg{51|4M9} 121m16 123r36 124r50 133m16 135r36 136r50
+94m10 Current_Reg{51|4M9} 120m16 123r20 124r34 132m16 135r20 136r34
+95m10 Changed_Val{51|4M9} 124m19 136m19 142r42
+97U20 Increment_Line 97b20 110l14 110t28 185s10 190s13 193s13 196s13
+119i17 i{integer} 120r37 121r53
+131i17 i{integer} 132r37 133r53
+206a10 V{13|66A9} 210r16
+207a10 Result{35A12} 211m16 215r17
+209i14 I<short_short_integer> 210r18 211r31 212r46
 X 21 raildefs.ads
-23K9*Raildefs 19|20w4 23r5 39r26 40r25 54r26 84r29 85r29 152r26 161r23 21|86e13
-45I9*Sensor_Idx<short_short_integer> 19|39r35 54r35 84r38 152r35 160r19
-51n29*On{51E9} 19|161r32
-79A9*Four_Registers(51|4M9)<integer> 19|40r34 85r38
+23K9*Raildefs 19|21w4 24r5 40r26 41r25 46r30 47r30 58r26 88r29 89r29 201r26
+. 210r23 21|86e13
+45I9*Sensor_Idx<short_short_integer> 19|40r35 58r35 88r38 201r35 209r19
+51n29*On{51E9} 19|210r32
+79A9*Four_Registers(51|4M9)<integer> 19|41r34 46r39 47r39 89r38
 X 22 slogger.ads
-51K9*Slogger 19|24w6 109r13 110r13 22|100e12
-53b4*On{boolean} 19|109r21
-87U14*Send_Event 19|110s21
+51K9*Slogger 19|25w6 158r13 159r13 22|100e12
+53b4*On{boolean} 19|158r21
+87U14*Send_Event 19|159s21
 X 23 swindows.ads
-17K9*Swindows 18|10w6 14r28 19|17w6 17r21 28r19 48r12 48r30 60r23 23|90e13
-19P9*Window 18|14r37 19|28r28 60r32
-20E9*Color 19|48r21 23|22e59
-22n45*Yellow{20E9} 19|97r25
-22n53*White{20E9} 19|48r39 96r24 99r25
-42U14*Put_Line 19|134s10 140s13 143s13 146s13
-45e7 Foreground{20E9} 19|134r59
+17K9*Swindows 18|10w6 14r28 19|18w6 18r21 29r19 52r12 52r30 64r23 23|90e13
+19P9*Window 18|14r37 19|29r28 64r32
+20E9*Color 19|52r21 23|22e59
+22n45*Yellow{20E9} 19|105r25
+22n53*White{20E9} 19|52r39 104r24 107r25
+42U14*Put_Line 19|183s10 189s13 192s13 195s13
+45e7 Foreground{20E9} 19|183r59
 X 37 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
 X 51 unsigned_types.ads
-3K9*Unsigned_Types 19|18w6 18r27 51|11e19
-4M9*Unsigned_8<14|62M9> 19|53r26 151r26
+3K9*Unsigned_Types 19|19w6 19r27 51|11e19
+4M9*Unsigned_8<14|62M9> 19|57r26 93r25 94r24 95r24 200r26
 

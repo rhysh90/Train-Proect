@@ -16,7 +16,7 @@ RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U lab3%b		lab3.adb		aca65fe6 NE OO SU
+U lab3%b		lab3.adb		00b1e4c5 NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -66,7 +66,7 @@ D i-cstrin.ads		20150518132148 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20150518132148 e53d8b8e interfaces.c_streams%s
 D interrupt_hdlr.ads	20160421093136 493c907b interrupt_hdlr%s
 D io_ports.ads		20160421093136 841e5c76 io_ports%s
-D lab3.adb		20160518024934 4a7a67fd lab3%b
+D lab3.adb		20160518051552 e66ddcde lab3%b
 D logger_ada.ads	20160421093136 52f590a4 logger_ada%s
 D raildefs.ads		20160421093136 bff1902e raildefs%s
 D simrail2.ads		20160421093136 6c13e450 simrail2%s
@@ -111,9 +111,12 @@ X 11 a-textio.ads
 49K13*Text_IO 471e16 27|18w10 319r20 356r8
 263U14*Put_Line 27|319s28 356s16
 X 14 block_driver.ads
-3K9*block_driver 12e17 27|25w6 200r13 201r13
+3K9*block_driver 12e17 27|25w6 128r7 129r7 130r7 131r7 132r7 133r7 134r7
+. 135r7 200r13 201r13
 5U14*Set_Cab 27|200s26
 7U14*Set_Polarity 27|201s26
+9U14*Set_Cab_And_Polarity 27|128s20 129s20 130s20 131s20 132s20 133s20 134s20
+. 135s20
 X 15 dac_driver.ads
 3K9*dac_driver 7e15 27|24w6 161r13
 5U14*Set_Voltage 27|161s24
@@ -165,7 +168,7 @@ X 27 lab3.adb
 90i7 Bit{29|63I9}
 91e7 Drive{18|146E9} 97m13 99m13
 111U14 Oval 111b14 111>20 139l8 139t12 270s7
-111e20 Pol{29|57E9}
+111e20 Pol{29|57E9} 128r86 129r86 130r86 131r86 132r86 133r86 134r86 135r86
 143N4 Pos0 160r50 199r49 315r58
 144i4 Number{integer} 156r10 157r24 170m7 184r10 185r28 192m13 210m7 221r10
 . 222r32 228m7 239r10 240r32 246m7 264m9 269m7 281r10 282r44 287m7 298r10
@@ -192,11 +195,14 @@ X 27 lab3.adb
 308e7 C{character} 312m26 313r15 315r53
 X 29 raildefs.ads
 23K9*Raildefs 27|23w6 23r52 41r13 84r16 85r16 89r15 90r15 118r35 119r35 120r35
-. 121r35 122r35 123r35 124r35 125r35 29|86e13
-30M9*Cab_Type 27|153r13 182r20 199r20 282r35 299r35
+. 121r35 122r35 123r35 124r35 125r35 128r41 128r64 129r41 129r64 130r41 130r64
+. 131r41 131r64 132r41 132r64 133r41 133r64 134r41 134r64 135r41 135r64 29|86e13
+30M9*Cab_Type 27|128r73 129r73 130r73 131r73 132r73 133r73 134r73 135r73
+. 153r13 182r20 199r20 282r35 299r35
 31M12*Dac_Id{30M9} 27|157r17
 35I9*Block_Idx<short_short_integer> 27|41r22
-36I12*Block_Id{35I9} 27|180r20 185r19
+36I12*Block_Id{35I9} 27|128r50 129r50 130r50 131r50 132r50 133r50 134r50
+. 135r50 180r20 185r19
 57E9*Polarity_Type 27|111r29 181r20 255r18 29|59e19
 58n8*Normal_Pol{57E9} 27|188r25 260r21
 59n7*Reverse_Pol{57E9} 27|190r25 262r21

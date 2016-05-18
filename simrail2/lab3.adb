@@ -125,14 +125,14 @@ procedure Lab3 is
       turnout_driver.Set_Straight(Raildefs.Turnout_Id(19));
 
       -- set blocks for cab 2
-      --block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(12), Raildefs.Cab_Type(1), Pol);
-      --block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(13), Raildefs.Cab_Type(1), Pol);
-      --block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(14), Raildefs.Cab_Type(1), Pol);
-      --block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(15), Raildefs.Cab_Type(1), Pol);
-      --block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(16), Raildefs.Cab_Type(1), Pol);
-      --block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(17), Raildefs.Cab_Type(1), Pol);
-      --block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(18), Raildefs.Cab_Type(1), Pol);
-      --block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(19), Raildefs.Cab_Type(1), Pol);
+      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(12), Raildefs.Cab_Type(2), Pol);
+      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(13), Raildefs.Cab_Type(2), Pol);
+      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(14), Raildefs.Cab_Type(2), Pol);
+      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(15), Raildefs.Cab_Type(2), Pol);
+      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(16), Raildefs.Cab_Type(2), Pol);
+      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(17), Raildefs.Cab_Type(2), Pol);
+      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(18), Raildefs.Cab_Type(2), Pol);
+      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(19), Raildefs.Cab_Type(2), Pol);
 
       --run train 2 around the oval
 
