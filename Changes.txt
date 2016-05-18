@@ -1,2 +1,28 @@
 -Added DD08defs 
+
 -Changed B_command and h_Command names to Bell_Command and Horn_Command
+--Sensor_Register is the interrupt handler
+--Analyze passes the Sensor events into the sporadic for train control ASER task
+
+
+--MAYBE NEED
+protected type Lock is
+      entry Acquire;
+      procedure Release;
+   private
+      Available : Boolean := True;
+   end Lock;
+
+   protected body Lock is
+      entry Acquire when Available is
+      begin
+         Available := False;
+      end Acquire;
+
+      procedure Release is
+      begin
+         Available := True;
+      end Release;
+   end Lock;
+
+   S : Lock;
