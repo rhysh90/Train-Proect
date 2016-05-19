@@ -1,0 +1,266 @@
+V "GNAT Lib v2015"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+
+RN
+RV NO_DELAY
+RV NO_FIXED_POINT
+RV NO_IO
+RV NO_RELATIVE_DELAY
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U main%b		main.adb		477bae56 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W block_driver%s	block_driver.adb	block_driver.ali
+W dac_driver%s		dac_driver.adb		dac_driver.ali
+W dio192defs%s		dio192defs.ads		dio192defs.ali
+W fat_controller%s	fat_controller.adb	fat_controller.ali
+W halls2%s		halls2.adb		halls2.ali
+W int32defs%s		int32defs.ads		int32defs.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interrupt_hdlr%s	interrupt_hdlr.adb	interrupt_hdlr.ali
+W io_ports%s		io_ports.adb		io_ports.ali
+W raildefs%s		raildefs.ads		raildefs.ali
+W simrail2%s		simrail2.adb		simrail2.ali
+W slogger%s		slogger.adb		slogger.ali
+W sound_manager%s	sound_manager.adb	sound_manager.ali
+W swindows%s		swindows.adb		swindows.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W trains%s		trains.adb		trains.ali
+W turnout_driver%s	turnout_driver.adb	turnout_driver.ali
+W unsigned_types%s	unsigned_types.ads	unsigned_types.ali
+
+D ada.ads		20150518132148 3ffc8e18 ada%s
+D a-calend.ads		20150518132148 d986d312 ada.calendar%s
+D a-caldel.ads		20150518132148 9f20b83d ada.calendar.delays%s
+D a-except.ads		20150518132148 5250cb69 ada.exceptions%s
+D a-finali.ads		20150518132148 69f99942 ada.finalization%s
+D a-inteio.ads		20150518132148 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20150518132148 e4a01f64 ada.io_exceptions%s
+D a-reatim.ads		20150518132148 a5838d5a ada.real_time%s
+D a-stream.ads		20150518132148 119b8fb3 ada.streams%s
+D a-tags.ads		20150518132148 dc4d0634 ada.tags%s
+D a-textio.ads		20150518132148 386df5d4 ada.text_io%s
+D a-tiinio.ads		20150518132148 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
+D block_driver.ads	20160519093830 a3b793c4 block_driver%s
+D dac_driver.ads	20160519093830 b267bd32 dac_driver%s
+D das08defs.ads		20160519093830 ad4a2296 das08defs%s
+D dda06defs.ads		20160519093830 ef38bf95 dda06defs%s
+D dio192defs.ads	20160519093830 fecc3a89 dio192defs%s
+D fat_controller.ads	20160519094530 b3fb39b4 fat_controller%s
+D halls2.ads		20160519093830 5308d55d halls2%s
+D int32defs.ads		20160519093830 dfad4756 int32defs%s
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D i-c.ads		20150518132148 5421119b interfaces.c%s
+D i-cstrin.ads		20150518132148 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20150518132148 e53d8b8e interfaces.c_streams%s
+D interrupt_hdlr.ads	20160519093830 493c907b interrupt_hdlr%s
+D io_ports.ads		20160519093830 841e5c76 io_ports%s
+D logger_ada.ads	20160519093830 52f590a4 logger_ada%s
+D main.adb		20160519121820 367e4a9f main%b
+D projdefs.ads		20160519093830 eddf79ef projdefs%s
+D raildefs.ads		20160519093830 bff1902e raildefs%s
+D simrail2.ads		20160519093830 6c13e450 simrail2%s
+D slogger.ads		20160519093830 857a547d slogger%s
+D sound_manager.ads	20160519093830 05b410f5 sound_manager%s
+D swindows.ads		20160519093830 a676c5b7 swindows%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D s-atacco.ads		20150518132148 4c36d12f system.address_to_access_conversions%s
+D s-conca2.ads		20150518132148 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20150518132148 0ebbdb71 system.crtl%s
+D s-exctab.ads		20150518132148 54135002 system.exception_table%s
+D s-ficobl.ads		20150518132148 078245e4 system.file_control_block%s
+D s-finmas.ads		20150518132148 814daec4 system.finalization_masters%s
+D s-finroo.ads		20150518132148 4ff27390 system.finalization_root%s
+D s-multip.ads		20150518132150 38ac9f73 system.multiprocessors%s
+D s-osinte.ads		20150518132150 2e5b26a9 system.os_interface%s
+D s-parame.ads		20150518132150 7e2a0d7f system.parameters%s
+D s-pooglo.ads		20150518132150 542f33d0 system.pool_global%s
+D s-secsta.ads		20150518132150 86a2856d system.secondary_stack%s
+D s-soflin.ads		20150518132150 aa763b52 system.soft_links%s
+D s-stache.ads		20150518132150 a37c21ec system.stack_checking%s
+D s-stausa.ads		20150518132150 017a0a05 system.stack_usage%s
+D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
+D s-stoele.ads		20150518132150 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20150518132150 b16154c2 system.storage_pools%s
+D s-stratt.ads		20150518132150 aedef97e system.stream_attributes%s
+D s-tasinf.ads		20150518132150 601f6b72 system.task_info%s
+D s-taspri.ads		20150518132150 6c1d93d4 system.task_primitives%s
+D s-taprop.ads		20150518132150 1dd2e1b6 system.task_primitives.operations%s
+D s-taskin.ads		20150518132150 339749f0 system.tasking%s
+D s-traent.ads		20150518132150 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
+D s-wchcon.ads		20150518132150 1b7d22d2 system.wch_con%s
+D s-win32.ads		20150518132150 b7f96285 system.win32%s
+D trains.ads		20160519121016 2422e566 trains%s
+D turnout_driver.ads	20160519093830 990f7fc0 turnout_driver%s
+D unchconv.ads		20150518132150 ca2f9e18 unchecked_conversion%s
+D unsigned_types.ads	20160519093830 ea348493 unsigned_types%s
+X 1 ada.ads
+16K9*Ada 19e8 29|18r6 18r19 37r24 328r16 365r4
+X 6 a-inteio.ads
+18K13*Integer_Text_IO[12|46] 29|18w23 37r28
+X 11 a-textio.ads
+49K13*Text_IO 471e16 29|18w10 328r20 365r8
+263U14*Put_Line 29|328s28 365s16
+X 14 block_driver.ads
+3K9*block_driver 12e17 29|25w6 137r7 138r7 139r7 140r7 141r7 142r7 143r7
+. 144r7 209r13 210r13
+5U14*Set_Cab 29|209s26
+7U14*Set_Polarity 29|210s26
+9U14*Set_Cab_And_Polarity 29|137s20 138s20 139s20 140s20 141s20 142s20 143s20
+. 144s20
+X 15 dac_driver.ads
+3K9*dac_driver 7e15 29|24w6 170r13
+5U14*Set_Voltage 29|170s24
+X 18 dio192defs.ads
+27K9*Dio192defs 204e15 29|28w6 50r50 61r11 97r11 100r15
+56N4*Pctl1_Addr 29|64r31 84r31
+60N4*Qctl1_Addr 29|65r31 85r31
+66N4*Pctl2_Addr 29|66r31 86r31
+70N4*Qctl2_Addr 29|67r31 87r31
+74a4*Block_Addr(67|5M9) 29|74r34
+103m4*Output_Init2{67|4M9} 29|84r43 85r43 86r43 87r43
+104m4*Output_Init1{67|4M9} 29|64r43 65r43 66r43 67r43
+128A9*Block_Register(118R9)<31|35I9> 29|50r61
+137a4*Zero_Normal{128A9} 29|73r28
+146E9*Turnout_Drive_Bit 146e48 29|100r26
+147e4*Straighten{146E9} 29|106r22
+148e4*Turn{146E9} 29|108r22
+178V13*Unsigned[66|20]{67|4M9} 29|74s50
+X 19 fat_controller.ads
+4K9*Fat_Controller 8e19 29|32w6
+X 20 halls2.ads
+13K9*Halls2 68e11 29|28w29 373r4
+16U14*Initialize 29|373s11
+X 21 int32defs.ads
+20K9*Int32defs 84e14 29|28w18
+X 22 interfac.ads
+62M9*Unsigned_8
+65M9*Unsigned_16
+X 26 interrupt_hdlr.ads
+12K9*Interrupt_Hdlr 18e19 29|29w6 369r4 374r4
+14U14*Init 29|369s19
+16U14*Install 29|374s19
+X 27 io_ports.ads
+35K9*IO_Ports 56e13 29|20w6 64r7 65r7 66r7 67r7 74r10 84r7 85r7 86r7 87r7
+42U14*Write_IO_Port 29|64s16 65s16 66s16 67s16 74s19 84s16 85s16 86s16 87s16
+X 29 main.adb
+35U11*main 35b11 381l5 381t9
+37K12 Iio=37:28
+39p4 W_In{35|19P9} 167r20 176r20 195r20 202r23 206r20 212r23 216r20 234r20
+. 252r20 267r17 274r19 293r20 310r20 320r20 321r20 359r17 367m19 367r19
+39p10 W_Info{35|19P9}
+39p18 W_Interrupts{35|19P9} 368m19 368r19 369r25
+43r4 Train1{64|3R9}
+44r4 Train2{64|3R9}
+45r4 Train3{64|3R9}
+49A9 Block_Reg_Array(18|128A9)<31|35I9> 51r17
+51a4 Block_Regs{49A9} 72r16 73m10 74r60
+58U14 Init_Dio 58b14 90l8 90t16 371s4
+72i11 I<short_short_integer> 73r22 74r46 74r72
+92U14 Pull 92b14 93>7 94>7 113l8 113t12
+93i7 Tn{31|64I12} 98r40 99r40
+94e7 Dir{31|69E9} 102r12
+98i7 Ndx{31|63I9}
+99i7 Bit{31|63I9}
+100e7 Drive{18|146E9} 106m13 108m13
+120U14 Oval 120b14 120>20 148l8 148t12 279s7
+120e20 Pol{31|57E9} 137r86 138r86 139r86 140r86 141r86 142r86 143r86 144r86
+152N4 Pos0 169r50 208r49 324r58
+153i4 Number{integer} 165r10 166r24 179m7 193r10 194r28 201m13 219m7 230r10
+. 231r32 237m7 248r10 249r32 255m7 273m9 278m7 290r10 291r44 296m7 307r10
+. 308r44 313m7 324m16 324r26 329m16 333m16
+160U14 Dac_Command 160b14 180l8 180t19 336s16
+161e7 C{character} 167m26 168r13 169r45
+162m7 Dac{31|30M9} 166m10 170r37 172m13 175r10
+163m7 V{67|4M9} 169m13 170r42
+187U14 b_command 187b14 220l8 220t17 339s16
+188e7 C{character} 195m26 196r13 198r16 206m26 207r13 208r44
+189i7 Block{31|36I12} 194m10 209r34 210r39
+190e7 Polarity{31|57E9} 197m13 199m13 210r46
+191m7 Cab{31|30M9} 208m13 209r41
+227U14 t_command 227b14 238l8 238t17 342s16
+228i7 Turnout{31|64I12} 231m10 232r34
+245U14 s_command 245b14 256l8 256t17 345s16
+246i7 Turnout{31|64I12} 249m10 250r38
+263U14 o_command 263b14 280l8 280t17 348s16
+264e7 Polarity{31|57E9} 269m9 271m9 279r12
+265e7 C{character} 267m23 268r10 270r13
+288U14 Bell_command 288b14 297l8 297t20 351s16
+305U14 Horn_command 305b14 314l8 314t20 354s16
+316U14 Dialog_Loop 316b14 361l8 361t19 379s4
+317e7 C{character} 321m26 322r15 324r53
+X 31 raildefs.ads
+23K9*Raildefs 29|23w6 23r52 50r13 93r16 94r16 98r15 99r15 127r35 128r35 129r35
+. 130r35 131r35 132r35 133r35 134r35 137r41 137r64 138r41 138r64 139r41 139r64
+. 140r41 140r64 141r41 141r64 142r41 142r64 143r41 143r64 144r41 144r64 31|86e13
+30M9*Cab_Type 29|137r73 138r73 139r73 140r73 141r73 142r73 143r73 144r73
+. 162r13 191r20 208r20 291r35 308r35
+31M12*Dac_Id{30M9} 29|166r17
+35I9*Block_Idx<short_short_integer> 29|50r22
+36I12*Block_Id{35I9} 29|137r50 138r50 139r50 140r50 141r50 142r50 143r50
+. 144r50 189r20 194r19
+57E9*Polarity_Type 29|120r29 190r20 264r18 31|59e19
+58n8*Normal_Pol{57E9} 29|197r25 269r21
+59n7*Reverse_Pol{57E9} 29|199r25 271r21
+63I9*Turnout_Idx<short_short_integer> 29|98r24 99r24
+64I12*Turnout_Id{63I9} 29|93r25 127r44 128r44 129r44 130r44 131r44 132r44
+. 133r44 134r44 228r19 231r21 246r19 249r21
+69E9*Turnout_Pos 29|94r25 31|72e18
+70n11*Straight{69E9} 29|105r15
+71n11*Turned{69E9} 29|107r15
+72n11*Middle{69E9} 29|103r15
+X 32 simrail2.ads
+32K9*Simrail2 29|19w6 332r16 365r55 366r4 32|95e13
+52V13*Version{string} 29|365s64
+62U14*Reset 29|366s13
+63i10 N_Trains{positive} 29|366r20
+64i10 N_Carriages_Train_1{natural} 29|366r35
+75U14*Dump 29|332s25
+X 33 slogger.ads
+51K9*Slogger 29|30w6 327r16 33|100e12
+97U14*Finalize 29|327s24
+X 34 sound_manager.ads
+3K9*Sound_Manager 29|27w6 291r10 308r10 34|9e18
+5U14*Sound_Horn 29|308s24
+7U14*Sound_Bell 29|291s24
+X 35 swindows.ads
+17K9*Swindows 29|21w6 21r52 39r33 367r4 368r4 35|90e13
+19P9*Window 29|39r42
+27U14*Open 29|367s13 368s13
+39U14*Clear 29|359s10
+42U14*Put_Line 29|176s10 202s13 212s13 216s10 234s10 252s10 274s9 293s10
+. 310s10 320s10
+61U14*Get_Char 29|167s10 195s10 206s10 267s7 321s10
+X 51 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+X 64 trains.ads
+1K9*Trains 29|32w22 33r5 64|14e11
+3R9*Train 29|43r13 44r13 45r13 64|12e17
+5V13*Make{3R9} 29|43s22 44s22 45s22
+X 65 turnout_driver.ads
+3K9*turnout_driver 29|26w6 127r7 128r7 129r7 130r7 131r7 132r7 133r7 134r7
+. 232r10 250r10 65|8e19
+5U14*Set_Turn 29|232s25
+6U14*Set_Straight 29|127s22 128s22 129s22 130s22 131s22 132s22 133s22 134s22
+. 250s25
+X 67 unsigned_types.ads
+3K9*Unsigned_Types 29|22w6 22r52 67|11e19
+4M9*Unsigned_8<22|62M9> 29|163r13 169r18
+5M9*Unsigned_16<22|65M9>
+

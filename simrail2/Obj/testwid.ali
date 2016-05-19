@@ -21,12 +21,12 @@ D ada.ads		20150518132148 3ffc8e18 ada%s
 D a-calend.ads		20150518132148 d986d312 ada.calendar%s
 D a-caldel.ads		20150518132148 9f20b83d ada.calendar.delays%s
 D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
-D projdefs.ads		20160519024936 eddf79ef projdefs%s
+D projdefs.ads		20160519093830 eddf79ef projdefs%s
 D system.ads		20150518132150 f4ce8c3a system%s
 D s-exctab.ads		20150518132148 54135002 system.exception_table%s
 D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
-D testwid.adb		20160518030812 5d90fcf0 testwid%b
-D widget.ads		20160518030812 925163c2 widget%s
+D testwid.adb		20160519093830 5d90fcf0 testwid%b
+D widget.ads		20160519093830 925163c2 widget%s
 X 5 projdefs.ads
 1K9*Projdefs 5e13 9|3w6 4r5
 4I12*Request_Type{integer} 9|10r23

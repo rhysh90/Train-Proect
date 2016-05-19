@@ -1,0 +1,57 @@
+V "GNAT Lib v2015"
+A -gnatA
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U trains%b		trains.adb		2182d0d6 NE OO PK
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U trains%s		trains.ads		2422e566 EE OO PF PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.adb		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20150518132148 3ffc8e18 ada%s
+D a-except.ads		20150518132148 5250cb69 ada.exceptions%s
+D a-stream.ads		20150518132148 119b8fb3 ada.streams%s
+D a-tags.ads		20150518132148 dc4d0634 ada.tags%s
+D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
+D system.ads		20150518132150 f4ce8c3a system%s
+D s-exctab.ads		20150518132148 54135002 system.exception_table%s
+D s-parame.ads		20150518132150 7e2a0d7f system.parameters%s
+D s-secsta.ads		20150518132150 86a2856d system.secondary_stack%s
+D s-soflin.ads		20150518132150 aa763b52 system.soft_links%s
+D s-stache.ads		20150518132150 a37c21ec system.stack_checking%s
+D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
+D s-stoele.ads		20150518132150 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20150518132150 ed88f8fb system.storage_elements%b
+D s-stratt.ads		20150518132150 aedef97e system.stream_attributes%s
+D s-traent.ads		20150518132150 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
+D trains.ads		20160519121016 2422e566 trains%s
+D trains.adb		20160519121254 05a035b0 trains%b
+X 18 trains.ads
+1K9*Trains 8E9 14l5 14e11 19|1b14 19l5 19t11
+3R9*Train 5p13 5r73 8c9 12e17 19|10r14 12r11
+5V13*Make{3R9} 5>19 5>43 19|7b13 17l8 17t12
+5i19 Sensor_Front{integer} 19|8b7 14r25
+5i43 Sensor_Back{integer} 19|9b7 15r24
+10i10*Sensor_Front{integer} 19|14m9
+11i10*Sensor_Back{integer} 19|15m9
+X 19 trains.adb
+12r7 T{18|3R9} 14m7 15m7 16r14
+

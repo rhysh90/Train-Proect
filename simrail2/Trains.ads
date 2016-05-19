@@ -1,14 +1,14 @@
--- Train : an representation of a train within the simulator
--- It contains the trains desired route and its current position
--- Rhys Hill, Matt Hannah, Swinburne Univ Tech. orig 19-May-16
-with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO;
-use Projdefs, Ada.Real_Time;
 package Trains is
-	type Train is tagged
-		record
-                  Last_Sensor_Hit : Integer;
-      		end record;
 
-   procedure update_Last_Hit(Value: in Integer);
+   type Train is tagged private;
+
+   function Make (Sensor_Front : Integer; Sensor_Back : Integer) return Train;
+
+private
+   type Train is tagged
+      record
+         Sensor_Front : Integer;
+         Sensor_Back  : Integer;
+      end record;
 
 end Trains;

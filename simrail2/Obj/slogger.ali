@@ -52,10 +52,10 @@ D interfac.ads		20150518132148 6033a23f interfaces%s
 D i-c.ads		20150518132148 5421119b interfaces.c%s
 D i-cstrin.ads		20150518132148 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20150518132148 e53d8b8e interfaces.c_streams%s
-D logger_ada.ads	20160421093136 52f590a4 logger_ada%s
-D raildefs.ads		20160421093136 bff1902e raildefs%s
-D slogger.ads		20160421093136 857a547d slogger%s
-D slogger.adb		20160421093136 eb9554ca slogger%b
+D logger_ada.ads	20160519093830 52f590a4 logger_ada%s
+D raildefs.ads		20160519093830 bff1902e raildefs%s
+D slogger.ads		20160519093830 857a547d slogger%s
+D slogger.adb		20160519093830 eb9554ca slogger%b
 D system.ads		20150518132150 f4ce8c3a system%s
 D s-atacco.ads		20150518132148 4c36d12f system.address_to_access_conversions%s
 D s-crtl.ads		20150518132148 0ebbdb71 system.crtl%s
@@ -77,7 +77,7 @@ D s-traent.ads		20150518132150 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
 D s-wchcon.ads		20150518132150 1b7d22d2 system.wch_con%s
 D s-win32.ads		20150518132150 b7f96285 system.win32%s
-D unsigned_types.ads	20160421093136 ea348493 unsigned_types%s
+D unsigned_types.ads	20160519093830 ea348493 unsigned_types%s
 X 1 ada.ads
 16K9*Ada 19e8 20|33r6 34r6 35r6 39r24 40r23 41r24 46r9 49r11 66r10 70r10
 . 73r13

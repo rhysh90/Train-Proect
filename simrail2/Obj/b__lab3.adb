@@ -22,7 +22,6 @@ package body ada_main is
    E156 : Short_Integer; pragma Import (Ada, E156, "interfaces__c__strings_E");
    E027 : Short_Integer; pragma Import (Ada, E027, "system__exceptions_E");
    E089 : Short_Integer; pragma Import (Ada, E089, "system__file_control_block_E");
-   E272 : Short_Integer; pragma Import (Ada, E272, "ada__streams__stream_io_E");
    E080 : Short_Integer; pragma Import (Ada, E080, "system__file_io_E");
    E084 : Short_Integer; pragma Import (Ada, E084, "system__finalization_root_E");
    E082 : Short_Integer; pragma Import (Ada, E082, "ada__finalization_E");
@@ -34,7 +33,6 @@ package body ada_main is
    E254 : Short_Integer; pragma Import (Ada, E254, "system__pool_global_E");
    E146 : Short_Integer; pragma Import (Ada, E146, "system__random_seed_E");
    E019 : Short_Integer; pragma Import (Ada, E019, "system__secondary_stack_E");
-   E270 : Short_Integer; pragma Import (Ada, E270, "system__strings__stream_ops_E");
    E217 : Short_Integer; pragma Import (Ada, E217, "system__tasking__initialization_E");
    E148 : Short_Integer; pragma Import (Ada, E148, "ada__real_time_E");
    E059 : Short_Integer; pragma Import (Ada, E059, "ada__text_io_E");
@@ -47,7 +45,6 @@ package body ada_main is
    E239 : Short_Integer; pragma Import (Ada, E239, "logger_ada_E");
    E248 : Short_Integer; pragma Import (Ada, E248, "swindows_E");
    E245 : Short_Integer; pragma Import (Ada, E245, "interrupt_hdlr_E");
-   E266 : Short_Integer; pragma Import (Ada, E266, "trains_E");
    E116 : Short_Integer; pragma Import (Ada, E116, "io_ports_E");
    E241 : Short_Integer; pragma Import (Ada, E241, "dac_driver_E");
    E112 : Short_Integer; pragma Import (Ada, E112, "dio192defs_E");
@@ -57,7 +54,7 @@ package body ada_main is
    E178 : Short_Integer; pragma Import (Ada, E178, "simtrack2_E");
    E185 : Short_Integer; pragma Import (Ada, E185, "simtrack2__display_E");
    E264 : Short_Integer; pragma Import (Ada, E264, "sound_manager_E");
-   E276 : Short_Integer; pragma Import (Ada, E276, "turnout_driver_E");
+   E267 : Short_Integer; pragma Import (Ada, E267, "turnout_driver_E");
    E258 : Short_Integer; pragma Import (Ada, E258, "widget_E");
    E237 : Short_Integer; pragma Import (Ada, E237, "slogger_E");
 
@@ -79,7 +76,7 @@ package body ada_main is
          procedure F2;
          pragma Import (Ada, F2, "turnout_driver__finalize_body");
       begin
-         E276 := E276 - 1;
+         E267 := E267 - 1;
          F2;
       end;
       declare
@@ -96,54 +93,40 @@ package body ada_main is
          E120 := E120 - 1;
          F4;
       end;
-      declare
-         procedure F5;
-         pragma Import (Ada, F5, "trains__finalize_spec");
-      begin
-         E266 := E266 - 1;
-         F5;
-      end;
       E213 := E213 - 1;
       declare
-         procedure F6;
-         pragma Import (Ada, F6, "system__tasking__protected_objects__entries__finalize_spec");
+         procedure F5;
+         pragma Import (Ada, F5, "system__tasking__protected_objects__entries__finalize_spec");
       begin
-         F6;
+         F5;
       end;
       E059 := E059 - 1;
       declare
-         procedure F7;
-         pragma Import (Ada, F7, "ada__text_io__finalize_spec");
+         procedure F6;
+         pragma Import (Ada, F6, "ada__text_io__finalize_spec");
       begin
-         F7;
+         F6;
       end;
       declare
-         procedure F8;
-         pragma Import (Ada, F8, "system__file_io__finalize_body");
+         procedure F7;
+         pragma Import (Ada, F7, "system__file_io__finalize_body");
       begin
          E080 := E080 - 1;
-         F8;
+         F7;
       end;
       E250 := E250 - 1;
       E254 := E254 - 1;
       declare
+         procedure F8;
+         pragma Import (Ada, F8, "system__pool_global__finalize_spec");
+      begin
+         F8;
+      end;
+      declare
          procedure F9;
-         pragma Import (Ada, F9, "system__pool_global__finalize_spec");
+         pragma Import (Ada, F9, "system__finalization_masters__finalize_spec");
       begin
          F9;
-      end;
-      declare
-         procedure F10;
-         pragma Import (Ada, F10, "system__finalization_masters__finalize_spec");
-      begin
-         F10;
-      end;
-      E272 := E272 - 1;
-      declare
-         procedure F11;
-         pragma Import (Ada, F11, "ada__streams__stream_io__finalize_spec");
-      begin
-         F11;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -240,7 +223,7 @@ package body ada_main is
            False, True, True, True, True, False, True, True, 
            False, True, False, False, True, False, False, False, 
            True, True, False, True, False, True, True, False, 
-           False, True, False, True, False, False, False, False, 
+           False, True, False, False, False, False, False, False, 
            True, True, True, True, True, False, False, True, 
            False, False, True, False, True, True, False, True, 
            True, True, False, True, False, False, False, True, 
@@ -282,8 +265,6 @@ package body ada_main is
       E027 := E027 + 1;
       System.File_Control_Block'Elab_Spec;
       E089 := E089 + 1;
-      Ada.Streams.Stream_Io'Elab_Spec;
-      E272 := E272 + 1;
       System.Finalization_Root'Elab_Spec;
       E084 := E084 + 1;
       Ada.Finalization'Elab_Spec;
@@ -316,8 +297,6 @@ package body ada_main is
       E086 := E086 + 1;
       System.Secondary_Stack'Elab_Body;
       E019 := E019 + 1;
-      System.Strings.Stream_Ops'Elab_Body;
-      E270 := E270 + 1;
       System.Tasking.Initialization'Elab_Body;
       E217 := E217 + 1;
       Ada.Real_Time'Elab_Spec;
@@ -341,8 +320,6 @@ package body ada_main is
       E260 := E260 + 1;
       E239 := E239 + 1;
       Swindows'Elab_Spec;
-      Trains'Elab_Spec;
-      E266 := E266 + 1;
       E241 := E241 + 1;
       Dio192defs'Elab_Spec;
       E112 := E112 + 1;
@@ -359,7 +336,7 @@ package body ada_main is
       E248 := E248 + 1;
       E264 := E264 + 1;
       turnout_driver'elab_body;
-      E276 := E276 + 1;
+      E267 := E267 + 1;
       Widget'Elab_Body;
       E258 := E258 + 1;
       Slogger'Elab_Spec;
@@ -403,35 +380,34 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Adagraph.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\exec_load.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\logger_ada.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Projdefs.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Trains.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Unsigned_Types.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\das08defs.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\raildefs.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dda06defs.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dac_driver.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dio192defs.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\block_driver.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\int32defs.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simdefs2.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\halls2.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simtrack2.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simtrack2-display.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simrail2.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Swindows.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\sound_manager.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\turnout_driver.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Widget.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\slogger.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Io_ports.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\interrupt_hdlr.o
-   --   C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\lab3.o
-   --   -LC:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\
-   --   -LC:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\
-   --   -LC:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/
+   --   D:\Train-Proect\simrail2\Obj\Adagraph.o
+   --   D:\Train-Proect\simrail2\Obj\exec_load.o
+   --   D:\Train-Proect\simrail2\Obj\logger_ada.o
+   --   D:\Train-Proect\simrail2\Obj\Projdefs.o
+   --   D:\Train-Proect\simrail2\Obj\Unsigned_Types.o
+   --   D:\Train-Proect\simrail2\Obj\das08defs.o
+   --   D:\Train-Proect\simrail2\Obj\raildefs.o
+   --   D:\Train-Proect\simrail2\Obj\dda06defs.o
+   --   D:\Train-Proect\simrail2\Obj\dac_driver.o
+   --   D:\Train-Proect\simrail2\Obj\dio192defs.o
+   --   D:\Train-Proect\simrail2\Obj\block_driver.o
+   --   D:\Train-Proect\simrail2\Obj\int32defs.o
+   --   D:\Train-Proect\simrail2\Obj\simdefs2.o
+   --   D:\Train-Proect\simrail2\Obj\halls2.o
+   --   D:\Train-Proect\simrail2\Obj\simtrack2.o
+   --   D:\Train-Proect\simrail2\Obj\simtrack2-display.o
+   --   D:\Train-Proect\simrail2\Obj\simrail2.o
+   --   D:\Train-Proect\simrail2\Obj\Swindows.o
+   --   D:\Train-Proect\simrail2\Obj\sound_manager.o
+   --   D:\Train-Proect\simrail2\Obj\turnout_driver.o
+   --   D:\Train-Proect\simrail2\Obj\Widget.o
+   --   D:\Train-Proect\simrail2\Obj\slogger.o
+   --   D:\Train-Proect\simrail2\Obj\Io_ports.o
+   --   D:\Train-Proect\simrail2\Obj\interrupt_hdlr.o
+   --   D:\Train-Proect\simrail2\Obj\lab3.o
+   --   -LD:\Train-Proect\simrail2\Obj\
+   --   -LD:\Train-Proect\simrail2\Obj\
+   --   -LD:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/
    --   -static
    --   -ladagraph
    --   -lgnarl

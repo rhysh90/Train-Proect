@@ -25,7 +25,7 @@ RV MAX_PROTECTED_ENTRIES=1
 RV MAX_TASKS=1
 RV MAX_ENTRY_QUEUE_LENGTH=1+
 
-U widget%b		widget.adb		9b537435 OO PF PK
+U widget%b		widget.adb		36fe0b10 OO PF PK
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
@@ -50,7 +50,6 @@ W system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
 W system.tasking.protected_objects.entries%s  s-tpoben.adb  s-tpoben.ali
 W system.tasking.protected_objects.operations%s  s-tpobop.adb  s-tpobop.ali
 W system.tasking.stages%s  s-tassta.adb		s-tassta.ali
-W trains%s		trains.adb		trains.ali
 
 U widget%s		widget.ads		7f8e1a2d EE NE OO PK
 W projdefs%s		projdefs.ads		projdefs.ali
@@ -68,12 +67,12 @@ D a-textio.ads		20150518132148 386df5d4 ada.text_io%s
 D a-tiflio.ads		20150518132148 56fbda09 ada.text_io.float_io%s
 D a-tiinio.ads		20150518132148 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
-D exec_load.ads		20040501145524 482fa4fb exec_load%s
+D exec_load.ads		20160519093830 482fa4fb exec_load%s
 D interfac.ads		20150518132148 6033a23f interfaces%s
 D i-c.ads		20150518132148 5421119b interfaces.c%s
 D i-cstrin.ads		20150518132148 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20150518132148 e53d8b8e interfaces.c_streams%s
-D projdefs.ads		20160519024936 eddf79ef projdefs%s
+D projdefs.ads		20160519093830 eddf79ef projdefs%s
 D system.ads		20150518132150 f4ce8c3a system%s
 D s-atacco.ads		20150518132148 4c36d12f system.address_to_access_conversions%s
 D s-conca2.ads		20150518132148 02a0d7d0 system.concat_2%s
@@ -95,7 +94,6 @@ D s-stausa.ads		20150518132150 017a0a05 system.stack_usage%s
 D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
 D s-stalib.adb		20150518132150 f2fe2716 system.standard_library%b
 D s-stoele.ads		20150518132150 2dc34a04 system.storage_elements%s
-D s-stratt.ads		20150518132150 aedef97e system.stream_attributes%s
 D s-tasinf.ads		20150518132150 601f6b72 system.task_info%s
 D s-taspri.ads		20150518132150 6c1d93d4 system.task_primitives%s
 D s-taprop.ads		20150518132150 1dd2e1b6 system.task_primitives.operations%s
@@ -108,34 +106,34 @@ D s-traent.ads		20150518132150 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
 D s-wchcon.ads		20150518132150 1b7d22d2 system.wch_con%s
 D s-win32.ads		20150518132150 b7f96285 system.win32%s
-D trains.ads		20160519043150 b8f4867a trains%s
-D widget.ads		20160518030812 925163c2 widget%s
-D widget.adb		20160519044600 9e29fa13 widget%b
+D widget.ads		20160519093830 925163c2 widget%s
+D widget.adb		20160519094846 8b70034c widget%b
 X 1 ada.ads
-16K9*Ada 19e8 56|4r16 4r40 4r55 4r82 5r15 70r7 81r7 82r7 86r7 90r7 126r12
+16K9*Ada 19e8 54|4r16 4r40 4r55 4r74 5r15 41r7 52r7 53r7 55r7 91r12
 X 4 a-flteio.ads
-20K13*Float_Text_IO[11|46] 56|4w59 70r11
+20K13*Float_Text_IO[11|46] 54|4w59 41r11
 X 5 a-inteio.ads
-18K13*Integer_Text_IO[12|46] 56|4w86
+18K13*Integer_Text_IO[12|46] 54|4w78
 X 7 a-reatim.ads
-39K13*Real_Time 146e18 56|4w44 5r19
-45O9*Time<duration> 56|32r9
-50O9*Time_Span<duration> 56|62r12
-57V13*Clock{45O9} 56|67s13 76s13
-62V14*"-"{50O9} 56|67s19
-84V13*To_Duration{duration} 56|68s12
+39K13*Real_Time 146e18 54|4w44 5r19
+45O9*Time<duration> 54|8r9
+50O9*Time_Span<duration> 54|33r12
+57V13*Clock{45O9} 54|38s13 47s13
+62V14*"-"{50O9} 54|38s19
+84V13*To_Duration{duration} 54|39s12
 X 10 a-textio.ads
-49K13*Text_IO 471e16 56|4w20 81r11 82r11 86r11 90r11 126r16
-242U14*Put 56|81s19
-263U14*Put_Line 56|82s19 86s19 90s19 126s24
+49K13*Text_IO 471e16 54|4w20 52r11 53r11 55r11 91r16
+242U14*Put 54|52s19
+263U14*Put_Line 54|53s19 55s19 91s24
 X 11 a-tiflio.ads
-79U14*Put 56|70s25[4|20]
+79U14*Put 54|41s25[4|20]
 X 14 exec_load.ads
-42K9*Exec_Load 47e14 56|4w29
+42K9*Exec_Load 47e14 54|4w29 54r7
+44U14*Eat 54|54s17
 X 19 projdefs.ads
-1K9*Projdefs 5e13 55|4w6 4r21 56|4w6 5r5
-4I12*Request_Type{integer} 55|8r32 56|41r22 44r23 47r14 56r22 79r39 96r25
-. 107r26 120r13
+1K9*Projdefs 5e13 53|4w6 4r21 54|4w6 5r5
+4I12*Request_Type{integer} 53|8r32 54|12r22 15r23 18r14 27r22 50r39 61r25
+. 72r26 85r13
 X 20 system.ads
 67M9*Address
 X 30 s-memory.ads
@@ -147,45 +145,32 @@ X 37 s-stausa.ads
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
 X 39 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
-X 54 trains.ads
-6K9*Trains 14e11 56|4w74 5r30
-7R14*Train 10e27 56|35r13
-9i19*Last_Sensor_Hit{integer} 56|85m14 86r35
-X 55 widget.ads
-5K9*Widget 12l5 12e11 56|6b14 137l5 137t11
-7U14*Start 8>20 56|55b14 59l8 59t13
-8i20 Request{19|4I12} 56|56b10 58r20
-10U14*Init_Time_Stamp 56|74b14 77l8 77t23
-X 56 widget.adb
-8W19 Lock 12E10 13l8 13e12 15b19 25l8 25t12 27r12 28r12 29r12 30r12
-9Y13 Acquire 16b13 19l11 19t18 83s13
-10U17 Release 21b17 24l11 24t18 88s13
-12b10 Available{boolean} 16r26 18r10 23r10
-27w4 Lock1{8W19}
-28w4 Lock2{8W19} 83r7 88r7
-29w4 Lock3{8W19}
-30w4 Lock4{8W19}
-32o4 T0{7|45O9} 67r21 76m7
-35r4 Train2{54|7R14} 85m7 86r28
-39w14 Buffer 58r7 94b19 116l8 116t14 124r10
-40U17 Start 41>10 58s14 95b17 104l11 104t16
-41i10 Request{19|4I12} 96b13 103r18
-43Y13 Wait_Start 44<10 45<10 106b13 115l11 115t21 124s17
-44i10 Request{19|4I12} 111m10 124r28
-45b10 Over_Run{boolean} 112m10 124r42
-47i7 Item{19|4I12} 103r10 111r21
-48b7 Item_Available{boolean} 98r13 101r13 109r18 113r10
-49b10 Too_Fast{boolean} 99r13 112r22 114r10
-52t9 Worker_Thread 119b14 135l8 135t21
-61V13 Time_Stamp{string} 61b13 72l8 72t18 81s23 90s28 126s33
-62o7 Dt{7|50O9} 67m7 68r24
-63o7 D{duration} 68m7 69r19
-64f7 Tf{float} 69m7 70r41
-65a7 time_stamp{string} 70m29 71r14
-79U14 Sporadic_Op 79b14 79>26 91l8 91t19 128s10
-79i26 Request{19|4I12} 82r38 85r41
-107i13 Request{19|4I12}
-108b13 Over_Run{boolean}
-120i7 Req{19|4I12} 124m37 128r22
-121b7 Oops{boolean} 124m52 125r13 126r61
+X 53 widget.ads
+5K9*Widget 12l5 12e11 54|6b14 102l5 102t11
+7U14*Start 8>20 54|26b14 30l8 30t13
+8i20 Request{19|4I12} 54|27b10 29r20
+10U14*Init_Time_Stamp 54|45b14 48l8 48t23
+X 54 widget.adb
+8o4 T0{7|45O9} 38r21 47m7
+10w14 Buffer 29r7 59b19 81l8 81t14 89r10
+11U17 Start 12>10 29s14 60b17 69l11 69t16
+12i10 Request{19|4I12} 61b13 68r18
+14Y13 Wait_Start 15<10 16<10 71b13 80l11 80t21 89s17
+15i10 Request{19|4I12} 76m10 89r28
+16b10 Over_Run{boolean} 77m10 89r42
+18i7 Item{19|4I12} 68r10 76r21
+19b7 Item_Available{boolean} 63r13 66r13 74r18 78r10
+20b10 Too_Fast{boolean} 64r13 77r22 79r10
+23t9 Worker_Thread 84b14 100l8 100t21
+32V13 Time_Stamp{string} 32b13 43l8 43t18 52s23 55s28 91s33
+33o7 Dt{7|50O9} 38m7 39r24
+34o7 D{duration} 39m7 40r19
+35f7 Tf{float} 40m7 41r41
+36a7 time_stamp{string} 41m29 42r14
+50U14 Sporadic_Op 50b14 50>26 56l8 56t19 93s10
+50i26 Request{19|4I12} 53r38
+72i13 Request{19|4I12}
+73b13 Over_Run{boolean}
+85i7 Req{19|4I12} 89m37 93r22
+86b7 Oops{boolean} 89m52 90r13 91r61
 

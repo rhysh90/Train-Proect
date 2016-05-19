@@ -35,8 +35,8 @@ W system.standard_library%s  s-stalib.adb	s-stalib.ali
 D ada.ads		20150518132148 3ffc8e18 ada%s
 D a-except.ads		20150518132148 5250cb69 ada.exceptions%s
 D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
-D adagraph.ads		20160421093136 0b1102d2 adagraph%s
-D adagraph.adb		20160421093136 5f81c2df adagraph%b
+D adagraph.ads		20160519093830 0b1102d2 adagraph%s
+D adagraph.adb		20160519093830 5f81c2df adagraph%b
 D interfac.ads		20150518132148 6033a23f interfaces%s
 D i-c.ads		20150518132148 5421119b interfaces.c%s
 D i-cstrin.ads		20150518132148 341d0ddf interfaces.c.strings%s
