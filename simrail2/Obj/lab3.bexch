@@ -1,44 +1,22 @@
-[GENERATED OBJECT FILE]
-b__lab3.o
+[MAPPING FILE]
+C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\GNAT-TEMP-000003.TMP
+[TOOLCHAIN VERSION]
+ada
+GNAT 2015
+[MAIN BASE NAME]
+lab3
+[COMPILER PATH]
+c:\gnat\2015\bin\gcc.exe
+[COMPILER LEADING SWITCHES]
+-c
+-x
+ada
+-gnatA
+[MAIN DEPENDENCY FILE]
+C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\lab3.ali
+[DEPENDENCY FILES]
+[BINDING OPTIONS]
+gnatbind_prefix=
 [PROJECT FILES]
 C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\skeleton.gpr
-20160518030940
-[BOUND OBJECT FILES]
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Adagraph.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\logger_ada.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Unsigned_Types.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\das08defs.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\raildefs.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dda06defs.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dac_driver.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\dio192defs.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\block_driver.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\int32defs.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simdefs2.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\halls2.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simtrack2.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simtrack2-display.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\simrail2.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Swindows.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\sound_manager.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\turnout_driver.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\slogger.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\Io_ports.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\interrupt_hdlr.o
-C:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\lab3.o
-[GENERATED SOURCE FILES]
-b__lab3.ads
-b__lab3.adb
-b__lab3.ali
-[RESULTING OPTIONS]
--LC:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\
--LC:\Users\69640_000\Documents\GitHub\Train Proect\simrail2\Obj\
--LC:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/
--static
--static-libgcc
--ladagraph
-C:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/libgnarl.a
-C:/gnat/2015/lib/gcc/i686-pc-mingw32/4.9.3/adalib/libgnat.a
--Xlinker
---stack=0x200000,0x1000
--mthreads
+20160519033852

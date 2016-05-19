@@ -28,6 +28,7 @@ with Sound_Manager;
 with Dio192defs, Int32defs, Halls2;
 with Interrupt_Hdlr;  -- 2.1
 with Slogger;  -- 2.2
+with Trains;
 
 procedure Lab3 is
    --package Iio is new Ada.Text_Io.Integer_Io(Integer);

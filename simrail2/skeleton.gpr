@@ -5,7 +5,7 @@ project Skeleton is
    for Source_Files use ("Adagraph.adb", "Adagraph.ads", "block_driver.adb", "block_driver.ads", "dac_driver.adb", "dac_driver.ads", "das08defs.ads", "dda06defs.ads", "dio192defs.ads", "exec_load.adb", "exec_load.ads", "halls2.adb", "halls2.ads", 
       "int32defs.ads", "interrupt_hdlr.adb", "interrupt_hdlr.ads", "Io_ports.adb", "Io_ports.ads", "lab3.adb", "logger_ada.adb", "logger_ada.ads", "Projdefs.ads", "raildefs.ads", "real_time_ex.adb", "simdefs2.ads", 
       "simrail2-blockdriver_pkg.adb", "simrail2-relay_pkg.adb", "simrail2-segment_feature_pkg.adb", "simrail2-step.adb", "simrail2-test.adb", "simrail2-turnout_pkg.adb", "simrail2.adb", "simrail2.ads", "simtrack2-display.adb", 
-      "simtrack2-display.ads", "simtrack2.ads", "skel2.adb", "slogger.adb", "slogger.ads", "sound_manager.adb", "sound_manager.ads", "Swindows.adb", "Swindows.ads", "TestWid.adb", "turnout_driver.adb", "turnout_driver.ads", 
+      "simtrack2-display.ads", "simtrack2.ads", "skel2.adb", "slogger.adb", "slogger.ads", "sound_manager.adb", "sound_manager.ads", "Swindows.adb", "Swindows.ads", "TestWid.adb", "Trains.ads", "turnout_driver.adb", "turnout_driver.ads", 
       "Unsigned_Types.ads", "Widget.adb", "Widget.ads");
 
 end Skeleton;

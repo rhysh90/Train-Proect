@@ -1,11 +1,40 @@
 -- Widget : an example Sporadic for RTP lecture
 -- It has single-item buffer and a worker that delays 1 second.
 -- R K Allen, Swinburne Univ Tech.  orig 25-Mar-01 revised 13-May-03
-with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO;
-use Projdefs, Ada.Real_Time;
+with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO, Trains, Ada.Integer_Text_IO;
+use Projdefs, Ada.Real_Time, Trains;
 package body Widget is
    
+   protected type Lock is
+      entry Acquire;
+      procedure Release;
+      private
+         Available : Boolean := True;
+   end Lock;
+
+   protected body Lock is
+      entry Acquire when Available is
+      begin
+         Available := False;
+      end Acquire;
+
+      procedure Release is
+      begin
+         Available := True;
+      end Release;
+   end Lock;
+
+   Lock1 : Lock;
+   Lock2 : Lock;
+   Lock3 : Lock;
+   Lock4 : Lock;
+   
    T0 : Time;
+   
+  -- Train1 : Train;
+   Train2 : Train;
+ --  Train3 : Train;
+ --  Train4 : Train;
 
    protected Buffer is
       procedure Start(
@@ -51,7 +80,13 @@ package body Widget is
    begin
       Ada.Text_IO.Put(Time_Stamp);
       Ada.Text_Io.Put_Line(" Req=" & Request'Img & " starting");
-      Exec_Load.Eat(1.0);
+      Lock2.Acquire;
+      --Updtae Train2
+      Train2.Last_Sensor_Hit := Integer(Request);
+      Ada.Text_IO.Put_Line(Train2.Last_Sensor_Hit'Img);
+           
+      Lock2.Release;
+     -- Exec_Load.Eat(1.0);
       Ada.Text_IO.Put_Line(Time_Stamp & " complete");
    end Sporadic_Op;
        

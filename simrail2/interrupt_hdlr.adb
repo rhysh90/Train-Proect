@@ -14,17 +14,29 @@
 -- Copyright: Dr R. K Allen, Faculty of Sc Eng Tech, Swinburne Uni Tech
 --
 with Ada.Text_IO;
+with Ada.Numerics.Generic_Elementary_Functions;
+with Ada.Numerics.Elementary_Functions;
 with Ada.Integer_Text_Io;
 with Swindows;  use Swindows;
 with Unsigned_Types;  use Unsigned_Types;
+with Widget;
 with
    Raildefs,
    Int32defs,
-   Halls2;
+   Halls2,
+   Projdefs;
 use Raildefs;
 with Slogger;  --v2.2
 
 package body Interrupt_Hdlr is
+
+   --procedure F(Value : in Float) is
+   --   package Float_Functions is new Ada.Numerics.Generic_Elementary_Functions (Float);
+   --   The_Log : Integer := 0;
+   --begin
+   --   The_Log := Integer(Float_Functions.Log(Value, 2.0));
+   --   G(Value, The_Log);
+   --end;
 
    W_Interrupts : Swindows.Window;
    -- assumed to be full width, ie 78 columns inside, and W_Height lines inside
@@ -64,6 +76,7 @@ package body Interrupt_Hdlr is
          Win : in     Swindows.Window) is
    begin
       W_Interrupts := Win;
+      Widget.Init_Time_Stamp;
    end Init;
 
    procedure Install is -- added v1.1
@@ -93,6 +106,7 @@ package body Interrupt_Hdlr is
          Previous_Reg : Unsigned_8;
          Current_Reg : Unsigned_8;
          Changed_Val : Unsigned_8;
+         Sensor_Int  : Integer;
 
          procedure Increment_Line is -- v1.4
             -- provides rolling colour change (much more efficient than
@@ -122,6 +136,8 @@ package body Interrupt_Hdlr is
                --compare unsigned_8 with each other
                if (Current_Reg XOR Previous_Reg) /= 0 then
                   Changed_Val := Current_Reg XOR Previous_Reg;
+                  --Sensor 1 to 32
+                  Sensor_Int := (Integer(Ada.Numerics.Elementary_Functions.Log(Float(Changed_Val), 2.0)) + (i*8) + 1);
                end if;
             end loop;
 
@@ -134,12 +150,16 @@ package body Interrupt_Hdlr is
                --compare unsigned_8 with each other
                if (Current_Reg XOR Previous_Reg) /= 0 then
                   Changed_Val := Current_Reg XOR Previous_Reg;
+                  --Sensor 33 to 64
+                  Sensor_Int := (Integer(Ada.Numerics.Elementary_Functions.Log(Float(Changed_Val), 2.0)) + (i*8) + 33);
                end if;
             end loop;
         end if;
 
          --create ASER operation in train controller
-         Ada.Integer_Text_IO.Put(Integer(Changed_Val));
+         --Ada.Integer_Text_IO.Put(Sensor_Int);
+         Widget.Start(Projdefs.Request_Type(Sensor_Int));
+
 
          --update the previous sensor registers with current for next interrupt
         if Offset < 32 then

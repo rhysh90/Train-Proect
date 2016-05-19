@@ -35,7 +35,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#00b1e4c5#;
+   u00001 : constant Version_32 := 16#6c64da9b#;
    pragma Export (C, u00001, "lab3B");
    u00002 : constant Version_32 := 16#fbff4c67#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -521,40 +521,72 @@ package ada_main is
    pragma Export (C, u00242, "halls2B");
    u00243 : constant Version_32 := 16#ecf94573#;
    pragma Export (C, u00243, "halls2S");
-   u00244 : constant Version_32 := 16#fae66b3c#;
+   u00244 : constant Version_32 := 16#5529341e#;
    pragma Export (C, u00244, "interrupt_hdlrB");
    u00245 : constant Version_32 := 16#ef4a55cc#;
    pragma Export (C, u00245, "interrupt_hdlrS");
-   u00246 : constant Version_32 := 16#a906eaad#;
-   pragma Export (C, u00246, "swindowsB");
-   u00247 : constant Version_32 := 16#a676c5b7#;
-   pragma Export (C, u00247, "swindowsS");
-   u00248 : constant Version_32 := 16#b5b2aca1#;
-   pragma Export (C, u00248, "system__finalization_mastersB");
-   u00249 : constant Version_32 := 16#80d8a57a#;
-   pragma Export (C, u00249, "system__finalization_mastersS");
-   u00250 : constant Version_32 := 16#6d4d969a#;
-   pragma Export (C, u00250, "system__storage_poolsB");
-   u00251 : constant Version_32 := 16#01950bbe#;
-   pragma Export (C, u00251, "system__storage_poolsS");
-   u00252 : constant Version_32 := 16#e34550ca#;
-   pragma Export (C, u00252, "system__pool_globalB");
-   u00253 : constant Version_32 := 16#c88d2d16#;
-   pragma Export (C, u00253, "system__pool_globalS");
-   u00254 : constant Version_32 := 16#2bce1226#;
-   pragma Export (C, u00254, "system__memoryB");
-   u00255 : constant Version_32 := 16#adb3ea0e#;
-   pragma Export (C, u00255, "system__memoryS");
-   u00256 : constant Version_32 := 16#1a44f244#;
-   pragma Export (C, u00256, "sound_managerB");
-   u00257 : constant Version_32 := 16#fd3b26de#;
-   pragma Export (C, u00257, "sound_managerS");
-   u00258 : constant Version_32 := 16#477ea605#;
-   pragma Export (C, u00258, "das08defsS");
-   u00259 : constant Version_32 := 16#587e0610#;
-   pragma Export (C, u00259, "turnout_driverB");
-   u00260 : constant Version_32 := 16#23f2d4e8#;
-   pragma Export (C, u00260, "turnout_driverS");
+   u00246 : constant Version_32 := 16#eddf79ef#;
+   pragma Export (C, u00246, "projdefsS");
+   u00247 : constant Version_32 := 16#a906eaad#;
+   pragma Export (C, u00247, "swindowsB");
+   u00248 : constant Version_32 := 16#a676c5b7#;
+   pragma Export (C, u00248, "swindowsS");
+   u00249 : constant Version_32 := 16#b5b2aca1#;
+   pragma Export (C, u00249, "system__finalization_mastersB");
+   u00250 : constant Version_32 := 16#80d8a57a#;
+   pragma Export (C, u00250, "system__finalization_mastersS");
+   u00251 : constant Version_32 := 16#6d4d969a#;
+   pragma Export (C, u00251, "system__storage_poolsB");
+   u00252 : constant Version_32 := 16#01950bbe#;
+   pragma Export (C, u00252, "system__storage_poolsS");
+   u00253 : constant Version_32 := 16#e34550ca#;
+   pragma Export (C, u00253, "system__pool_globalB");
+   u00254 : constant Version_32 := 16#c88d2d16#;
+   pragma Export (C, u00254, "system__pool_globalS");
+   u00255 : constant Version_32 := 16#2bce1226#;
+   pragma Export (C, u00255, "system__memoryB");
+   u00256 : constant Version_32 := 16#adb3ea0e#;
+   pragma Export (C, u00256, "system__memoryS");
+   u00257 : constant Version_32 := 16#fded2333#;
+   pragma Export (C, u00257, "widgetB");
+   u00258 : constant Version_32 := 16#7f8e1a2d#;
+   pragma Export (C, u00258, "widgetS");
+   u00259 : constant Version_32 := 16#aae0185d#;
+   pragma Export (C, u00259, "exec_loadB");
+   u00260 : constant Version_32 := 16#482fa4fb#;
+   pragma Export (C, u00260, "exec_loadS");
+   u00261 : constant Version_32 := 16#f533f6df#;
+   pragma Export (C, u00261, "calendarS");
+   u00262 : constant Version_32 := 16#7dbbd31d#;
+   pragma Export (C, u00262, "text_ioS");
+   u00263 : constant Version_32 := 16#1a44f244#;
+   pragma Export (C, u00263, "sound_managerB");
+   u00264 : constant Version_32 := 16#fd3b26de#;
+   pragma Export (C, u00264, "sound_managerS");
+   u00265 : constant Version_32 := 16#477ea605#;
+   pragma Export (C, u00265, "das08defsS");
+   u00266 : constant Version_32 := 16#2eebb6aa#;
+   pragma Export (C, u00266, "trainsS");
+   u00267 : constant Version_32 := 16#f4e1c091#;
+   pragma Export (C, u00267, "system__stream_attributesB");
+   u00268 : constant Version_32 := 16#221dd20d#;
+   pragma Export (C, u00268, "system__stream_attributesS");
+   u00269 : constant Version_32 := 16#06cb2950#;
+   pragma Export (C, u00269, "system__strings__stream_opsB");
+   u00270 : constant Version_32 := 16#55d4bd57#;
+   pragma Export (C, u00270, "system__strings__stream_opsS");
+   u00271 : constant Version_32 := 16#a71b0af5#;
+   pragma Export (C, u00271, "ada__streams__stream_ioB");
+   u00272 : constant Version_32 := 16#31fc8e02#;
+   pragma Export (C, u00272, "ada__streams__stream_ioS");
+   u00273 : constant Version_32 := 16#5de653db#;
+   pragma Export (C, u00273, "system__communicationB");
+   u00274 : constant Version_32 := 16#edaed9e8#;
+   pragma Export (C, u00274, "system__communicationS");
+   u00275 : constant Version_32 := 16#587e0610#;
+   pragma Export (C, u00275, "turnout_driverB");
+   u00276 : constant Version_32 := 16#23f2d4e8#;
+   pragma Export (C, u00276, "turnout_driverS");
    --  BEGIN ELABORATION ORDER
    --  ada%s
    --  interfaces%s
@@ -688,11 +720,15 @@ package ada_main is
    --  interfaces.c%s
    --  system.multiprocessors%b
    --  interfaces.c.strings%s
+   --  system.communication%s
+   --  system.communication%b
    --  system.exceptions%s
    --  system.exceptions%b
    --  system.exceptions.machine%s
    --  system.file_control_block%s
+   --  ada.streams.stream_io%s
    --  system.file_io%s
+   --  ada.streams.stream_io%b
    --  system.finalization_root%s
    --  system.finalization_root%b
    --  ada.finalization%s
@@ -700,6 +736,8 @@ package ada_main is
    --  system.storage_pools%s
    --  system.storage_pools%b
    --  system.finalization_masters%s
+   --  system.stream_attributes%s
+   --  system.stream_attributes%b
    --  system.win32%s
    --  system.os_interface%s
    --  system.interrupt_management%s
@@ -721,6 +759,7 @@ package ada_main is
    --  ada.calendar%b
    --  ada.calendar.delays%s
    --  ada.calendar.delays%b
+   --  calendar%s
    --  system.memory%s
    --  system.memory%b
    --  system.standard_library%b
@@ -744,6 +783,8 @@ package ada_main is
    --  system.address_image%b
    --  system.soft_links.tasking%s
    --  system.soft_links.tasking%b
+   --  system.strings.stream_ops%s
+   --  system.strings.stream_ops%b
    --  system.tasking.entry_calls%s
    --  system.tasking.initialization%s
    --  system.tasking.task_attributes%s
@@ -781,12 +822,17 @@ package ada_main is
    --  system.tasking.entry_calls%b
    --  system.tasking.stages%s
    --  system.tasking.stages%b
+   --  text_io%s
    --  adagraph%s
    --  adagraph%b
+   --  exec_load%s
+   --  exec_load%b
    --  logger_ada%s
    --  logger_ada%b
+   --  projdefs%s
    --  swindows%s
    --  interrupt_hdlr%s
+   --  trains%s
    --  unsigned_types%s
    --  das08defs%s
    --  io_ports%s
@@ -811,6 +857,8 @@ package ada_main is
    --  sound_manager%b
    --  turnout_driver%s
    --  turnout_driver%b
+   --  widget%s
+   --  widget%b
    --  slogger%s
    --  slogger%b
    --  io_ports%b
