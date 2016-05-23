@@ -29,8 +29,8 @@ with Dio192defs, Int32defs, Halls2;
 with Interrupt_Hdlr;  -- 2.1
 with Slogger;  -- 2.2
 
-with Fat_Controller, Trains;
-use Trains;
+with Fat_Controller, Trains, Turnouts, Blocks;
+use Trains, Turnouts, Blocks;
 
 procedure main is
    --package Iio is new Ada.Text_Io.Integer_Io(Integer);
@@ -40,38 +40,12 @@ procedure main is
 
    --TRAIN PROJECT CODE--
 
-   protected type Lock is
-      entry Acquire;
-      procedure Release;
-   private
-      Available : Boolean := True;
-   end Lock;
-
-   protected body Lock is
-      entry Acquire when Available is
-      begin
-         Available := False;
-      end Acquire;
-
-      procedure Release is
-      begin
-         Available := True;
-      end Release;
-   end Lock;
-
-   T1 : Lock;
-   T2 : Lock;
-   T3 : Lock;
-
-
    -- TRAIN OBJECTS --
-   Train1 : Train := Make(1, 2);
+   Train1 : Train := Make(27, 25);
    Train2 : Train := Make(23, 35); --starting locations
-   Train3 : Train := Make(1, 2);
-
+   Train3 : Train := Make(4, 3);
 
    F : Integer;
-   --F_Controller : Fat_Controller;
 
    -- vars and code for dio192: -------
    --
@@ -402,12 +376,12 @@ begin
    Interrupt_Hdlr.Install; -- calls Halls2
 
    --intialize objects
-   --Fat_Controller.Init(Train1, T1, Train2, T2, Train3, T3);
+   Fat_Controller.Init(Train1, Train2, Train3);
+   Turnouts.Init;
+   Blocks.Init;
 
    Dialog_Loop;
-   T1.Acquire;
    F := Trains.Get_Sensor_Front(Train1);
    F := Trains.Get_Sensor_Back(Train1);
-   T1.Release;
 
 end main;
