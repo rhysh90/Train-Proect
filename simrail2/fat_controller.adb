@@ -1,9 +1,15 @@
-with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO, Ada.Integer_Text_IO;
-use Projdefs, Ada.Real_Time;
+with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO, Ada.Integer_Text_IO, Trains;
+use Projdefs, Ada.Real_Time, Trains;
 
 package body Fat_Controller is
 
    T0 : Time;
+   Train1, Train2, Train3 : Train;
+
+   BuffSize : constant := 10;
+
+   type Circular_Buffer is array (1..BuffSize) of Request_Type;
+
 
     protected Buffer is
       procedure Start(
@@ -11,9 +17,19 @@ package body Fat_Controller is
 
       entry Wait_Start(
          Request: out Request_Type;
-         Over_Run : out Boolean );
+                       Over_Run : out Boolean );
+
+      entry Add(Request : in Request_Type);
+      entry Remove(Request : out Request_Type);
    private
       Item : Request_Type;
+
+      --Circular Buffer
+      Items : Circular_Buffer;
+      Iin : Integer := 1;
+      Jout : Integer := 1;
+      Count : Natural := 0;
+
       Item_Available,
          Too_Fast : Boolean := False;
    end Buffer;
@@ -45,11 +61,23 @@ package body Fat_Controller is
       T0 := Clock;
    end Init_Time_Stamp;
 
+   procedure Init (T1 : in Train; T2 : in Train; T3 : in Train) is
+   begin
+      Train1 := T1;
+      Train2 := T2;
+      Train3 := T3;
+
+   end Init;
+
+
    procedure Sporadic_Op(Request : in Request_Type) is
    begin
       Ada.Text_IO.Put(Time_Stamp);
       Ada.Text_Io.Put_Line(" Req=" & Request'Img & " starting");
-      Exec_Load.Eat(1.0);
+      --Exec_Load.Eat(1.0); NOT REQUIRED
+      --Pass senor request to the correct train controller
+
+
       Ada.Text_IO.Put_Line(Time_Stamp & " complete");
    end Sporadic_Op;
 
@@ -76,6 +104,20 @@ package body Fat_Controller is
          Item_Available := False;
          Too_Fast := False;
       end Wait_Start;
+
+      entry Add(Request : in Request_Type) when Count < BuffSize is
+      begin
+         Items(Iin) := Request;
+         Iin := Iin mod BuffSize + 1;
+         Count := Count + 1;
+      end Add;
+
+      entry Remove(Request : out Request_Type) when Count > 0 is
+      begin
+         Request := Items(jout);
+         Jout := Jout mod BuffSize + 1;
+         Count := Count - 1;
+      end Remove;
    end Buffer;
 
    -------
@@ -86,8 +128,10 @@ package body Fat_Controller is
       loop
          Buffer.Wait_Start(Request=>Req, Over_Run=>Oops);
          if Oops then
-           Ada.Text_Io.Put_Line(Time_Stamp & " Over_Run=" & Oops'Img);
+           Ada.Text_Io.Put_Line(Time_Stamp & " Sensor Event Lost");
          end if;
+         Buffer.Add(Req);
+         Buffer.Remove(Request=>Req);
          Sporadic_Op(Req);
          --delay 1.0;
          -- NB the above delay statement is for test/demo ONLY.
