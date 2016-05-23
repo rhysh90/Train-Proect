@@ -1,4 +1,4 @@
-with Ada.Text_IO;
+with Ada.Integer_Text_IO, Ada.Text_IO;
 
 package body Trains is
 
@@ -91,17 +91,18 @@ package body Trains is
    --   Hit Sensor    --
    ---------------------
 
-   procedure Hit_Sensor ( T : out Train; Sensor_Hit : Integer) is
+   procedure Hit_Sensor ( T : in out Train; Sensor_Hit : Integer) is
    begin
       -- work out whether front or back and set
-     S.Acquire;
+      S.Acquire;
+      --Ada.Integer_Text_IO.Put(T.Sensors_In_Route(T.Route_Marker));
+      Ada.Integer_Text_IO.Put(T.Route_Marker);
 
-        if (T.Sensor_Next = Sensor_Hit) then
+      --if (T.Sensors_In_Route(T.Route_Marker) = Sensor_Hit) then
          T.Sensor_Front := Sensor_Hit;
          T.Route_Marker := T.Route_Marker + 1;
-         T.Sensor_Next := T.Sensors_In_Route(T.Route_Marker);
          Ada.Text_IO.Put_Line("Train got Sensor Event");
-        end if;
+       -- end if;
 
      S.Release;
 
@@ -116,7 +117,6 @@ package body Trains is
       S.Acquire;
       T.Sensors_In_Route := Sensors;
       T.Route_Marker := 1;
-      T.Sensor_Next := T.Sensors_In_Route(T.Route_Marker);
       S.Release;
 
    end Set_Route;

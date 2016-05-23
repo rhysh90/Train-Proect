@@ -3,8 +3,8 @@
 with Projdefs, Trains;  use Projdefs, Trains;
 package Fat_Controller is
 
-   procedure Start(Request: in Request_Type);
+   procedure Pass_Event(Request: in Request_Type);
 
-   procedure Init (T1 : in Train; T2 : in Train; T3 : in Train);
+   procedure Init (T1 : in out Train; T2 : in out Train; T3 : in out Train);
 
 end Fat_Controller;

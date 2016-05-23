@@ -380,6 +380,11 @@ begin
    Turnouts.Init;
    Blocks.Init;
 
+   --WE NEED TO PASS IN POINTERS TO THE TRAIN OBJECTS --
+
+   --TEST TEST TEST TEST TEST
+   Trains.Set_Route(Train2, (35, 37, 39, 41, 43, 45, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
+
    Dialog_Loop;
    F := Trains.Get_Sensor_Front(Train1);
    F := Trains.Get_Sensor_Back(Train1);

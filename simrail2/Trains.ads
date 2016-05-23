@@ -17,7 +17,7 @@ package Trains is
 
    procedure Set_Sensor_Back ( T : out Train;  Sensor : Integer);
 
-   procedure Hit_Sensor ( T : out Train; Sensor_Hit : Integer);
+   procedure Hit_Sensor ( T : in out Train; Sensor_Hit : Integer);
 
    procedure Set_Route ( T : out Train; Sensors : Route);
 

@@ -37,11 +37,11 @@ package body Fat_Controller is
    task Worker_Thread;
    ------------
 
-   procedure Start(
+   procedure Pass_Event(
          Request: in Request_Type) is
    begin
       Buffer.Add(Request);
-   end Start;
+   end Pass_Event;
 
    function Time_Stamp return String is
       Dt : Time_Span;
@@ -61,25 +61,22 @@ package body Fat_Controller is
       T0 := Clock;
    end Init_Time_Stamp;
 
-   procedure Init (T1 : in Train; T2 : in Train; T3 : in Train) is
+   procedure Init (T1 : in out Train; T2 : in out Train; T3 : in out Train) is
    begin
       Train1 := T1;
       Train2 := T2;
       Train3 := T3;
-
+      Init_Time_Stamp;
    end Init;
 
 
    procedure Sporadic_Op(Request : in Request_Type) is
-
-      Front1 : Integer := Get_Sensor_Front(Train1);
-      Back1 : Integer := Get_Sensor_Back(Train1);
-
    begin
       Ada.Text_IO.Put(Time_Stamp);
       Ada.Text_Io.Put_Line(" Req=" & Request'Img & " starting");
       --Exec_Load.Eat(1.0); NOT REQUIRED
       --Pass senor request to the correct train controller
+
       Hit_Sensor(Train2, Request);
 
       --TODO get the rest and check them too
@@ -133,7 +130,7 @@ package body Fat_Controller is
       --Oops : Boolean;
    begin
       loop
-         Buffer.Remove(Request=>Req);
+         Buffer.Remove(Req);
          Sporadic_Op(Req);
          --delay 1.0;
          -- NB the above delay statement is for test/demo ONLY.
