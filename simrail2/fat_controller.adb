@@ -71,11 +71,17 @@ package body Fat_Controller is
 
 
    procedure Sporadic_Op(Request : in Request_Type) is
+
+      Front1 : Integer := Get_Sensor_Front(Train1);
+      Back1 : Integer := Get_Sensor_Back(Train1);
+
    begin
       Ada.Text_IO.Put(Time_Stamp);
       Ada.Text_Io.Put_Line(" Req=" & Request'Img & " starting");
       --Exec_Load.Eat(1.0); NOT REQUIRED
       --Pass senor request to the correct train controller
+
+      --TODO get the rest and check them too
 
 
       Ada.Text_IO.Put_Line(Time_Stamp & " complete");
