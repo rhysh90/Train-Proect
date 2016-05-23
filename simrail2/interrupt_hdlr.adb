@@ -28,6 +28,8 @@ with
 use Raildefs;
 with Slogger;  --v2.2
 
+with Fat_Controller;
+
 package body Interrupt_Hdlr is
 
    --procedure F(Value : in Float) is
@@ -138,6 +140,7 @@ package body Interrupt_Hdlr is
                   Changed_Val := Current_Reg XOR Previous_Reg;
                   --Sensor 1 to 32
                   Sensor_Int := (Integer(Ada.Numerics.Elementary_Functions.Log(Float(Changed_Val), 2.0)) + (i*8) + 1);
+                  Fat_Controller.Start(Projdefs.Request_Type(Sensor_Int));
                end if;
             end loop;
 
@@ -152,6 +155,7 @@ package body Interrupt_Hdlr is
                   Changed_Val := Current_Reg XOR Previous_Reg;
                   --Sensor 33 to 64
                   Sensor_Int := (Integer(Ada.Numerics.Elementary_Functions.Log(Float(Changed_Val), 2.0)) + (i*8) + 33);
+                  Fat_Controller.Start(Projdefs.Request_Type(Sensor_Int));
                end if;
             end loop;
         end if;

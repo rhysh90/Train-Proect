@@ -38,11 +38,40 @@ procedure main is
 
    W_In, W_Info, W_Interrupts : Swindows.Window;
 
+   --TRAIN PROJECT CODE--
+
+   protected type Lock is
+      entry Acquire;
+      procedure Release;
+   private
+      Available : Boolean := True;
+   end Lock;
+
+   protected body Lock is
+      entry Acquire when Available is
+      begin
+         Available := False;
+      end Acquire;
+
+      procedure Release is
+      begin
+         Available := True;
+      end Release;
+   end Lock;
+
+   T1 : Lock;
+   T2 : Lock;
+   T3 : Lock;
+
 
    -- TRAIN OBJECTS --
    Train1 : Train := Make(1, 2);
-   Train2 : Train := Make(23, 35);
+   Train2 : Train := Make(23, 35); --starting locations
    Train3 : Train := Make(1, 2);
+
+
+   F : Integer;
+   --F_Controller : Fat_Controller;
 
    -- vars and code for dio192: -------
    --
@@ -360,7 +389,6 @@ procedure main is
       end loop;
    end Dialog_Loop;
 
-
 begin
    Ada.Text_IO.Put_Line (" Simple use of simrail2 " & Simrail2.Version);
    Simrail2.Reset (N_Trains => 3, N_Carriages_Train_1 => 2);
@@ -373,9 +401,13 @@ begin
    Halls2.Initialize;
    Interrupt_Hdlr.Install; -- calls Halls2
 
-   --create objects needed
-
+   --intialize objects
+   --Fat_Controller.Init(Train1, T1, Train2, T2, Train3, T3);
 
    Dialog_Loop;
+   T1.Acquire;
+   F := Trains.Get_Sensor_Front(Train1);
+   F := Trains.Get_Sensor_Back(Train1);
+   T1.Release;
 
 end main;

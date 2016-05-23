@@ -4,6 +4,10 @@ package Trains is
 
    function Make (Sensor_Front : Integer; Sensor_Back : Integer) return Train;
 
+   function Get_Sensor_Front ( T : in Train ) return Integer;
+
+   function Get_Sensor_Back ( T : in Train ) return Integer;
+
 private
    type Train is tagged
       record
@@ -12,3 +16,5 @@ private
       end record;
 
 end Trains;
+
+
