@@ -40,7 +40,7 @@ package body Fat_Controller is
    procedure Start(
          Request: in Request_Type) is
    begin
-      Buffer.Start(Request);
+      Buffer.Add(Request);
    end Start;
 
    function Time_Stamp return String is
@@ -123,14 +123,9 @@ package body Fat_Controller is
    -------
    task body Worker_Thread is
       Req : Request_Type ;
-      Oops : Boolean;
+      --Oops : Boolean;
    begin
       loop
-         Buffer.Wait_Start(Request=>Req, Over_Run=>Oops);
-         if Oops then
-           Ada.Text_Io.Put_Line(Time_Stamp & " Sensor Event Lost");
-         end if;
-         Buffer.Add(Req);
          Buffer.Remove(Request=>Req);
          Sporadic_Op(Req);
          --delay 1.0;
