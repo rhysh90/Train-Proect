@@ -2,7 +2,7 @@ V "GNAT Lib v2015"
 A -gnatA
 A -mtune=generic
 A -march=pentiumpro
-P ZX
+P SS ZX
 
 RN
 RV NO_EXCEPTION_HANDLERS
@@ -16,7 +16,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U interrupt_hdlr%b	interrupt_hdlr.adb	5529341e OO PK
+U interrupt_hdlr%b	interrupt_hdlr.adb	baf13c76 OO PK
 W ada%s			ada.ads			ada.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 W ada.numerics%s	a-numeri.ads		a-numeri.ali
@@ -24,6 +24,7 @@ W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
 W ada.numerics.generic_elementary_functions%s
 W ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
+W fat_controller%s	fat_controller.adb	fat_controller.ali
 W halls2%s		halls2.adb		halls2.ali
 W int32defs%s		int32defs.ads		int32defs.ali
 W projdefs%s		projdefs.ads		projdefs.ali
@@ -56,6 +57,7 @@ D a-tags.ads		20150518132148 dc4d0634 ada.tags%s
 D a-textio.ads		20150518132148 386df5d4 ada.text_io%s
 D a-tiinio.ads		20150518132148 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
+D fat_controller.ads	20160523123538 c4614238 fat_controller%s
 D halls2.ads		20160519093830 5308d55d halls2%s
 D int32defs.ads		20160519093830 dfad4756 int32defs%s
 D interfac.ads		20150518132148 6033a23f interfaces%s
@@ -63,7 +65,7 @@ D i-c.ads		20150518132148 5421119b interfaces.c%s
 D i-cstrin.ads		20150518132148 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20150518132148 e53d8b8e interfaces.c_streams%s
 D interrupt_hdlr.ads	20160519093830 493c907b interrupt_hdlr%s
-D interrupt_hdlr.adb	20160519093830 ecc4231e interrupt_hdlr%b
+D interrupt_hdlr.adb	20160523113448 c77d694e interrupt_hdlr%b
 D logger_ada.ads	20160519093830 52f590a4 logger_ada%s
 D projdefs.ads		20160519093830 eddf79ef projdefs%s
 D raildefs.ads		20160519093830 bff1902e raildefs%s
@@ -80,12 +82,14 @@ D s-multip.ads		20150518132150 38ac9f73 system.multiprocessors%s
 D s-osinte.ads		20150518132150 2e5b26a9 system.os_interface%s
 D s-parame.ads		20150518132150 7e2a0d7f system.parameters%s
 D s-pooglo.ads		20150518132150 542f33d0 system.pool_global%s
+D s-secsta.ads		20150518132150 86a2856d system.secondary_stack%s
 D s-soflin.ads		20150518132150 aa763b52 system.soft_links%s
 D s-stache.ads		20150518132150 a37c21ec system.stack_checking%s
 D s-stausa.ads		20150518132150 017a0a05 system.stack_usage%s
 D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
 D s-stoele.ads		20150518132150 2dc34a04 system.storage_elements%s
 D s-stopoo.ads		20150518132150 b16154c2 system.storage_pools%s
+D s-stratt.ads		20150518132150 aedef97e system.stream_attributes%s
 D s-tasinf.ads		20150518132150 601f6b72 system.task_info%s
 D s-taspri.ads		20150518132150 6c1d93d4 system.task_primitives%s
 D s-taprop.ads		20150518132150 1dd2e1b6 system.task_primitives.operations%s
@@ -95,98 +99,101 @@ D s-traent.ads		20150518132150 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
 D s-wchcon.ads		20150518132150 1b7d22d2 system.wch_con%s
 D s-win32.ads		20150518132150 b7f96285 system.win32%s
+D trains.ads		20160523124548 fe0be460 trains%s
 D unchconv.ads		20150518132150 ca2f9e18 unchecked_conversion%s
 D unsigned_types.ads	20160519093830 ea348493 unsigned_types%s
 D widget.ads		20160519093830 925163c2 widget%s
 X 1 ada.ads
-16K9*Ada 19e8 24|16r6 17r6 18r6 19r6 45r24 140r42 154r42
+16K9*Ada 19e8 25|16r6 17r6 18r6 19r6 47r24 142r42 157r42
 X 4 a-inteio.ads
-18K13*Integer_Text_IO[15|46] 24|19w10 45r28
+18K13*Integer_Text_IO[15|46] 25|19w10 47r28
 X 6 a-numeri.ads
-16K13*Numerics 32e17 24|17r10 18r10 140r46 154r46
+16K13*Numerics 32e17 25|17r10 18r10 142r46 157r46
 X 8 a-nuelfu.ads
-18K22*Elementary_Functions[9|39] 24|18w19 140r55 154r55
+18K22*Elementary_Functions[9|39] 25|18w19 142r55 157r55
 X 9 a-ngelfu.ads
-39k22*Generic_Elementary_Functions 171e46 24|17w19
-68V13*Log{float} 24|140s76[8|18] 154s76[8|18]
+39k22*Generic_Elementary_Functions 171e46 25|17w19
+68V13*Log{float} 25|142s76[8|18] 157s76[8|18]
 X 14 a-textio.ads
-49K13*Text_IO 471e16 24|16w10
+49K13*Text_IO 471e16 25|16w10
 X 15 a-tiinio.ads
-76U14*Put 24|183s14[4|18] 200s17[4|18]
-X 17 halls2.ads
-13K9*Halls2 68e11 24|26w4 84r7
-31U14*Install_Int_Handling 24|84s14
-X 18 int32defs.ads
-20K9*Int32defs 84e14 24|25w4 104r14 225r14
-66A9*Sensor_Register(27|51E9)<27|45I9> 24|226r19
-80V13*Unsigned_8_To_Sensor_Register[56|20]{66A9} 24|226s38
-X 19 interfac.ads
+76U14*Put 25|187s14[4|18] 204s17[4|18]
+X 17 fat_controller.ads
+4K9*Fat_Controller 11e19 25|31w6 143r19 158r19
+6U14*Pass_Event 25|143s34 158s34
+X 18 halls2.ads
+13K9*Halls2 68e11 25|26w4 86r7
+31U14*Install_Int_Handling 25|86s14
+X 19 int32defs.ads
+20K9*Int32defs 84e14 25|25w4 106r14 229r14
+66A9*Sensor_Register(28|51E9)<28|45I9> 25|230r19
+80V13*Unsigned_8_To_Sensor_Register[60|20]{66A9} 25|230s38
+X 20 interfac.ads
 62M9*Unsigned_8
-X 23 interrupt_hdlr.ads
-12K9*Interrupt_Hdlr 18l5 18e19 24|31b14 240l5 240t19
-14U14*Init 14>19 24|75b14 80l8 80t12
-14p19 Win{29|19P9} 24|76b10 78r23
-16U14*Install 24|82b14 85l8 85t15
-X 24 interrupt_hdlr.adb
-41p4 W_Interrupts{29|19P9} 78m7 203r19 209r22 212r22 215r22
-43i4 W_Height{natural} 115r45
-45K12 Iio=45:28 183r10 200r13
-47A12 String8{string}<integer> 71r17 222r20 227r19
-49w14 Interrupt 84r35 87b19 238l8 238t17
-51U17 Analyze 52>10 53>10 84r45 100b17 217l11 217t18
-52i10 Offset{27|45I9} 101b13 130r13 165r12 179r45 185r13
-53a10 Value{27|79A9} 102b13 134r31 148r31 166r37 168r37 179r54 186r46 187r46
-. 188r46 189r46 191r46 192r46 193r46 194r46 199r13 200r50
-58a7 Previous_Sensor_Reg1{27|79A9} 135r32 166r13
-59a7 Previous_Sensor_Reg2{27|79A9} 149r32 168r13
-61i7 Number{natural} 183r37 204r10 204r21
-62i7 Line_Number{natural} 115r13 115r29 116r16 203r46 209r54 212r51 215r50
-64e7 Fg{29|20E9} 118r19 119r19 121r19 203r71
-65a7 Sensor_Line{string} 183r18 186r13 187r13 188r13 189r13 191r13 192r13
-. 193r13 194r13 200r21 203r33
-68V16 To_String{47A12} 69>13 70>13 186s36 187s36 188s36 189s36 191s36 192s36
-. 193s36 194s36 219b16 236l11 236t20
-69m13 Val{57|4M9} 220b13 226r69
-70i13 LSB_Sensor{27|45I9} 221b13 232r50
-106m10 Previous_Reg{57|4M9} 135m16 137r36 138r50 149m16 151r36 152r50
-107m10 Current_Reg{57|4M9} 134m16 137r20 138r34 148m16 151r20 152r34
-108m10 Changed_Val{57|4M9} 138m19 140r86 152m19 154r86
-109i10 Sensor_Int{integer} 140m19 154m19 161r45
-111U20 Increment_Line 111b20 124l14 124t28 205s10 210s13 213s13 216s13
-133i17 i{integer} 134r37 135r53 140r109
-147i17 i{integer} 148r37 149r53 154r109
-226a10 V{18|66A9} 230r16
-227a10 Result{47A12} 231m16 235r17
-229i14 I<short_short_integer> 230r18 231r31 232r46
-X 26 projdefs.ads
-1K9*Projdefs 24|27w4 161r23 26|5e13
-4I12*Request_Type{integer} 24|161r32
-X 27 raildefs.ads
-23K9*Raildefs 24|24w4 28r5 52r26 53r25 58r30 59r30 70r26 101r29 102r29 221r26
-. 230r23 27|86e13
-45I9*Sensor_Idx<short_short_integer> 24|52r35 70r35 101r38 221r35 229r19
-51n29*On{51E9} 24|230r32
-79A9*Four_Registers(57|4M9)<integer> 24|53r34 58r39 59r39 102r38
-X 28 slogger.ads
-51K9*Slogger 24|29w6 178r13 179r13 28|100e12
-53b4*On{boolean} 24|178r21
-87U14*Send_Event 24|179s21
-X 29 swindows.ads
-17K9*Swindows 23|10w6 14r28 24|20w6 20r21 41r19 64r12 64r30 76r23 29|90e13
-19P9*Window 23|14r37 24|41r28 76r32
-20E9*Color 24|64r21 29|22e59
-22n45*Yellow{20E9} 24|119r25
-22n53*White{20E9} 24|64r39 118r24 121r25
-42U14*Put_Line 24|203s10 209s13 212s13 215s13
-45e7 Foreground{20E9} 24|203r59
-X 43 s-stausa.ads
+X 24 interrupt_hdlr.ads
+12K9*Interrupt_Hdlr 18l5 18e19 25|33b14 244l5 244t19
+14U14*Init 14>19 25|77b14 82l8 82t12
+14p19 Win{30|19P9} 25|78b10 80r23
+16U14*Install 25|84b14 87l8 87t15
+X 25 interrupt_hdlr.adb
+43p4 W_Interrupts{30|19P9} 80m7 207r19 213r22 216r22 219r22
+45i4 W_Height{natural} 117r45
+47K12 Iio=47:28 187r10 204r13
+49A12 String8{string}<integer> 73r17 226r20 231r19
+51w14 Interrupt 86r35 89b19 242l8 242t17
+53U17 Analyze 54>10 55>10 86r45 102b17 221l11 221t18
+54i10 Offset{28|45I9} 103b13 132r13 169r12 183r45 189r13
+55a10 Value{28|79A9} 104b13 136r31 151r31 170r37 172r37 183r54 190r46 191r46
+. 192r46 193r46 195r46 196r46 197r46 198r46 203r13 204r50
+60a7 Previous_Sensor_Reg1{28|79A9} 137r32 170r13
+61a7 Previous_Sensor_Reg2{28|79A9} 152r32 172r13
+63i7 Number{natural} 187r37 208r10 208r21
+64i7 Line_Number{natural} 117r13 117r29 118r16 207r46 213r54 216r51 219r50
+66e7 Fg{30|20E9} 120r19 121r19 123r19 207r71
+67a7 Sensor_Line{string} 187r18 190r13 191r13 192r13 193r13 195r13 196r13
+. 197r13 198r13 204r21 207r33
+70V16 To_String{49A12} 71>13 72>13 190s36 191s36 192s36 193s36 195s36 196s36
+. 197s36 198s36 223b16 240l11 240t20
+71m13 Val{61|4M9} 224b13 230r69
+72i13 LSB_Sensor{28|45I9} 225b13 236r50
+108m10 Previous_Reg{61|4M9} 137m16 139r36 140r50 152m16 154r36 155r50
+109m10 Current_Reg{61|4M9} 136m16 139r20 140r34 151m16 154r20 155r34
+110m10 Changed_Val{61|4M9} 140m19 142r86 155m19 157r86
+111i10 Sensor_Int{integer} 142m19 143r67 157m19 158r67
+113U20 Increment_Line 113b20 126l14 126t28 209s10 214s13 217s13 220s13
+135i17 i{integer} 136r37 137r53 142r109
+150i17 i{integer} 151r37 152r53 157r109
+230a10 V{19|66A9} 234r16
+231a10 Result{49A12} 235m16 239r17
+233i14 I<short_short_integer> 234r18 235r31 236r46
+X 27 projdefs.ads
+1K9*Projdefs 25|27w4 143r45 158r45 27|5e13
+4I12*Request_Type{integer} 25|143r54 158r54
+X 28 raildefs.ads
+23K9*Raildefs 25|24w4 28r5 54r26 55r25 60r30 61r30 72r26 103r29 104r29 225r26
+. 234r23 28|86e13
+45I9*Sensor_Idx<short_short_integer> 25|54r35 72r35 103r38 225r35 233r19
+51n29*On{51E9} 25|234r32
+79A9*Four_Registers(61|4M9)<integer> 25|55r34 60r39 61r39 104r38
+X 29 slogger.ads
+51K9*Slogger 25|29w6 182r13 183r13 29|100e12
+53b4*On{boolean} 25|182r21
+87U14*Send_Event 25|183s21
+X 30 swindows.ads
+17K9*Swindows 24|10w6 14r28 25|20w6 20r21 43r19 66r12 66r30 78r23 30|90e13
+19P9*Window 24|14r37 25|43r28 78r32
+20E9*Color 25|66r21 30|22e59
+22n45*Yellow{20E9} 25|121r25
+22n53*White{20E9} 25|66r39 120r24 123r25
+42U14*Put_Line 25|207s10 213s13 216s13 219s13
+45e7 Foreground{20E9} 25|207r59
+X 45 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
-X 57 unsigned_types.ads
-3K9*Unsigned_Types 24|21w6 21r27 57|11e19
-4M9*Unsigned_8<19|62M9> 24|69r26 106r25 107r24 108r24 220r26
-X 58 widget.ads
-5K9*Widget 24|22w6 79r7 161r10 58|12e11
-7U14*Start 24|161s17
-10U14*Init_Time_Stamp 24|79s14
+X 61 unsigned_types.ads
+3K9*Unsigned_Types 25|21w6 21r27 61|11e19
+4M9*Unsigned_8<20|62M9> 25|71r26 108r25 109r24 110r24 224r26
+X 62 widget.ads
+5K9*Widget 25|22w6 81r7 62|12e11
+10U14*Init_Time_Stamp 25|81s14
 

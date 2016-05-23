@@ -4,7 +4,7 @@ use Projdefs, Ada.Real_Time, Trains;
 package body Fat_Controller is
 
    T0 : Time;
-   Train1, Train2, Train3 : Train;
+   Train1, Train2, Train3 : Train_Access;
 
    BuffSize : constant := 10;
 
@@ -61,7 +61,7 @@ package body Fat_Controller is
       T0 := Clock;
    end Init_Time_Stamp;
 
-   procedure Init (T1 : in out Train; T2 : in out Train; T3 : in out Train) is
+   procedure Init (T1 : in out Train_Access; T2 : in out Train_Access; T3 : in out Train_Access) is
    begin
       Train1 := T1;
       Train2 := T2;
@@ -72,17 +72,16 @@ package body Fat_Controller is
 
    procedure Sporadic_Op(Request : in Request_Type) is
    begin
-      Ada.Text_IO.Put(Time_Stamp);
-      Ada.Text_Io.Put_Line(" Req=" & Request'Img & " starting");
+      --Ada.Text_IO.Put(Time_Stamp);
+      --Ada.Text_Io.Put_Line(" Req=" & Request'Img & " starting");
       --Exec_Load.Eat(1.0); NOT REQUIRED
       --Pass senor request to the correct train controller
-
-      Hit_Sensor(Train2, Request);
+      Hit_Sensor(Train2.all, Request);
 
       --TODO get the rest and check them too
 
 
-      Ada.Text_IO.Put_Line(Time_Stamp & " complete");
+      --Ada.Text_IO.Put_Line(Time_Stamp & " complete");
    end Sporadic_Op;
 
    ---------

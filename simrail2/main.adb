@@ -41,11 +41,9 @@ procedure main is
    --TRAIN PROJECT CODE--
 
    -- TRAIN OBJECTS --
-   Train1 : Train := Make(27, 25);
-   Train2 : Train := Make(23, 35); --starting locations
-   Train3 : Train := Make(4, 3);
-
-   F : Integer;
+   Train1 : Train_Access := Make(27, 25);
+   Train2 : Train_Access := Make(23, 35); --starting locations
+   Train3 : Train_Access := Make(4, 3);
 
    -- vars and code for dio192: -------
    --
@@ -380,13 +378,8 @@ begin
    Turnouts.Init;
    Blocks.Init;
 
-   --WE NEED TO PASS IN POINTERS TO THE TRAIN OBJECTS --
-
    --TEST TEST TEST TEST TEST
-   Trains.Set_Route(Train2, (35, 37, 39, 41, 43, 45, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
-
+   Set_Route(Train2.all, (35, 41, 43, 1, 1, 45, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
    Dialog_Loop;
-   F := Trains.Get_Sensor_Front(Train1);
-   F := Trains.Get_Sensor_Back(Train1);
 
 end main;

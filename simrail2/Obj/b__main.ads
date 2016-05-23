@@ -35,7 +35,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#477bae56#;
+   u00001 : constant Version_32 := 16#523963a8#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#fbff4c67#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -513,74 +513,82 @@ package ada_main is
    pragma Export (C, u00238, "logger_adaB");
    u00239 : constant Version_32 := 16#a3570c65#;
    pragma Export (C, u00239, "logger_adaS");
-   u00240 : constant Version_32 := 16#792d926a#;
-   pragma Export (C, u00240, "dac_driverB");
-   u00241 : constant Version_32 := 16#089a161a#;
-   pragma Export (C, u00241, "dac_driverS");
-   u00242 : constant Version_32 := 16#e291ee6c#;
-   pragma Export (C, u00242, "fat_controllerB");
-   u00243 : constant Version_32 := 16#5e24405b#;
-   pragma Export (C, u00243, "fat_controllerS");
-   u00244 : constant Version_32 := 16#aae0185d#;
-   pragma Export (C, u00244, "exec_loadB");
-   u00245 : constant Version_32 := 16#482fa4fb#;
-   pragma Export (C, u00245, "exec_loadS");
-   u00246 : constant Version_32 := 16#f533f6df#;
-   pragma Export (C, u00246, "calendarS");
-   u00247 : constant Version_32 := 16#7dbbd31d#;
-   pragma Export (C, u00247, "text_ioS");
-   u00248 : constant Version_32 := 16#eddf79ef#;
-   pragma Export (C, u00248, "projdefsS");
-   u00249 : constant Version_32 := 16#fcc9a4c0#;
-   pragma Export (C, u00249, "halls2B");
-   u00250 : constant Version_32 := 16#ecf94573#;
-   pragma Export (C, u00250, "halls2S");
-   u00251 : constant Version_32 := 16#5529341e#;
-   pragma Export (C, u00251, "interrupt_hdlrB");
-   u00252 : constant Version_32 := 16#ef4a55cc#;
-   pragma Export (C, u00252, "interrupt_hdlrS");
-   u00253 : constant Version_32 := 16#a906eaad#;
-   pragma Export (C, u00253, "swindowsB");
-   u00254 : constant Version_32 := 16#a676c5b7#;
-   pragma Export (C, u00254, "swindowsS");
-   u00255 : constant Version_32 := 16#b5b2aca1#;
-   pragma Export (C, u00255, "system__finalization_mastersB");
-   u00256 : constant Version_32 := 16#80d8a57a#;
-   pragma Export (C, u00256, "system__finalization_mastersS");
-   u00257 : constant Version_32 := 16#6d4d969a#;
-   pragma Export (C, u00257, "system__storage_poolsB");
-   u00258 : constant Version_32 := 16#01950bbe#;
-   pragma Export (C, u00258, "system__storage_poolsS");
-   u00259 : constant Version_32 := 16#e34550ca#;
-   pragma Export (C, u00259, "system__pool_globalB");
-   u00260 : constant Version_32 := 16#c88d2d16#;
-   pragma Export (C, u00260, "system__pool_globalS");
-   u00261 : constant Version_32 := 16#2bce1226#;
-   pragma Export (C, u00261, "system__memoryB");
-   u00262 : constant Version_32 := 16#adb3ea0e#;
-   pragma Export (C, u00262, "system__memoryS");
-   u00263 : constant Version_32 := 16#36fe0b10#;
-   pragma Export (C, u00263, "widgetB");
-   u00264 : constant Version_32 := 16#7f8e1a2d#;
-   pragma Export (C, u00264, "widgetS");
-   u00265 : constant Version_32 := 16#1a44f244#;
-   pragma Export (C, u00265, "sound_managerB");
-   u00266 : constant Version_32 := 16#fd3b26de#;
-   pragma Export (C, u00266, "sound_managerS");
-   u00267 : constant Version_32 := 16#477ea605#;
-   pragma Export (C, u00267, "das08defsS");
-   u00268 : constant Version_32 := 16#2182d0d6#;
-   pragma Export (C, u00268, "trainsB");
-   u00269 : constant Version_32 := 16#2422e566#;
-   pragma Export (C, u00269, "trainsS");
-   u00270 : constant Version_32 := 16#f4e1c091#;
-   pragma Export (C, u00270, "system__stream_attributesB");
-   u00271 : constant Version_32 := 16#221dd20d#;
-   pragma Export (C, u00271, "system__stream_attributesS");
-   u00272 : constant Version_32 := 16#587e0610#;
-   pragma Export (C, u00272, "turnout_driverB");
-   u00273 : constant Version_32 := 16#23f2d4e8#;
-   pragma Export (C, u00273, "turnout_driverS");
+   u00240 : constant Version_32 := 16#37e97421#;
+   pragma Export (C, u00240, "blocksB");
+   u00241 : constant Version_32 := 16#830122d3#;
+   pragma Export (C, u00241, "blocksS");
+   u00242 : constant Version_32 := 16#792d926a#;
+   pragma Export (C, u00242, "dac_driverB");
+   u00243 : constant Version_32 := 16#089a161a#;
+   pragma Export (C, u00243, "dac_driverS");
+   u00244 : constant Version_32 := 16#8d3649cd#;
+   pragma Export (C, u00244, "fat_controllerB");
+   u00245 : constant Version_32 := 16#d7b5dfb7#;
+   pragma Export (C, u00245, "fat_controllerS");
+   u00246 : constant Version_32 := 16#aae0185d#;
+   pragma Export (C, u00246, "exec_loadB");
+   u00247 : constant Version_32 := 16#482fa4fb#;
+   pragma Export (C, u00247, "exec_loadS");
+   u00248 : constant Version_32 := 16#f533f6df#;
+   pragma Export (C, u00248, "calendarS");
+   u00249 : constant Version_32 := 16#7dbbd31d#;
+   pragma Export (C, u00249, "text_ioS");
+   u00250 : constant Version_32 := 16#eddf79ef#;
+   pragma Export (C, u00250, "projdefsS");
+   u00251 : constant Version_32 := 16#cfdd2151#;
+   pragma Export (C, u00251, "trainsB");
+   u00252 : constant Version_32 := 16#13d49d8f#;
+   pragma Export (C, u00252, "trainsS");
+   u00253 : constant Version_32 := 16#f4e1c091#;
+   pragma Export (C, u00253, "system__stream_attributesB");
+   u00254 : constant Version_32 := 16#221dd20d#;
+   pragma Export (C, u00254, "system__stream_attributesS");
+   u00255 : constant Version_32 := 16#fcc9a4c0#;
+   pragma Export (C, u00255, "halls2B");
+   u00256 : constant Version_32 := 16#ecf94573#;
+   pragma Export (C, u00256, "halls2S");
+   u00257 : constant Version_32 := 16#baf13c76#;
+   pragma Export (C, u00257, "interrupt_hdlrB");
+   u00258 : constant Version_32 := 16#ef4a55cc#;
+   pragma Export (C, u00258, "interrupt_hdlrS");
+   u00259 : constant Version_32 := 16#a906eaad#;
+   pragma Export (C, u00259, "swindowsB");
+   u00260 : constant Version_32 := 16#a676c5b7#;
+   pragma Export (C, u00260, "swindowsS");
+   u00261 : constant Version_32 := 16#b5b2aca1#;
+   pragma Export (C, u00261, "system__finalization_mastersB");
+   u00262 : constant Version_32 := 16#80d8a57a#;
+   pragma Export (C, u00262, "system__finalization_mastersS");
+   u00263 : constant Version_32 := 16#6d4d969a#;
+   pragma Export (C, u00263, "system__storage_poolsB");
+   u00264 : constant Version_32 := 16#01950bbe#;
+   pragma Export (C, u00264, "system__storage_poolsS");
+   u00265 : constant Version_32 := 16#e34550ca#;
+   pragma Export (C, u00265, "system__pool_globalB");
+   u00266 : constant Version_32 := 16#c88d2d16#;
+   pragma Export (C, u00266, "system__pool_globalS");
+   u00267 : constant Version_32 := 16#2bce1226#;
+   pragma Export (C, u00267, "system__memoryB");
+   u00268 : constant Version_32 := 16#adb3ea0e#;
+   pragma Export (C, u00268, "system__memoryS");
+   u00269 : constant Version_32 := 16#36fe0b10#;
+   pragma Export (C, u00269, "widgetB");
+   u00270 : constant Version_32 := 16#7f8e1a2d#;
+   pragma Export (C, u00270, "widgetS");
+   u00271 : constant Version_32 := 16#1a44f244#;
+   pragma Export (C, u00271, "sound_managerB");
+   u00272 : constant Version_32 := 16#fd3b26de#;
+   pragma Export (C, u00272, "sound_managerS");
+   u00273 : constant Version_32 := 16#477ea605#;
+   pragma Export (C, u00273, "das08defsS");
+   u00274 : constant Version_32 := 16#587e0610#;
+   pragma Export (C, u00274, "turnout_driverB");
+   u00275 : constant Version_32 := 16#23f2d4e8#;
+   pragma Export (C, u00275, "turnout_driverS");
+   u00276 : constant Version_32 := 16#95d8caed#;
+   pragma Export (C, u00276, "turnoutsB");
+   u00277 : constant Version_32 := 16#7bb6b2d8#;
+   pragma Export (C, u00277, "turnoutsS");
    --  BEGIN ELABORATION ORDER
    --  ada%s
    --  interfaces%s
@@ -818,16 +826,18 @@ package ada_main is
    --  logger_ada%s
    --  logger_ada%b
    --  projdefs%s
-   --  fat_controller%s
-   --  fat_controller%b
    --  swindows%s
    --  interrupt_hdlr%s
    --  trains%s
    --  trains%b
+   --  fat_controller%s
+   --  fat_controller%b
    --  unsigned_types%s
    --  das08defs%s
    --  io_ports%s
    --  raildefs%s
+   --  blocks%s
+   --  blocks%b
    --  dda06defs%s
    --  dac_driver%s
    --  dac_driver%b
@@ -848,6 +858,8 @@ package ada_main is
    --  sound_manager%b
    --  turnout_driver%s
    --  turnout_driver%b
+   --  turnouts%s
+   --  turnouts%b
    --  widget%s
    --  widget%b
    --  slogger%s

@@ -1,0 +1,22 @@
+[MAPPING FILE]
+D:\Train-Proect\simrail2\Obj\GNAT-TEMP-000003.TMP
+[TOOLCHAIN VERSION]
+ada
+GNAT 2015
+[MAIN BASE NAME]
+fat_controller
+[COMPILER PATH]
+d:\gnat\2015\bin\gcc.exe
+[COMPILER LEADING SWITCHES]
+-c
+-x
+ada
+-gnatA
+[MAIN DEPENDENCY FILE]
+D:\Train-Proect\simrail2\Obj\fat_controller.ali
+[DEPENDENCY FILES]
+[BINDING OPTIONS]
+gnatbind_prefix=
+[PROJECT FILES]
+D:\Train-Proect\simrail2\skeleton.gpr
+20160523110846

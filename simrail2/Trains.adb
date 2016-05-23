@@ -28,11 +28,8 @@ package body Trains is
    ----------
 
    function Make
-     (Sensor_Front : Integer;
-      Sensor_Back : Integer)
-      return Train
-   is
-      T : Train;
+     (Sensor_Front : Integer; Sensor_Back : Integer) return Train_Access is
+      T : Train_Access := new Train;
    begin
       T.Sensor_Front := Sensor_Front;
       T.Sensor_Back := Sensor_Back;
@@ -96,13 +93,16 @@ package body Trains is
       -- work out whether front or back and set
       S.Acquire;
       --Ada.Integer_Text_IO.Put(T.Sensors_In_Route(T.Route_Marker));
-      Ada.Integer_Text_IO.Put(T.Route_Marker);
+      --T.Route_Marker := T.Route_Marker + 1;
+      --Ada.Integer_Text_IO.Put(T.Sensor_Front);
 
-      --if (T.Sensors_In_Route(T.Route_Marker) = Sensor_Hit) then
+      if (T.Sensors_In_Route(T.Route_Marker) = Sensor_Hit) then
          T.Sensor_Front := Sensor_Hit;
          T.Route_Marker := T.Route_Marker + 1;
+         Ada.Text_IO.Put_Line("");
          Ada.Text_IO.Put_Line("Train got Sensor Event");
-       -- end if;
+         Ada.Text_IO.Put_Line("");
+      end if;
 
      S.Release;
 

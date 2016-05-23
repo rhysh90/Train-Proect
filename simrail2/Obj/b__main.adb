@@ -25,12 +25,12 @@ package body ada_main is
    E080 : Short_Integer; pragma Import (Ada, E080, "system__file_io_E");
    E084 : Short_Integer; pragma Import (Ada, E084, "system__finalization_root_E");
    E082 : Short_Integer; pragma Import (Ada, E082, "ada__finalization_E");
-   E258 : Short_Integer; pragma Import (Ada, E258, "system__storage_pools_E");
-   E256 : Short_Integer; pragma Import (Ada, E256, "system__finalization_masters_E");
+   E264 : Short_Integer; pragma Import (Ada, E264, "system__storage_pools_E");
+   E262 : Short_Integer; pragma Import (Ada, E262, "system__finalization_masters_E");
    E164 : Short_Integer; pragma Import (Ada, E164, "system__task_info_E");
    E008 : Short_Integer; pragma Import (Ada, E008, "ada__calendar_E");
    E006 : Short_Integer; pragma Import (Ada, E006, "ada__calendar__delays_E");
-   E260 : Short_Integer; pragma Import (Ada, E260, "system__pool_global_E");
+   E266 : Short_Integer; pragma Import (Ada, E266, "system__pool_global_E");
    E146 : Short_Integer; pragma Import (Ada, E146, "system__random_seed_E");
    E019 : Short_Integer; pragma Import (Ada, E019, "system__secondary_stack_E");
    E217 : Short_Integer; pragma Import (Ada, E217, "system__tasking__initialization_E");
@@ -41,23 +41,25 @@ package body ada_main is
    E225 : Short_Integer; pragma Import (Ada, E225, "system__tasking__queuing_E");
    E233 : Short_Integer; pragma Import (Ada, E233, "system__tasking__stages_E");
    E187 : Short_Integer; pragma Import (Ada, E187, "adagraph_E");
-   E245 : Short_Integer; pragma Import (Ada, E245, "exec_load_E");
+   E247 : Short_Integer; pragma Import (Ada, E247, "exec_load_E");
    E239 : Short_Integer; pragma Import (Ada, E239, "logger_ada_E");
-   E243 : Short_Integer; pragma Import (Ada, E243, "fat_controller_E");
-   E254 : Short_Integer; pragma Import (Ada, E254, "swindows_E");
-   E252 : Short_Integer; pragma Import (Ada, E252, "interrupt_hdlr_E");
-   E269 : Short_Integer; pragma Import (Ada, E269, "trains_E");
+   E260 : Short_Integer; pragma Import (Ada, E260, "swindows_E");
+   E258 : Short_Integer; pragma Import (Ada, E258, "interrupt_hdlr_E");
+   E252 : Short_Integer; pragma Import (Ada, E252, "trains_E");
+   E245 : Short_Integer; pragma Import (Ada, E245, "fat_controller_E");
    E116 : Short_Integer; pragma Import (Ada, E116, "io_ports_E");
-   E241 : Short_Integer; pragma Import (Ada, E241, "dac_driver_E");
+   E241 : Short_Integer; pragma Import (Ada, E241, "blocks_E");
+   E243 : Short_Integer; pragma Import (Ada, E243, "dac_driver_E");
    E112 : Short_Integer; pragma Import (Ada, E112, "dio192defs_E");
    E111 : Short_Integer; pragma Import (Ada, E111, "block_driver_E");
-   E250 : Short_Integer; pragma Import (Ada, E250, "halls2_E");
+   E256 : Short_Integer; pragma Import (Ada, E256, "halls2_E");
    E120 : Short_Integer; pragma Import (Ada, E120, "simrail2_E");
    E178 : Short_Integer; pragma Import (Ada, E178, "simtrack2_E");
    E185 : Short_Integer; pragma Import (Ada, E185, "simtrack2__display_E");
-   E266 : Short_Integer; pragma Import (Ada, E266, "sound_manager_E");
-   E273 : Short_Integer; pragma Import (Ada, E273, "turnout_driver_E");
-   E264 : Short_Integer; pragma Import (Ada, E264, "widget_E");
+   E272 : Short_Integer; pragma Import (Ada, E272, "sound_manager_E");
+   E275 : Short_Integer; pragma Import (Ada, E275, "turnout_driver_E");
+   E277 : Short_Integer; pragma Import (Ada, E277, "turnouts_E");
+   E270 : Short_Integer; pragma Import (Ada, E270, "widget_E");
    E237 : Short_Integer; pragma Import (Ada, E237, "slogger_E");
 
    Local_Priority_Specific_Dispatching : constant String := "";
@@ -71,78 +73,98 @@ package body ada_main is
          procedure F1;
          pragma Import (Ada, F1, "widget__finalize_body");
       begin
-         E264 := E264 - 1;
+         E270 := E270 - 1;
          F1;
       end;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "turnout_driver__finalize_body");
+         pragma Import (Ada, F2, "turnouts__finalize_body");
       begin
-         E273 := E273 - 1;
+         E277 := E277 - 1;
          F2;
       end;
       declare
          procedure F3;
-         pragma Import (Ada, F3, "swindows__finalize_body");
+         pragma Import (Ada, F3, "turnout_driver__finalize_body");
       begin
-         E254 := E254 - 1;
+         E275 := E275 - 1;
          F3;
       end;
       declare
          procedure F4;
-         pragma Import (Ada, F4, "simrail2__finalize_body");
+         pragma Import (Ada, F4, "swindows__finalize_body");
       begin
-         E120 := E120 - 1;
+         E260 := E260 - 1;
          F4;
       end;
-      E269 := E269 - 1;
       declare
          procedure F5;
-         pragma Import (Ada, F5, "trains__finalize_spec");
+         pragma Import (Ada, F5, "simrail2__finalize_body");
       begin
+         E120 := E120 - 1;
          F5;
       end;
       declare
          procedure F6;
-         pragma Import (Ada, F6, "fat_controller__finalize_body");
+         pragma Import (Ada, F6, "blocks__finalize_body");
       begin
-         E243 := E243 - 1;
+         E241 := E241 - 1;
          F6;
       end;
-      E213 := E213 - 1;
       declare
          procedure F7;
-         pragma Import (Ada, F7, "system__tasking__protected_objects__entries__finalize_spec");
+         pragma Import (Ada, F7, "fat_controller__finalize_body");
       begin
+         E245 := E245 - 1;
          F7;
       end;
-      E059 := E059 - 1;
       declare
          procedure F8;
-         pragma Import (Ada, F8, "ada__text_io__finalize_spec");
+         pragma Import (Ada, F8, "trains__finalize_body");
       begin
+         E252 := E252 - 1;
          F8;
       end;
       declare
          procedure F9;
-         pragma Import (Ada, F9, "system__file_io__finalize_body");
+         pragma Import (Ada, F9, "trains__finalize_spec");
       begin
-         E080 := E080 - 1;
          F9;
       end;
-      E256 := E256 - 1;
-      E260 := E260 - 1;
+      E213 := E213 - 1;
       declare
          procedure F10;
-         pragma Import (Ada, F10, "system__pool_global__finalize_spec");
+         pragma Import (Ada, F10, "system__tasking__protected_objects__entries__finalize_spec");
       begin
          F10;
       end;
+      E059 := E059 - 1;
       declare
          procedure F11;
-         pragma Import (Ada, F11, "system__finalization_masters__finalize_spec");
+         pragma Import (Ada, F11, "ada__text_io__finalize_spec");
       begin
          F11;
+      end;
+      declare
+         procedure F12;
+         pragma Import (Ada, F12, "system__file_io__finalize_body");
+      begin
+         E080 := E080 - 1;
+         F12;
+      end;
+      E262 := E262 - 1;
+      E266 := E266 - 1;
+      declare
+         procedure F13;
+         pragma Import (Ada, F13, "system__pool_global__finalize_spec");
+      begin
+         F13;
+      end;
+      declare
+         procedure F14;
+         pragma Import (Ada, F14, "system__finalization_masters__finalize_spec");
+      begin
+         F14;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -244,7 +266,7 @@ package body ada_main is
            False, False, True, False, True, True, False, True, 
            True, True, False, True, False, False, False, True, 
            True, True, True, False, True, False),
-         Count => (0, 0, 0, 2, 3, 2, 4, 0, 5, 0),
+         Count => (0, 0, 0, 3, 3, 2, 4, 0, 8, 0),
          Unknown => (False, False, False, False, False, False, False, False, True, False));
       Priority_Specific_Dispatching :=
         Local_Priority_Specific_Dispatching'Address;
@@ -286,7 +308,7 @@ package body ada_main is
       Ada.Finalization'Elab_Spec;
       E082 := E082 + 1;
       System.Storage_Pools'Elab_Spec;
-      E258 := E258 + 1;
+      E264 := E264 + 1;
       System.Finalization_Masters'Elab_Spec;
       System.Task_Info'Elab_Spec;
       E164 := E164 + 1;
@@ -296,11 +318,11 @@ package body ada_main is
       Ada.Calendar.Delays'Elab_Body;
       E006 := E006 + 1;
       System.Pool_Global'Elab_Spec;
-      E260 := E260 + 1;
+      E266 := E266 + 1;
       System.Random_Seed'Elab_Body;
       E146 := E146 + 1;
       System.Finalization_Masters'Elab_Body;
-      E256 := E256 + 1;
+      E262 := E262 + 1;
       System.File_Io'Elab_Body;
       E080 := E080 + 1;
       E156 := E156 + 1;
@@ -333,19 +355,22 @@ package body ada_main is
       Adagraph'Elab_Body;
       E187 := E187 + 1;
       Exec_Load'Elab_Body;
-      E245 := E245 + 1;
+      E247 := E247 + 1;
       E239 := E239 + 1;
-      Fat_Controller'Elab_Body;
-      E243 := E243 + 1;
       Swindows'Elab_Spec;
       Trains'Elab_Spec;
-      E269 := E269 + 1;
+      Trains'Elab_Body;
+      E252 := E252 + 1;
+      Fat_Controller'Elab_Body;
+      E245 := E245 + 1;
+      Blocks'Elab_Body;
       E241 := E241 + 1;
+      E243 := E243 + 1;
       Dio192defs'Elab_Spec;
       E112 := E112 + 1;
       E111 := E111 + 1;
       Simrail2'Elab_Spec;
-      E250 := E250 + 1;
+      E256 := E256 + 1;
       Simtrack2'Elab_Spec;
       E178 := E178 + 1;
       Simtrack2.Display'Elab_Body;
@@ -353,18 +378,20 @@ package body ada_main is
       Simrail2'Elab_Body;
       E120 := E120 + 1;
       Swindows'Elab_Body;
-      E254 := E254 + 1;
-      E266 := E266 + 1;
+      E260 := E260 + 1;
+      E272 := E272 + 1;
       turnout_driver'elab_body;
-      E273 := E273 + 1;
+      E275 := E275 + 1;
+      Turnouts'Elab_Body;
+      E277 := E277 + 1;
       Widget'Elab_Body;
-      E264 := E264 + 1;
+      E270 := E270 + 1;
       Slogger'Elab_Spec;
       Slogger'Elab_Body;
       E237 := E237 + 1;
       E116 := E116 + 1;
       Interrupt_Hdlr'Elab_Body;
-      E252 := E252 + 1;
+      E258 := E258 + 1;
    end adainit;
 
    procedure Ada_Main_Program;
@@ -404,11 +431,12 @@ package body ada_main is
    --   D:\Train-Proect\simrail2\Obj\exec_load.o
    --   D:\Train-Proect\simrail2\Obj\logger_ada.o
    --   D:\Train-Proect\simrail2\Obj\Projdefs.o
+   --   D:\Train-Proect\simrail2\Obj\Trains.o
    --   D:\Train-Proect\simrail2\Obj\fat_controller.o
-   --   D:\Train-Proect\simrail2\Obj\trains.o
    --   D:\Train-Proect\simrail2\Obj\Unsigned_Types.o
    --   D:\Train-Proect\simrail2\Obj\das08defs.o
    --   D:\Train-Proect\simrail2\Obj\raildefs.o
+   --   D:\Train-Proect\simrail2\Obj\blocks.o
    --   D:\Train-Proect\simrail2\Obj\dda06defs.o
    --   D:\Train-Proect\simrail2\Obj\dac_driver.o
    --   D:\Train-Proect\simrail2\Obj\dio192defs.o
@@ -422,6 +450,7 @@ package body ada_main is
    --   D:\Train-Proect\simrail2\Obj\Swindows.o
    --   D:\Train-Proect\simrail2\Obj\sound_manager.o
    --   D:\Train-Proect\simrail2\Obj\turnout_driver.o
+   --   D:\Train-Proect\simrail2\Obj\turnouts.o
    --   D:\Train-Proect\simrail2\Obj\Widget.o
    --   D:\Train-Proect\simrail2\Obj\slogger.o
    --   D:\Train-Proect\simrail2\Obj\Io_ports.o

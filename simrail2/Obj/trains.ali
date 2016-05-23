@@ -5,21 +5,44 @@ A -march=pentiumpro
 P SS ZX
 
 RN
+RV NO_ALLOCATORS
 RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_IO
 RV NO_IMPLICIT_CONDITIONALS
+RV NO_IMPLICIT_LOOPS
+RV NO_LOCAL_ALLOCATORS
+RV NO_PROTECTED_TYPES
 RV NO_SECONDARY_STACK
 RV NO_STANDARD_STORAGE_POOLS
 RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
+RV SPARK_05
+RV MAX_PROTECTED_ENTRIES=1
+RV MAX_ENTRY_QUEUE_LENGTH=1+
 
-U trains%b		trains.adb		2182d0d6 NE OO PK
-W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+U trains%b		trains.adb		cfdd2151 OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system%s		system.ads		system.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.tasking%s	s-taskin.adb		s-taskin.ali
+W system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
+W system.tasking.protected_objects.entries%s  s-tpoben.adb  s-tpoben.ali
+W system.tasking.protected_objects.operations%s  s-tpobop.adb  s-tpobop.ali
 
-U trains%s		trains.ads		2422e566 EE OO PF PK
+U trains%s		trains.ads		13d49d8f EE OO PF PK
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.streams%s		a-stream.adb		a-stream.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
+W projdefs%s		projdefs.ads		projdefs.ali
 W system%s		system.ads		system.ali
 W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 W system.storage_elements%s  s-stoele.adb	s-stoele.ali
@@ -27,31 +50,108 @@ W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
 
 D ada.ads		20150518132148 3ffc8e18 ada%s
 D a-except.ads		20150518132148 5250cb69 ada.exceptions%s
+D a-finali.ads		20150518132148 69f99942 ada.finalization%s
+D a-inteio.ads		20150518132148 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20150518132148 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20150518132148 119b8fb3 ada.streams%s
 D a-tags.ads		20150518132148 dc4d0634 ada.tags%s
+D a-textio.ads		20150518132148 386df5d4 ada.text_io%s
+D a-tiinio.ads		20150518132148 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20150518132148 6033a23f interfaces%s
+D i-c.ads		20150518132148 5421119b interfaces.c%s
+D i-cstrin.ads		20150518132148 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20150518132148 e53d8b8e interfaces.c_streams%s
+D projdefs.ads		20160519093830 eddf79ef projdefs%s
 D system.ads		20150518132150 f4ce8c3a system%s
+D s-atacco.ads		20150518132148 4c36d12f system.address_to_access_conversions%s
+D s-crtl.ads		20150518132148 0ebbdb71 system.crtl%s
 D s-exctab.ads		20150518132148 54135002 system.exception_table%s
+D s-ficobl.ads		20150518132148 078245e4 system.file_control_block%s
+D s-finroo.ads		20150518132148 4ff27390 system.finalization_root%s
+D s-memory.ads		20150518132150 597d6634 system.memory%s
+D s-multip.ads		20150518132150 38ac9f73 system.multiprocessors%s
+D s-osinte.ads		20150518132150 2e5b26a9 system.os_interface%s
 D s-parame.ads		20150518132150 7e2a0d7f system.parameters%s
 D s-secsta.ads		20150518132150 86a2856d system.secondary_stack%s
 D s-soflin.ads		20150518132150 aa763b52 system.soft_links%s
 D s-stache.ads		20150518132150 a37c21ec system.stack_checking%s
+D s-stausa.ads		20150518132150 017a0a05 system.stack_usage%s
 D s-stalib.ads		20150518132150 fa0a3617 system.standard_library%s
+D s-stalib.adb		20150518132150 f2fe2716 system.standard_library%b
 D s-stoele.ads		20150518132150 2dc34a04 system.storage_elements%s
 D s-stoele.adb		20150518132150 ed88f8fb system.storage_elements%b
 D s-stratt.ads		20150518132150 aedef97e system.stream_attributes%s
+D s-tasinf.ads		20150518132150 601f6b72 system.task_info%s
+D s-taspri.ads		20150518132150 6c1d93d4 system.task_primitives%s
+D s-taskin.ads		20150518132150 339749f0 system.tasking%s
+D s-taprob.ads		20150518132150 502249e3 system.tasking.protected_objects%s
+D s-tpoben.ads		20150518132150 b641f948 system.tasking.protected_objects.entries%s
+D s-tpobop.ads		20150518132150 5f548bb3 system.tasking.protected_objects.operations%s
 D s-traent.ads		20150518132150 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
-D trains.ads		20160519121016 2422e566 trains%s
-D trains.adb		20160519121254 05a035b0 trains%b
-X 18 trains.ads
-1K9*Trains 8E9 14l5 14e11 19|1b14 19l5 19t11
-3R9*Train 5p13 5r73 8c9 12e17 19|10r14 12r11
-5V13*Make{3R9} 5>19 5>43 19|7b13 17l8 17t12
-5i19 Sensor_Front{integer} 19|8b7 14r25
-5i43 Sensor_Back{integer} 19|9b7 15r24
-10i10*Sensor_Front{integer} 19|14m9
-11i10*Sensor_Back{integer} 19|15m9
-X 19 trains.adb
-12r7 T{18|3R9} 14m7 15m7 16r14
+D s-wchcon.ads		20150518132150 1b7d22d2 system.wch_con%s
+D s-win32.ads		20150518132150 b7f96285 system.win32%s
+D trains.ads		20160523124548 fe0be460 trains%s
+D trains.adb		20160523124554 fff0b941 trains%b
+X 1 ada.ads
+16K9*Ada 19e8 46|1r6 1r27 102r10 103r10 104r10
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[9|46] 46|1w10
+X 8 a-textio.ads
+49K13*Text_IO 471e16 46|1w31 102r14 103r14 104r14
+263U14*Put_Line 46|102s22 103s22 104s22
+X 15 projdefs.ads
+1K9*Projdefs 5e13 45|1w6 2r5
+4I12*Request_Type{integer} 45|10r34
+X 16 system.ads
+67M9*Address
+X 22 s-memory.ads
+53V13*Alloc{16|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{16|67M9} 105i<c,__gnat_realloc>22
+X 29 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+X 31 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+X 45 trains.ads
+4K9*Trains 27E9 36l5 36e11 46|3b14 124l5 124t11
+6R9*Train 8r32 14p13 14r36 16p13 16r35 18p14 18r41 20p14 20r40 22p14 22r34
+. 24p14 24r38 27c9 34e17 46|32r31 43r36 56r35 69r40 80r41 91r38 115r34
+8P9*Train_Access(6R9) 12r73 46|31r61 32r11
+10A9*Route(15|4I12)<integer> 22r51 31r29 46|115r51
+12V13*Make{8P9} 12>19 12>43 46|30b13 37l8 37t12
+12i19 Sensor_Front{integer} 46|31b7 34r25
+12i43 Sensor_Back{integer} 46|31b31 35r24
+14V13*Get_Sensor_Front{integer} 14>32 46|43b13 50l8 50t24
+14r32 T{6R9} 46|43b32 47r16
+16V13*Get_Sensor_Back{integer} 16>31 46|56b13 63l8 63t23
+16r31 T{6R9} 46|56b31 60r16
+18U14*Set_Sensor_Front 18<33 18>49 46|80b14 85l8 85t24
+18r33 T{6R9} 46|80b33 83m7
+18i49 Sensor{integer} 46|80b49 83r25
+20U14*Set_Sensor_Back 20<32 20>48 46|69b14 74l8 74t23
+20r32 T{6R9} 46|69b32 72m7
+20i48 Sensor{integer} 46|69b48 72r24
+22U14*Set_Route 22<26 22>41 46|115b14 122l8 122t17
+22r26 T{6R9} 46|115b26 118m7 119m7
+22a41 Sensors{10A9} 46|115b41 118r29
+24U14*Hit_Sensor 24=27 24>45 46|91b14 109l8 109t18
+24r27 T{6R9} 46|91b27 99r11 99r30 100m10 101m10 101r28
+24i45 Sensor_Hit{integer} 46|91b45 99r48 100r28
+29i10*Sensor_Front{integer} 46|34m9 47r18 83m9 100m12
+30i10*Sensor_Back{integer} 46|35m9 60r18 72m9
+31a10*Sensors_In_Route{10A9} 46|99r13 118m9
+32i10*Sensor_Next{integer}
+33i10*Route_Marker{integer} 46|99r32 101m12 101r30 119m9
+X 46 trains.adb
+5W19 Lock 9E7 10l8 10e12 12b19 22l8 22t12 24r8
+6Y13 Acquire 13b13 16l11 16t18 46s9 59s9 71s9 82s9 94s9 117s9
+7U17 Release 18b17 21l11 21t18 48s9 61s9 73s9 84s9 107s8 120s9
+9b7 Available{boolean} 13r26 15r10 20r10
+24w4 S{5W19} 46r7 48r7 59r7 61r7 71r7 73r7 82r7 84r7 94r7 107r6 117r7 120r7
+32p7 T{45|8P9} 34r7 35r7 36r14
+44i4 value{integer} 47m7 49r14
+57i4 value{integer} 60m7 62r14
 

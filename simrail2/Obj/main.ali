@@ -16,13 +16,14 @@ RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U main%b		main.adb		477bae56 NE OO SU IL
+U main%b		main.adb		523963a8 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W block_driver%s	block_driver.adb	block_driver.ali
+W blocks%s		blocks.adb		blocks.ali
 W dac_driver%s		dac_driver.adb		dac_driver.ali
 W dio192defs%s		dio192defs.ads		dio192defs.ali
 W fat_controller%s	fat_controller.adb	fat_controller.ali
@@ -40,6 +41,7 @@ W system.concat_2%s	s-conca2.adb		s-conca2.ali
 W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 W trains%s		trains.adb		trains.ali
 W turnout_driver%s	turnout_driver.adb	turnout_driver.ali
+W turnouts%s		turnouts.adb		turnouts.ali
 W unsigned_types%s	unsigned_types.ads	unsigned_types.ali
 
 D ada.ads		20150518132148 3ffc8e18 ada%s
@@ -56,11 +58,12 @@ D a-textio.ads		20150518132148 386df5d4 ada.text_io%s
 D a-tiinio.ads		20150518132148 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20150518132148 f9eb8f06 ada.unchecked_conversion%s
 D block_driver.ads	20160519093830 a3b793c4 block_driver%s
+D blocks.ads		20160523100506 3cf0b2fd blocks%s
 D dac_driver.ads	20160519093830 b267bd32 dac_driver%s
 D das08defs.ads		20160519093830 ad4a2296 das08defs%s
 D dda06defs.ads		20160519093830 ef38bf95 dda06defs%s
 D dio192defs.ads	20160519093830 fecc3a89 dio192defs%s
-D fat_controller.ads	20160519094530 b3fb39b4 fat_controller%s
+D fat_controller.ads	20160523123538 c4614238 fat_controller%s
 D halls2.ads		20160519093830 5308d55d halls2%s
 D int32defs.ads		20160519093830 dfad4756 int32defs%s
 D interfac.ads		20150518132148 6033a23f interfaces%s
@@ -70,7 +73,7 @@ D i-cstrea.ads		20150518132148 e53d8b8e interfaces.c_streams%s
 D interrupt_hdlr.ads	20160519093830 493c907b interrupt_hdlr%s
 D io_ports.ads		20160519093830 841e5c76 io_ports%s
 D logger_ada.ads	20160519093830 52f590a4 logger_ada%s
-D main.adb		20160519121820 367e4a9f main%b
+D main.adb		20160523124548 76386de0 main%b
 D projdefs.ads		20160519093830 eddf79ef projdefs%s
 D raildefs.ads		20160519093830 bff1902e raildefs%s
 D simrail2.ads		20160519093830 6c13e450 simrail2%s
@@ -105,162 +108,172 @@ D s-traent.ads		20150518132150 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20150518132150 9d58a4c0 system.unsigned_types%s
 D s-wchcon.ads		20150518132150 1b7d22d2 system.wch_con%s
 D s-win32.ads		20150518132150 b7f96285 system.win32%s
-D trains.ads		20160519121016 2422e566 trains%s
+D trains.ads		20160523124548 fe0be460 trains%s
 D turnout_driver.ads	20160519093830 990f7fc0 turnout_driver%s
+D turnouts.ads		20160523100506 c44722f6 turnouts%s
 D unchconv.ads		20150518132150 ca2f9e18 unchecked_conversion%s
 D unsigned_types.ads	20160519093830 ea348493 unsigned_types%s
 X 1 ada.ads
-16K9*Ada 19e8 29|18r6 18r19 37r24 328r16 365r4
+16K9*Ada 19e8 30|18r6 18r19 37r24 329r16 365r4
 X 6 a-inteio.ads
-18K13*Integer_Text_IO[12|46] 29|18w23 37r28
+18K13*Integer_Text_IO[12|46] 30|18w23 37r28
 X 11 a-textio.ads
-49K13*Text_IO 471e16 29|18w10 328r20 365r8
-263U14*Put_Line 29|328s28 365s16
+49K13*Text_IO 471e16 30|18w10 329r20 365r8
+263U14*Put_Line 30|329s28 365s16
 X 14 block_driver.ads
-3K9*block_driver 12e17 29|25w6 137r7 138r7 139r7 140r7 141r7 142r7 143r7
-. 144r7 209r13 210r13
-5U14*Set_Cab 29|209s26
-7U14*Set_Polarity 29|210s26
-9U14*Set_Cab_And_Polarity 29|137s20 138s20 139s20 140s20 141s20 142s20 143s20
-. 144s20
-X 15 dac_driver.ads
-3K9*dac_driver 7e15 29|24w6 170r13
-5U14*Set_Voltage 29|170s24
-X 18 dio192defs.ads
-27K9*Dio192defs 204e15 29|28w6 50r50 61r11 97r11 100r15
-56N4*Pctl1_Addr 29|64r31 84r31
-60N4*Qctl1_Addr 29|65r31 85r31
-66N4*Pctl2_Addr 29|66r31 86r31
-70N4*Qctl2_Addr 29|67r31 87r31
-74a4*Block_Addr(67|5M9) 29|74r34
-103m4*Output_Init2{67|4M9} 29|84r43 85r43 86r43 87r43
-104m4*Output_Init1{67|4M9} 29|64r43 65r43 66r43 67r43
-128A9*Block_Register(118R9)<31|35I9> 29|50r61
-137a4*Zero_Normal{128A9} 29|73r28
-146E9*Turnout_Drive_Bit 146e48 29|100r26
-147e4*Straighten{146E9} 29|106r22
-148e4*Turn{146E9} 29|108r22
-178V13*Unsigned[66|20]{67|4M9} 29|74s50
-X 19 fat_controller.ads
-4K9*Fat_Controller 8e19 29|32w6
-X 20 halls2.ads
-13K9*Halls2 68e11 29|28w29 373r4
-16U14*Initialize 29|373s11
-X 21 int32defs.ads
-20K9*Int32defs 84e14 29|28w18
-X 22 interfac.ads
+3K9*block_driver 12e17 30|25w6 138r7 139r7 140r7 141r7 142r7 143r7 144r7
+. 145r7 210r13 211r13
+5U14*Set_Cab 30|210s26
+7U14*Set_Polarity 30|211s26
+9U14*Set_Cab_And_Polarity 30|138s20 139s20 140s20 141s20 142s20 143s20 144s20
+. 145s20
+X 15 blocks.ads
+3K9*Blocks 14e11 30|32w40 33r23 379r4
+9U14*Init 30|379s11
+X 16 dac_driver.ads
+3K9*dac_driver 7e15 30|24w6 171r13
+5U14*Set_Voltage 30|171s24
+X 19 dio192defs.ads
+27K9*Dio192defs 204e15 30|28w6 51r50 62r11 98r11 101r15
+56N4*Pctl1_Addr 30|65r31 85r31
+60N4*Qctl1_Addr 30|66r31 86r31
+66N4*Pctl2_Addr 30|67r31 87r31
+70N4*Qctl2_Addr 30|68r31 88r31
+74a4*Block_Addr(69|5M9) 30|75r34
+103m4*Output_Init2{69|4M9} 30|85r43 86r43 87r43 88r43
+104m4*Output_Init1{69|4M9} 30|65r43 66r43 67r43 68r43
+128A9*Block_Register(118R9)<32|35I9> 30|51r61
+137a4*Zero_Normal{128A9} 30|74r28
+146E9*Turnout_Drive_Bit 146e48 30|101r26
+147e4*Straighten{146E9} 30|107r22
+148e4*Turn{146E9} 30|109r22
+178V13*Unsigned[68|20]{69|4M9} 30|75s50
+X 20 fat_controller.ads
+4K9*Fat_Controller 11e19 30|32w6 377r4
+8U14*Init 30|377s19
+X 21 halls2.ads
+13K9*Halls2 68e11 30|28w29 373r4
+16U14*Initialize 30|373s11
+X 22 int32defs.ads
+20K9*Int32defs 84e14 30|28w18
+X 23 interfac.ads
 62M9*Unsigned_8
 65M9*Unsigned_16
-X 26 interrupt_hdlr.ads
-12K9*Interrupt_Hdlr 18e19 29|29w6 369r4 374r4
-14U14*Init 29|369s19
-16U14*Install 29|374s19
-X 27 io_ports.ads
-35K9*IO_Ports 56e13 29|20w6 64r7 65r7 66r7 67r7 74r10 84r7 85r7 86r7 87r7
-42U14*Write_IO_Port 29|64s16 65s16 66s16 67s16 74s19 84s16 85s16 86s16 87s16
-X 29 main.adb
-35U11*main 35b11 381l5 381t9
+X 27 interrupt_hdlr.ads
+12K9*Interrupt_Hdlr 18e19 30|29w6 369r4 374r4
+14U14*Init 30|369s19
+16U14*Install 30|374s19
+X 28 io_ports.ads
+35K9*IO_Ports 56e13 30|20w6 65r7 66r7 67r7 68r7 75r10 85r7 86r7 87r7 88r7
+42U14*Write_IO_Port 30|65s16 66s16 67s16 68s16 75s19 85s16 86s16 87s16 88s16
+X 30 main.adb
+35U11*main 35b11 385l5 385t9
 37K12 Iio=37:28
-39p4 W_In{35|19P9} 167r20 176r20 195r20 202r23 206r20 212r23 216r20 234r20
-. 252r20 267r17 274r19 293r20 310r20 320r20 321r20 359r17 367m19 367r19
-39p10 W_Info{35|19P9}
-39p18 W_Interrupts{35|19P9} 368m19 368r19 369r25
-43r4 Train1{64|3R9}
-44r4 Train2{64|3R9}
-45r4 Train3{64|3R9}
-49A9 Block_Reg_Array(18|128A9)<31|35I9> 51r17
-51a4 Block_Regs{49A9} 72r16 73m10 74r60
-58U14 Init_Dio 58b14 90l8 90t16 371s4
-72i11 I<short_short_integer> 73r22 74r46 74r72
-92U14 Pull 92b14 93>7 94>7 113l8 113t12
-93i7 Tn{31|64I12} 98r40 99r40
-94e7 Dir{31|69E9} 102r12
-98i7 Ndx{31|63I9}
-99i7 Bit{31|63I9}
-100e7 Drive{18|146E9} 106m13 108m13
-120U14 Oval 120b14 120>20 148l8 148t12 279s7
-120e20 Pol{31|57E9} 137r86 138r86 139r86 140r86 141r86 142r86 143r86 144r86
-152N4 Pos0 169r50 208r49 324r58
-153i4 Number{integer} 165r10 166r24 179m7 193r10 194r28 201m13 219m7 230r10
-. 231r32 237m7 248r10 249r32 255m7 273m9 278m7 290r10 291r44 296m7 307r10
-. 308r44 313m7 324m16 324r26 329m16 333m16
-160U14 Dac_Command 160b14 180l8 180t19 336s16
-161e7 C{character} 167m26 168r13 169r45
-162m7 Dac{31|30M9} 166m10 170r37 172m13 175r10
-163m7 V{67|4M9} 169m13 170r42
-187U14 b_command 187b14 220l8 220t17 339s16
-188e7 C{character} 195m26 196r13 198r16 206m26 207r13 208r44
-189i7 Block{31|36I12} 194m10 209r34 210r39
-190e7 Polarity{31|57E9} 197m13 199m13 210r46
-191m7 Cab{31|30M9} 208m13 209r41
-227U14 t_command 227b14 238l8 238t17 342s16
-228i7 Turnout{31|64I12} 231m10 232r34
-245U14 s_command 245b14 256l8 256t17 345s16
-246i7 Turnout{31|64I12} 249m10 250r38
-263U14 o_command 263b14 280l8 280t17 348s16
-264e7 Polarity{31|57E9} 269m9 271m9 279r12
-265e7 C{character} 267m23 268r10 270r13
-288U14 Bell_command 288b14 297l8 297t20 351s16
-305U14 Horn_command 305b14 314l8 314t20 354s16
-316U14 Dialog_Loop 316b14 361l8 361t19 379s4
-317e7 C{character} 321m26 322r15 324r53
-X 31 raildefs.ads
-23K9*Raildefs 29|23w6 23r52 50r13 93r16 94r16 98r15 99r15 127r35 128r35 129r35
-. 130r35 131r35 132r35 133r35 134r35 137r41 137r64 138r41 138r64 139r41 139r64
-. 140r41 140r64 141r41 141r64 142r41 142r64 143r41 143r64 144r41 144r64 31|86e13
-30M9*Cab_Type 29|137r73 138r73 139r73 140r73 141r73 142r73 143r73 144r73
-. 162r13 191r20 208r20 291r35 308r35
-31M12*Dac_Id{30M9} 29|166r17
-35I9*Block_Idx<short_short_integer> 29|50r22
-36I12*Block_Id{35I9} 29|137r50 138r50 139r50 140r50 141r50 142r50 143r50
-. 144r50 189r20 194r19
-57E9*Polarity_Type 29|120r29 190r20 264r18 31|59e19
-58n8*Normal_Pol{57E9} 29|197r25 269r21
-59n7*Reverse_Pol{57E9} 29|199r25 271r21
-63I9*Turnout_Idx<short_short_integer> 29|98r24 99r24
-64I12*Turnout_Id{63I9} 29|93r25 127r44 128r44 129r44 130r44 131r44 132r44
-. 133r44 134r44 228r19 231r21 246r19 249r21
-69E9*Turnout_Pos 29|94r25 31|72e18
-70n11*Straight{69E9} 29|105r15
-71n11*Turned{69E9} 29|107r15
-72n11*Middle{69E9} 29|103r15
-X 32 simrail2.ads
-32K9*Simrail2 29|19w6 332r16 365r55 366r4 32|95e13
-52V13*Version{string} 29|365s64
-62U14*Reset 29|366s13
-63i10 N_Trains{positive} 29|366r20
-64i10 N_Carriages_Train_1{natural} 29|366r35
-75U14*Dump 29|332s25
-X 33 slogger.ads
-51K9*Slogger 29|30w6 327r16 33|100e12
-97U14*Finalize 29|327s24
-X 34 sound_manager.ads
-3K9*Sound_Manager 29|27w6 291r10 308r10 34|9e18
-5U14*Sound_Horn 29|308s24
-7U14*Sound_Bell 29|291s24
-X 35 swindows.ads
-17K9*Swindows 29|21w6 21r52 39r33 367r4 368r4 35|90e13
-19P9*Window 29|39r42
-27U14*Open 29|367s13 368s13
-39U14*Clear 29|359s10
-42U14*Put_Line 29|176s10 202s13 212s13 216s10 234s10 252s10 274s9 293s10
-. 310s10 320s10
-61U14*Get_Char 29|167s10 195s10 206s10 267s7 321s10
-X 51 s-stausa.ads
+39p4 W_In{36|19P9} 168r20 177r20 196r20 203r23 207r20 213r23 217r20 235r20
+. 253r20 268r17 275r19 294r20 311r20 321r20 322r20 360r17 367m19 367r19
+39p10 W_Info{36|19P9}
+39p18 W_Interrupts{36|19P9} 368m19 368r19 369r25
+44p4 Train1{65|8P9} 377m24 377r24
+45p4 Train2{65|8P9} 377m32 377r32 382r14
+46p4 Train3{65|8P9} 377m40 377r40
+50A9 Block_Reg_Array(19|128A9)<32|35I9> 52r17
+52a4 Block_Regs{50A9} 73r16 74m10 75r60
+59U14 Init_Dio 59b14 91l8 91t16 371s4
+73i11 I<short_short_integer> 74r22 75r46 75r72
+93U14 Pull 93b14 94>7 95>7 114l8 114t12
+94i7 Tn{32|64I12} 99r40 100r40
+95e7 Dir{32|69E9} 103r12
+99i7 Ndx{32|63I9}
+100i7 Bit{32|63I9}
+101e7 Drive{19|146E9} 107m13 109m13
+121U14 Oval 121b14 121>20 149l8 149t12 280s7
+121e20 Pol{32|57E9} 138r86 139r86 140r86 141r86 142r86 143r86 144r86 145r86
+153N4 Pos0 170r50 209r49 325r58
+154i4 Number{integer} 166r10 167r24 180m7 194r10 195r28 202m13 220m7 231r10
+. 232r32 238m7 249r10 250r32 256m7 274m9 279m7 291r10 292r44 297m7 308r10
+. 309r44 314m7 325m16 325r26 330m16 334m16
+161U14 Dac_Command 161b14 181l8 181t19 337s16
+162e7 C{character} 168m26 169r13 170r45
+163m7 Dac{32|30M9} 167m10 171r37 173m13 176r10
+164m7 V{69|4M9} 170m13 171r42
+188U14 b_command 188b14 221l8 221t17 340s16
+189e7 C{character} 196m26 197r13 199r16 207m26 208r13 209r44
+190i7 Block{32|36I12} 195m10 210r34 211r39
+191e7 Polarity{32|57E9} 198m13 200m13 211r46
+192m7 Cab{32|30M9} 209m13 210r41
+228U14 t_command 228b14 239l8 239t17 343s16
+229i7 Turnout{32|64I12} 232m10 233r34
+246U14 s_command 246b14 257l8 257t17 346s16
+247i7 Turnout{32|64I12} 250m10 251r38
+264U14 o_command 264b14 281l8 281t17 349s16
+265e7 Polarity{32|57E9} 270m9 272m9 280r12
+266e7 C{character} 268m23 269r10 271r13
+289U14 Bell_command 289b14 298l8 298t20 352s16
+306U14 Horn_command 306b14 315l8 315t20 355s16
+317U14 Dialog_Loop 317b14 362l8 362t19 383s4
+318e7 C{character} 322m26 323r15 325r53
+X 32 raildefs.ads
+23K9*Raildefs 30|23w6 23r52 51r13 94r16 95r16 99r15 100r15 128r35 129r35
+. 130r35 131r35 132r35 133r35 134r35 135r35 138r41 138r64 139r41 139r64 140r41
+. 140r64 141r41 141r64 142r41 142r64 143r41 143r64 144r41 144r64 145r41 145r64
+. 32|86e13
+30M9*Cab_Type 30|138r73 139r73 140r73 141r73 142r73 143r73 144r73 145r73
+. 163r13 192r20 209r20 292r35 309r35
+31M12*Dac_Id{30M9} 30|167r17
+35I9*Block_Idx<short_short_integer> 30|51r22
+36I12*Block_Id{35I9} 30|138r50 139r50 140r50 141r50 142r50 143r50 144r50
+. 145r50 190r20 195r19
+57E9*Polarity_Type 30|121r29 191r20 265r18 32|59e19
+58n8*Normal_Pol{57E9} 30|198r25 270r21
+59n7*Reverse_Pol{57E9} 30|200r25 272r21
+63I9*Turnout_Idx<short_short_integer> 30|99r24 100r24
+64I12*Turnout_Id{63I9} 30|94r25 128r44 129r44 130r44 131r44 132r44 133r44
+. 134r44 135r44 229r19 232r21 247r19 250r21
+69E9*Turnout_Pos 30|95r25 32|72e18
+70n11*Straight{69E9} 30|106r15
+71n11*Turned{69E9} 30|108r15
+72n11*Middle{69E9} 30|104r15
+X 33 simrail2.ads
+32K9*Simrail2 30|19w6 333r16 365r55 366r4 33|95e13
+52V13*Version{string} 30|365s64
+62U14*Reset 30|366s13
+63i10 N_Trains{positive} 30|366r20
+64i10 N_Carriages_Train_1{natural} 30|366r35
+75U14*Dump 30|333s25
+X 34 slogger.ads
+51K9*Slogger 30|30w6 328r16 34|100e12
+97U14*Finalize 30|328s24
+X 35 sound_manager.ads
+3K9*Sound_Manager 30|27w6 292r10 309r10 35|9e18
+5U14*Sound_Horn 30|309s24
+7U14*Sound_Bell 30|292s24
+X 36 swindows.ads
+17K9*Swindows 30|21w6 21r52 39r33 367r4 368r4 36|90e13
+19P9*Window 30|39r42
+27U14*Open 30|367s13 368s13
+39U14*Clear 30|360s10
+42U14*Put_Line 30|177s10 203s13 213s13 217s10 235s10 253s10 275s9 294s10
+. 311s10 321s10
+61U14*Get_Char 30|168s10 196s10 207s10 268s7 322s10
+X 52 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
-X 64 trains.ads
-1K9*Trains 29|32w22 33r5 64|14e11
-3R9*Train 29|43r13 44r13 45r13 64|12e17
-5V13*Make{3R9} 29|43s22 44s22 45s22
-X 65 turnout_driver.ads
-3K9*turnout_driver 29|26w6 127r7 128r7 129r7 130r7 131r7 132r7 133r7 134r7
-. 232r10 250r10 65|8e19
-5U14*Set_Turn 29|232s25
-6U14*Set_Straight 29|127s22 128s22 129s22 130s22 131s22 132s22 133s22 134s22
-. 250s25
-X 67 unsigned_types.ads
-3K9*Unsigned_Types 29|22w6 22r52 67|11e19
-4M9*Unsigned_8<22|62M9> 29|163r13 169r18
-5M9*Unsigned_16<22|65M9>
+X 65 trains.ads
+4K9*Trains 30|32w22 33r5 65|36e11
+8P9*Train_Access(6R9) 30|44r13 45r13 46r13
+12V13*Make{8P9} 30|44s29 45s29 46s29
+22U14*Set_Route 30|382s4
+X 66 turnout_driver.ads
+3K9*turnout_driver 30|26w6 128r7 129r7 130r7 131r7 132r7 133r7 134r7 135r7
+. 233r10 251r10 66|8e19
+5U14*Set_Turn 30|233s25
+6U14*Set_Straight 30|128s22 129s22 130s22 131s22 132s22 133s22 134s22 135s22
+. 251s25
+X 67 turnouts.ads
+3K9*Turnouts 30|32w30 33r13 378r4 67|14e13
+9U14*Init 30|378s13
+X 69 unsigned_types.ads
+3K9*Unsigned_Types 30|22w6 22r52 69|11e19
+4M9*Unsigned_8<23|62M9> 30|164r13 170r18
+5M9*Unsigned_16<23|65M9>
 
