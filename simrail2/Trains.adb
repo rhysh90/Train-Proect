@@ -1,3 +1,5 @@
+with Ada.Text_IO;
+
 package body Trains is
 
    protected type Lock is
@@ -64,13 +66,59 @@ package body Trains is
    end Get_Sensor_Back;
 
    ---------------------
+   -- Set Sensor Back --
+   ---------------------
+
+   procedure Set_Sensor_Back ( T : out Train;  Sensor : Integer) is
+   begin
+      S.Acquire;
+      T.Sensor_Back := Sensor;
+      S.Release;
+   end Set_Sensor_Back;
+
+   ---------------------
+   -- Set Sensor Back --
+   ---------------------
+
+   procedure Set_Sensor_Front ( T : out Train;  Sensor : Integer) is
+   begin
+      S.Acquire;
+      T.Sensor_Front := Sensor;
+      S.Release;
+   end Set_Sensor_Front;
+
+   ---------------------
    --   Hit Sensor    --
    ---------------------
 
-   function Hit_Sensor ( T : Train; Sensor_Hit : Integer) return Boolean is
+   procedure Hit_Sensor ( T : out Train; Sensor_Hit : Integer) is
    begin
       -- work out whether front or back and set
-      return true;
+     S.Acquire;
+
+        if (T.Sensor_Next = Sensor_Hit) then
+         T.Sensor_Front := Sensor_Hit;
+         T.Route_Marker := T.Route_Marker + 1;
+         T.Sensor_Next := T.Sensors_In_Route(T.Route_Marker);
+         Ada.Text_IO.Put_Line("Train got Sensor Event");
+        end if;
+
+     S.Release;
+
    end Hit_Sensor;
+
+   ---------------------
+   --    Set Route    --
+   ---------------------
+
+   procedure Set_Route ( T : out Train; Sensors : Route) is
+   begin
+      S.Acquire;
+      T.Sensors_In_Route := Sensors;
+      T.Route_Marker := 1;
+      T.Sensor_Next := T.Sensors_In_Route(T.Route_Marker);
+      S.Release;
+
+   end Set_Route;
 
 end Trains;
