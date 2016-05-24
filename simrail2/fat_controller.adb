@@ -76,7 +76,9 @@ package body Fat_Controller is
       --Ada.Text_Io.Put_Line(" Req=" & Request'Img & " starting");
       --Exec_Load.Eat(1.0); NOT REQUIRED
       --Pass senor request to the correct train controller
+      Hit_Sensor(Train1.all, Request);
       Hit_Sensor(Train2.all, Request);
+      Hit_Sensor(Train3.all, Request);
 
       --TODO get the rest and check them too
 
