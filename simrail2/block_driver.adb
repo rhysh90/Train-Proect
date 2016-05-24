@@ -1,4 +1,4 @@
-with Unsigned_Types, Dio192defs, IO_Ports, Blocks;
+with Unsigned_Types, Dio192defs, IO_Ports, Blocks, Raildefs;
 use Unsigned_Types;
 package body block_driver is
 
@@ -67,7 +67,11 @@ package body block_driver is
       Set_Polarity(B, Pol);
 
       --new
-      Blocks.Set_Block_State(B, true);
+      if Integer(Cab) = 0 then
+         Blocks.Set_Block_State(B,false);
+      else
+         Blocks.Set_Block_State(B, true);
+      end if;
    end Set_Cab_And_Polarity;
 
 end block_driver;

@@ -143,7 +143,8 @@ package body Trains is
 		state := Turnouts.Get_Turnout_State(Get_Turnout(Request));
                 if (state = Turned) then
                      Turnout_Driver.Set_Turn(Get_Turnout(Request));
-                     Ada.Text_IO.Put_Line("TURNOUT IS NOW TURNED do some timing here, stop the train for abit");
+               	     Ada.Text_IO.Put_Line("TURNOUT IS NOW TURNED do some timing here, stop the train for abit");
+                     --CHECK THE BLOCK UR GOING TO MAKE SURE IT IS NOT OWNED
                 else
                      Ada.Text_IO.Put_Line("TURNOUT IS ALREADY TURNED");
                 end if;
@@ -210,8 +211,58 @@ package body Trains is
                   null;
             end case;
          else
-            --Reverse POlarity
-            null;
+            case Request is
+               when 23 => --we already own block 12
+                  --grab block 19
+                  Block_Driver.Set_Cab_And_Polarity(19, Train_Info.Cab, Train_Info.Heading);
+
+               when 51 => --we already own block 19
+                  --grab block 18 if turnout 19 is straight
+                  if Turnouts.Get_Turnout_State(19) = Straight then
+                     Block_Driver.Set_Cab_And_Polarity(18, Train_Info.Cab, Train_Info.Heading);
+                  --grab block 23 if turnout 19 is turned
+                  elsif Turnouts.Get_Turnout_State(19) = Turned then
+                     Block_Driver.Set_Cab_And_Polarity(23, Train_Info.Cab, Train_Info.Heading);
+                  end if;
+
+               when 49 => --we already own block 18
+                  --grab block 17 if turnout 18 is straight
+                  if Turnouts.Get_Turnout_State(19) = Straight then
+                     Block_Driver.Set_Cab_And_Polarity(17, Train_Info.Cab, Train_Info.Heading);
+                  --grab block 9 if turnout 18 is turned
+                  elsif Turnouts.Get_Turnout_State(19) = Turned then
+                     Block_Driver.Set_Cab_And_Polarity(9, Train_Info.Cab, Train_Info.Heading);
+                  end if;
+
+               when 47 => --we already own block 17
+                  --grab block 16
+                  Block_Driver.Set_Cab_And_Polarity(16, Train_Info.Cab, Train_Info.Heading);
+
+               when 43 => --we already own block 16
+                  --grab block 15
+                  Block_Driver.Set_Cab_And_Polarity(15, Train_Info.Cab, Train_Info.Heading);
+
+               when 41 => --we already own block 15
+                  --grab block 23 if turnout 15 is straight
+                  if Turnouts.Get_Turnout_State(15) = Straight then
+                     Block_Driver.Set_Cab_And_Polarity(23, Train_Info.Cab, Train_Info.Heading);
+                  --grab block 14 if turnout 15 is turned
+                  elsif Turnouts.Get_Turnout_State(15) = Turned then
+                     Block_Driver.Set_Cab_And_Polarity(14, Train_Info.Cab, Train_Info.Heading);
+                  end if;
+
+               when 39 => --we already own block 14
+                  --grab block 13
+                  Block_Driver.Set_Cab_And_Polarity(13, Train_Info.Cab, Train_Info.Heading);
+
+               when 37 => --we already own block 13
+                  --grab block 12
+                  Block_Driver.Set_Cab_And_Polarity(12, Train_Info.Cab, Train_Info.Heading);
+
+               when others =>
+                  null;
+
+            end case;
          end if;
 
       elsif (Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = Request) then
@@ -224,6 +275,64 @@ package body Trains is
             Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
          elsif (Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 3) then
             Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
+         end if;
+
+          -- check if we need to acquire blocks, if so grab them depending on sensor and turnout
+         if Train_Info.Heading = Normal_Pol then
+            case Request is
+               when 37 => --we owned block 12, turn it off
+                  Block_Driver.Set_Cab_And_Polarity(12, 0, Train_Info.Heading);
+               when 39 =>
+                  --if turnout 14 is straight we owned block 13
+	          if Turnouts.Get_Turnout_State(14) = Straight then
+                     Block_Driver.Set_Cab_And_Polarity(13, 0, Train_Info.Heading);
+                  --if turnout 14 is turned we owned block 6
+                  elsif Turnouts.Get_Turnout_State(14) = Turned then
+                     Block_Driver.Set_Cab_And_Polarity(6, 0, Train_Info.Heading);
+                  end if;
+
+               when 41 =>
+                  --if turnout 15 is straight we owned block 14
+	          if Turnouts.Get_Turnout_State(15) = Straight then
+                     Block_Driver.Set_Cab_And_Polarity(14, 0, Train_Info.Heading);
+                  --if turnout 15 is turned we owned block 23
+                  elsif Turnouts.Get_Turnout_State(15) = Turned then
+                     Block_Driver.Set_Cab_And_Polarity(23, 0, Train_Info.Heading);
+                  end if;
+
+               when 43 => --we owned block 15 turn it off
+                  Block_Driver.Set_Cab_And_Polarity(15, 0, Train_Info.Heading);
+
+               when 48 | 47 => --we owned block 16 turn it off
+                  Block_Driver.Set_Cab_And_Polarity(16, 0, Train_Info.Heading);
+
+               when 49 =>
+                  --if turnout 18 is straight we owned block 17
+	          if Turnouts.Get_Turnout_State(18) = Straight then
+                     Block_Driver.Set_Cab_And_Polarity(17, 0, Train_Info.Heading);
+                  --if turnout 18 is turned we owned block 9
+                  elsif Turnouts.Get_Turnout_State(18) = Turned then
+                     Block_Driver.Set_Cab_And_Polarity(9, 0, Train_Info.Heading);
+                  end if;
+
+               when 51 =>
+                  --if turnout 19 is straight we owned block 18
+	          if Turnouts.Get_Turnout_State(15) = Straight then
+                     Block_Driver.Set_Cab_And_Polarity(18, 0, Train_Info.Heading);
+                  --if turnout 19 is turned we owned block 23
+                  elsif Turnouts.Get_Turnout_State(15) = Turned then
+                     Block_Driver.Set_Cab_And_Polarity(23, 0, Train_Info.Heading);
+                  end if;
+
+               when 21 => --we owned block 19 turn it off
+                    Block_Driver.Set_Cab_And_Polarity(19, 0, Train_Info.Heading);
+
+               when others =>
+                  null;
+            end case;
+         else
+            --Reverse POlarity
+            null;
          end if;
       end if;
 
