@@ -18,9 +18,11 @@ private
       record
          Sensor_Front : Integer;
          Sensor_Back  : Integer;
+         On_Sensor : Integer;
          Sensors_In_Route : Route;
          Sensor_Next : Integer;
          Route_Marker : Integer;
+         Route_Marker_Back : Integer;
          Heading : Polarity_Type;
          Cab : Cab_Type;
       end record;

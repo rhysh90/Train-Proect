@@ -82,6 +82,8 @@ package body Trains is
       S.Acquire;
       Train_Info.Sensors_In_Route := Sensors;
       Train_Info.Route_Marker := 1;
+      Train_Info.Route_Marker_Back := 1;
+      Train_Info.On_Sensor := 0;
       S.Release;
    end Set_Route;
 
@@ -116,14 +118,17 @@ package body Trains is
       state : Turnout_Pos;
    begin
       S.Acquire;
+      if (Train_Info.On_Sensor = Request) then
+         Train_Info.On_Sensor := 0;
 
       --Check if sensor hit was before a turnout and if that turnout is a part of your route
-      if (Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = Request) then
-         Ada.Text_Io.Put_Line(" Sensor " & Request'Img & " was hit");
+      elsif (Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = Request) then
+         Train_Info.On_Sensor := Request;
+         Ada.Text_Io.Put_Line(" Sensor " & Request'Img & " was hit by the FRONT");
          Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
          if (Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = 1) then
             Train_Info.Route_Marker := 1;
-            else if (Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = 2) then
+         elsif (Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = 2) then
                --Straight the next turnout
 	       state := Turnouts.Get_Turnout_State(Get_Turnout(Request));
                if (state = Turned) then
@@ -133,18 +138,17 @@ package body Trains is
                   Ada.Text_IO.Put_Line("TURNOUT IS ALREADY STRAIGHT");
                end if;
                Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
-               else if (Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = 3) then
-                  --Turn the next turnout
-		  state := Turnouts.Get_Turnout_State(Get_Turnout(Request));
-                  if (state = Turned) then
+         elsif (Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = 3) then
+               --Turn the next turnout
+		state := Turnouts.Get_Turnout_State(Get_Turnout(Request));
+                if (state = Turned) then
                      Turnout_Driver.Set_Turn(Get_Turnout(Request));
                      Ada.Text_IO.Put_Line("TURNOUT IS NOW TURNED do some timing here, stop the train for abit");
-                  else
+                else
                      Ada.Text_IO.Put_Line("TURNOUT IS ALREADY TURNED");
-                  end if;
-                  Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
-               end if;
-            end if;
+                end if;
+                Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
+
          end if;
 
          -- check if we need to acquire blocks, if so grab them depending on sensor and turnout
@@ -209,7 +213,20 @@ package body Trains is
             --Reverse POlarity
             null;
          end if;
+
+      elsif (Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = Request) then
+         Train_Info.On_Sensor := Request;
+         Ada.Text_Io.Put_Line(" Sensor " & Request'Img & " was hit by the BACK");
+         Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
+         if (Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 1) then
+            Train_Info.Route_Marker_Back := 1;
+	 elsif (Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 2) then
+            Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
+         elsif (Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 3) then
+            Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
+         end if;
       end if;
+
       S.Release;
    end Process_Sensor_Event;
 
