@@ -30,7 +30,7 @@ with Interrupt_Hdlr;  -- 2.1
 with Slogger;  -- 2.2
 
 with Fat_Controller, Trains, Turnouts, Blocks;
-use Trains, Turnouts, Blocks;
+use Turnouts, Blocks;
 
 procedure main is
    --package Iio is new Ada.Text_Io.Integer_Io(Integer);
@@ -41,9 +41,7 @@ procedure main is
    --TRAIN PROJECT CODE--
 
    -- TRAIN OBJECTS --
-   Train1 : Train_Access := Make(27, 25);
-   Train2 : Train_Access := Make(23, 35); --starting locations
-   Train3 : Train_Access := Make(4, 3);
+
 
    -- vars and code for dio192: -------
    --
@@ -374,12 +372,11 @@ begin
    Interrupt_Hdlr.Install; -- calls Halls2
 
    --intialize objects
-   Fat_Controller.Init(Train1, Train2, Train3);
    Turnouts.Init;
    Blocks.Init;
+   Fat_Controller.Init;
 
    --TEST TEST TEST TEST TEST
-   Set_Route(Train2.all, (35, 41, 43, 1, 1, 45, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
    Dialog_Loop;
 
 end main;

@@ -34,6 +34,15 @@ package body Turnouts is
       return Pos;
    end Get_Turnout_State;
 
+   function Get_Turnout(T : in Integer) return Turnout_Id is
+      Turnout : Turnout_Id;
+   begin
+      S.Acquire;
+      Turnout := Turnout_At_Sensor(T);
+      S.Release;
+      return Turnout;
+   end Get_Turnout;
+
    procedure Init is
    begin
       S.Acquire;

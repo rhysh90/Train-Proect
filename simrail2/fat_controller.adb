@@ -1,12 +1,15 @@
 with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO, Ada.Integer_Text_IO, Trains;
-use Projdefs, Ada.Real_Time, Trains;
+use Projdefs, Ada.Real_Time;
 
 package body Fat_Controller is
 
    T0 : Time;
-   Train1, Train2, Train3 : Train_Access;
 
    BuffSize : constant := 10;
+
+   package Train1 is new Trains;
+   package Train2 is new Trains;
+   package Train3 is new Trains;
 
    type Circular_Buffer is array (1..BuffSize) of Request_Type;
 
@@ -37,6 +40,13 @@ package body Fat_Controller is
    task Worker_Thread;
    ------------
 
+   procedure Init is
+   begin
+      Train1.Set_Route((27, 29, 31, 33, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
+      Train2.Set_Route((35, 39, 45, 41, 43, 45, 47, 49, 51, 15, 17, 19, 21, 23, 1, 1, 1, 1, 1, 1));
+      Train3.Set_Route((1, 1, 1, 1, 1, 45, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
+   end Init;
+
    procedure Pass_Event(
          Request: in Request_Type) is
    begin
@@ -61,14 +71,6 @@ package body Fat_Controller is
       T0 := Clock;
    end Init_Time_Stamp;
 
-   procedure Init (T1 : in out Train_Access; T2 : in out Train_Access; T3 : in out Train_Access) is
-   begin
-      Train1 := T1;
-      Train2 := T2;
-      Train3 := T3;
-      Init_Time_Stamp;
-   end Init;
-
 
    procedure Sporadic_Op(Request : in Request_Type) is
    begin
@@ -76,9 +78,9 @@ package body Fat_Controller is
       --Ada.Text_Io.Put_Line(" Req=" & Request'Img & " starting");
       --Exec_Load.Eat(1.0); NOT REQUIRED
       --Pass senor request to the correct train controller
-      Hit_Sensor(Train1.all, Request);
-      Hit_Sensor(Train2.all, Request);
-      Hit_Sensor(Train3.all, Request);
+      Train1.Hit_Sensor(Request);
+      Train2.Hit_Sensor(Request);
+      Train3.Hit_Sensor(Request);
 
       --TODO get the rest and check them too
 
