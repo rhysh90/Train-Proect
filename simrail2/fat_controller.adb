@@ -1,5 +1,5 @@
-with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO, Ada.Integer_Text_IO, Trains;
-use Projdefs, Ada.Real_Time;
+with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO, Ada.Integer_Text_IO, Trains, Raildefs;
+use Projdefs, Ada.Real_Time, Raildefs;
 
 package body Fat_Controller is
 
@@ -42,9 +42,17 @@ package body Fat_Controller is
 
    procedure Init is
    begin
-      Train1.Set_Route((27, 29, 31, 33, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
-      Train2.Set_Route((35, 39, 45, 41, 43, 45, 47, 49, 51, 15, 17, 19, 21, 23, 1, 1, 1, 1, 1, 1));
-      Train3.Set_Route((1, 1, 1, 1, 1, 45, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
+      Train1.Set_Route((27, 29, 31, 33, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
+      Train2.Set_Route((35, 2, 37, 2, 39, 2, 41, 43, 45, 2, 47, 2, 49, 2, 51, 15, 17, 19, 21, 23, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
+      Train3.Set_Route((4, 12, 14, 16, 26, 28, 30, 32, 34, 39, 41, 43, 45, 48, 50, 56, 58, 35, 23, 21, 19, 17, 15, 51, 53, 55, 61, 63, 1, 1, 1, 1, 1, 1, 1));
+
+      Train1.Set_Cab(1);
+      Train2.Set_Cab(2);
+      Train3.Set_Cab(3);
+
+      Train1.Set_Heading(Normal_Pol);
+      Train2.Set_Heading(Normal_Pol);
+      Train3.Set_Heading(Normal_Pol);
    end Init;
 
    procedure Pass_Event(

@@ -1,28 +1,7 @@
-with Unsigned_Types, Dio192defs, IO_Ports;
+with Unsigned_Types, Dio192defs, IO_Ports, Turnouts;
 use Unsigned_Types;
 package body turnout_driver is
 
-   protected type Lock is
-      entry Acquire;
-      procedure Release;
-   private
-      Available : Boolean := True;
-   end Lock;
-
-   protected body Lock is
-      entry Acquire when Available is
-      begin
-         Available := False;
-      end Acquire;
-
-      procedure Release is
-      begin
-         Available := True;
-      end Release;
-   end Lock;
-
-
-   S : Lock;
    Turnout_Drive_Array : array (Raildefs.Turnout_Idx range 0..2) of Unsigned_8;
    Tn_Drives : Unsigned_8;
 
@@ -49,6 +28,9 @@ package body turnout_driver is
       Value := Value OR Tn_Drives;
       Turnout_Drive_Array(Index) := Value;
       IO_Ports.Write_IO_Port(Turnout_Drive_Addr(Index), Turnout_Drive_Array(Index));
+
+      --new stuff
+      Turnouts.Set_Turnout_State(T, Turned);
    end Set_Turn;
 
    ------------------
@@ -74,6 +56,9 @@ package body turnout_driver is
       Value := Value AND Tn_Drives;
       Turnout_Drive_Array(Index) := Value;
       IO_Ports.Write_IO_Port(Turnout_Drive_Addr(Index), Turnout_Drive_Array(Index));
+
+      --new stuff
+      Turnouts.Set_Turnout_State(T, Straight);
    end Set_Straight;
 
 end turnout_driver;

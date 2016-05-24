@@ -1,3 +1,7 @@
+with Raildefs; use Raildefs;
+with Ada.Integer_Text_IO;
+with Ada.Text_IO;
+
 package body Blocks is
 
     protected type Lock is
@@ -33,6 +37,38 @@ package body Blocks is
       S.Release;
       return State;
    end Get_Block_State;
+
+   --------------
+   -- Get_Block--
+   --------------
+   --STILL NEED TO DO THIS
+   function Get_Block ( Sensor : in Integer; P : in Polarity_Type) return Block_Id is
+      Block : Block_Id := 1;
+      begin
+         S.Acquire;
+         if P = Normal_Pol then
+         --Block := Block_After_Sensor_Normal(Sensor);
+         null;
+         else
+         --Block := Block_After_Sensor_Reverse(Sensor);
+         null;
+         end if;
+         S.Release;
+         return Block;
+      end Get_Block;
+
+   --------------------
+   -- Set_Block_State--
+   --------------------
+   procedure Set_Block_State (B : in Block_Id; State : in Boolean) is
+   begin
+      S.Acquire;
+      Block(B) := State;
+      Ada.Integer_Text_IO.Put(Integer(B));
+      Ada.Text_IO.Put_Line(" BLOCK TAKEN");
+      S.Release;
+   end Set_Block_State;
+
 
    procedure Init is
    begin

@@ -1,3 +1,5 @@
+with Ada.Text_IO, Ada.Integer_Text_IO;
+
 package body Turnouts is
 
    protected type Lock is
@@ -42,6 +44,18 @@ package body Turnouts is
       S.Release;
       return Turnout;
    end Get_Turnout;
+
+   ----------------------
+   -- Set_Turnout_State--
+   ----------------------
+   procedure Set_Turnout_State (T : in Turnout_Id; State : in Turnout_Pos) is
+   begin
+      S.Acquire;
+      Turnout(T) := State;
+      Ada.Integer_Text_IO.Put(Integer(T));
+      Ada.Text_IO.Put_Line(" TURNOUT SET");
+      S.Release;
+   end Set_Turnout_State;
 
    procedure Init is
    begin
