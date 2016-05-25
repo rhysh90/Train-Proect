@@ -65,19 +65,23 @@ package body Turnouts is
         	when 37 => Turnout := Turnout_Id(13);
         	when 39 => Turnout := Turnout_Id(15);
         	when 45 => Turnout := Turnout_Id(16);
-       		when 47 => Turnout := Turnout_Id(17);
-         	when 49 => Turnout := Turnout_Id(19);
+                when 47 => Turnout := Turnout_Id(17);
+                when 48 => Turnout := Turnout_Id(16);
+                when 49 => Turnout := Turnout_Id(19);
+                when 53 => Turnout := Turnout_Id(19);
          	when others => null;
         end case;
 
       else
          case T is
+                when 58 => Turnout := Turnout_Id(12);
          	when 51 => Turnout := Turnout_Id(19);
          	when 49 => Turnout := Turnout_Id(18);
          	when 47 => Turnout := Turnout_Id(16);
          	when 41 => Turnout := Turnout_Id(15);
          	when 39 => Turnout := Turnout_Id(14);
-         	when 37 => Turnout := Turnout_Id(12);
+                when 37 => Turnout := Turnout_Id(12);
+                when 63 => Turnout := Turnout_Id(15);
          	when others => null;
          end case;
       end if;

@@ -1,5 +1,5 @@
-with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO, Ada.Integer_Text_IO, Trains, Raildefs;
-use Projdefs, Ada.Real_Time, Raildefs;
+with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO, Ada.Integer_Text_IO, Trains, Raildefs, Dac_Driver, UNsigned_Types, Block_Driver;
+use Projdefs, Ada.Real_Time, Raildefs, Unsigned_Types;
 
 package body Fat_Controller is
 
@@ -42,11 +42,11 @@ package body Fat_Controller is
 
    procedure Init is
    begin
-      Train1.Set_Route((27, 29, 31, 33, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+      Train1.Set_Route((1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
                        (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
-      Train2.Set_Route((35, 2, 37, 2, 39, 2, 41, 43, 45, 2, 47, 2, 49, 2, 51, 15, 17, 19, 21, 23, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-      	               (23, 21, 19, 17, 15, 51, 2, 49, 2, 47, 2, 45, 43, 41, 2, 39, 2, 37, 2, 35, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
-      Train3.Set_Route((4, 12, 14, 16, 26, 28, 30, 32, 34, 39, 41, 43, 45, 48, 50, 56, 58, 35, 23, 21, 19, 17, 15, 51, 53, 55, 61, 63, 1, 1, 1, 1, 1, 1, 1),
+      Train2.Set_Route((1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+      	               (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
+      Train3.Set_Route((1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
                        (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
 
       Train1.Set_Cab(1);
@@ -56,7 +56,61 @@ package body Fat_Controller is
       Train1.Set_Heading(Normal_Pol);
       Train2.Set_Heading(Normal_Pol);
       Train3.Set_Heading(Normal_Pol);
+
+      Train1.Set_Facing(Normal_Pol);
+      Train2.Set_Facing(Normal_Pol);
+      Train3.Set_Facing(Normal_Pol);
    end Init;
+
+   procedure Start_Oval (Train : in Integer; Heading : in Polarity_Type) is
+   begin
+      if Train = 1 then
+         null;
+      elsif Train = 2 then
+         Train2.Set_Route((35, 2, 37, 2, 39, 2, 41, 43, 45, 2, 47, 2, 49, 2, 51, 15, 17, 19, 21, 23, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+                          (23, 21, 19, 17, 15, 51, 2, 49, 2, 47, 2, 45, 43, 41, 2, 39, 2, 37, 2, 35, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
+         Train2.Set_Heading(Heading);
+         Block_Driver.Set_Cab_And_Polarity(12, 2, Heading);
+         Dac_Driver.Set_Voltage(Dac_Id(2), Unsigned_8((Character'pos ('9') - 48) * 27));
+      elsif Train = 3 then
+         null;
+      end if;
+   end Start_Oval;
+
+    procedure Start_Figure_Eight (Train : in Integer; Heading : in Polarity_Type) is
+   begin
+      if Train = 1 then
+         null;
+      elsif Train = 2 then
+         Train2.Set_Route((35, 3, 58, 56, 50, 48, 3, 45, 43, 41, 3, 63, 61, 55, 53, 3, 51, 15, 17, 19, 21, 23, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+                          (23, 21, 19, 17, 15, 51, 3, 53, 55, 61, 63, 3, 41, 43, 45, 3, 48, 50, 56, 58, 3, 35, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
+         Train2.Set_Heading(Heading);
+         Block_Driver.Set_Cab_And_Polarity(12, 2, Heading);
+         Dac_Driver.Set_Voltage(Dac_Id(2), Unsigned_8((Character'pos ('9') - 48) * 27));
+      elsif Train = 3 then
+         null;
+      end if;
+   end Start_Figure_Eight;
+
+   procedure Reverse_Direction (Train : in Integer) is
+      --temp : Integer;
+   begin
+      if Train = 1 then
+         null;
+      elsif Train = 2 then
+         Dac_Driver.Set_Voltage(Dac_Id(2), Unsigned_8((Character'pos ('0') - 48) * 27));
+         if Train2.Get_Heading = Normal_Pol then
+            Train2.Set_Heading(Reverse_Pol);
+         else
+            Train2.Set_Heading(Normal_Pol);
+         end if;
+         Block_Driver.Set_Cab_And_Polarity(12, 2, Train2.Get_Heading);
+
+      elsif Train = 3 then
+         null;
+      end if;
+   end Reverse_Direction;
+
 
    procedure Pass_Event(
          Request: in Request_Type) is

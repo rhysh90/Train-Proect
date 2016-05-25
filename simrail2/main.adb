@@ -111,40 +111,25 @@ procedure main is
       --      Unsigned(Tn_Drives(Ndx)) );
    end Pull;
 
-   -------- Oval ------------------------
+   ---------------- Oval ------------------------
    --
    -- p will set the direction around the oval
    -- sets up an inner oval track for train 2
    ----------------------------------------------
    procedure Oval (Pol : in Polarity_Type) is
    begin
-      --move other trains off the oval (can make this later)
-      --move train 2 into the oval
-      --set up the oval for train 2
-
-      --straighten turnouts in oval:
-      turnout_driver.Set_Straight(Raildefs.Turnout_Id(12));
-      turnout_driver.Set_Straight(Raildefs.Turnout_Id(13));
-      turnout_driver.Set_Straight(Raildefs.Turnout_Id(14));
-      turnout_driver.Set_Straight(Raildefs.Turnout_Id(15));
-      turnout_driver.Set_Straight(Raildefs.Turnout_Id(16));
-      turnout_driver.Set_Straight(Raildefs.Turnout_Id(17));
-      turnout_driver.Set_Straight(Raildefs.Turnout_Id(18));
-      turnout_driver.Set_Straight(Raildefs.Turnout_Id(19));
-
-      -- set blocks for cab 2
-      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(12), Raildefs.Cab_Type(2), Pol);
-      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(13), Raildefs.Cab_Type(2), Pol);
-      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(14), Raildefs.Cab_Type(2), Pol);
-      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(15), Raildefs.Cab_Type(2), Pol);
-      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(16), Raildefs.Cab_Type(2), Pol);
-      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(17), Raildefs.Cab_Type(2), Pol);
-      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(18), Raildefs.Cab_Type(2), Pol);
-      block_driver.Set_Cab_And_Polarity(Raildefs.Block_Id(19), Raildefs.Cab_Type(2), Pol);
-
-      --run train 2 around the oval
-
+      Fat_Controller.Start_Oval(2, Pol);
    end Oval;
+
+   -------- Figure Eight ------------------------
+   --
+   -- p will set the direction around the oval
+   -- sets up an inner figure eight track for train 2
+   ----------------------------------------------
+   procedure Figure_Eight (Pol : in Polarity_Type) is
+   begin
+      Fat_Controller.Start_Figure_Eight(2, Pol);
+   end Figure_Eight;
 
    -- for Dialog_Loop: --
 
@@ -278,6 +263,40 @@ procedure main is
       Oval(Polarity);
    end o_command;
 
+    -------- e_Command ------------------------
+   -- User syntax:  e{+/-}
+   --
+   -- calls the Figure_Eight function
+   ----------------------------------------------
+   procedure e_command is
+      Polarity : Polarity_Type;
+      C        : Character;
+   begin
+      Get_Char (W_In, C);
+      if C = '+' then
+      	Polarity := Normal_Pol;
+      elsif C = '-' then
+      	Polarity := Reverse_Pol;      -- THIS IS GOOD ONE
+      else
+      	Number := 0;
+      	Put_Line (W_In, "command ignored");
+      	delay 1.0;
+      	return;
+      end if;
+      Number := 0;
+      Figure_Eight(Polarity);
+   end e_command;
+
+   -------- r_Command ------------------------
+   -- User syntax:  r
+   --
+   -- reverses the oval/figure eight
+   ----------------------------------------------
+   procedure r_command is
+   begin
+      Fat_Controller.Reverse_Direction(2);
+   end r_command;
+
    -------- Bell_Command ------------------------
    -- User syntax:  nB
    -- where n is already read
@@ -351,6 +370,12 @@ procedure main is
 
             when 'H' =>
                Horn_command;
+
+            when 'r' =>
+               r_command;
+
+            when 'e' =>
+               e_command;
 
             when others =>
                null;
