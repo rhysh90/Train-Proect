@@ -8,7 +8,7 @@ package Turnouts is
 
    function Get_Turnout_State(T : in Turnout_Id) return Turnout_Pos;
 
-   function Get_Turnout(T : in Integer) return Turnout_Id;
+   function Get_Turnout(T : in Integer; Heading : in Polarity_Type) return Turnout_Id;
 
    procedure Set_Turnout_State (T : in Turnout_Id; State : in Turnout_Pos);
 

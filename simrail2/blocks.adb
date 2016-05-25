@@ -65,7 +65,11 @@ package body Blocks is
       S.Acquire;
       Block(B) := State;
       Ada.Integer_Text_IO.Put(Integer(B));
-      Ada.Text_IO.Put_Line(" BLOCK TAKEN");
+      if Integer(B) = 0 then
+         Ada.Text_IO.Put_Line(" BLOCK REMOVED");
+      else
+         Ada.Text_IO.Put_Line(" BLOCK TAKEN");
+      end if;
       S.Release;
    end Set_Block_State;
 

@@ -30,7 +30,7 @@ package body turnout_driver is
       IO_Ports.Write_IO_Port(Turnout_Drive_Addr(Index), Turnout_Drive_Array(Index));
 
       --new stuff
-      Turnouts.Set_Turnout_State(T, Turned);
+      --Turnouts.Set_Turnout_State(T, Turned);
    end Set_Turn;
 
    ------------------
@@ -58,7 +58,7 @@ package body turnout_driver is
       IO_Ports.Write_IO_Port(Turnout_Drive_Addr(Index), Turnout_Drive_Array(Index));
 
       --new stuff
-      Turnouts.Set_Turnout_State(T, Straight);
+      --Turnouts.Set_Turnout_State(T, Straight);
    end Set_Straight;
 
 end turnout_driver;

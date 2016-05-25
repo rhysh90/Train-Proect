@@ -228,7 +228,7 @@ procedure main is
    begin
       if Number in 1..19 then
          Turnout := Turnout_Id(Number);
-         turnout_driver.Set_Turn(Turnout);
+         Set_Turnout_State (Turnout, Turned);
       else
          Put_Line (W_In, "command ignored");     --COMAND IGNORED
          delay 1.0;
@@ -246,7 +246,7 @@ procedure main is
    begin
       if Number in 1..19 then
          Turnout := Turnout_Id(Number);
-         turnout_driver.Set_Straight(Turnout);
+         Set_Turnout_State (Turnout, Straight);
       else
          Put_Line (W_In, "command ignored");     --COMAND IGNORED
          delay 1.0;

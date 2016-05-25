@@ -1,4 +1,4 @@
-with Ada.Text_IO, Ada.Integer_Text_IO;
+with Ada.Text_IO, Ada.Integer_Text_IO, turnout_driver;
 
 package body Turnouts is
 
@@ -32,15 +32,55 @@ package body Turnouts is
    begin
       S.Acquire;
       Pos := Turnout(T);
+      -- Special Considerations for turnouts which share an entry point sensor --
+         if (T = 13) then
+         	if (Turnout(13) = Turned or else Turnout(14) = Turned) then
+            		Pos := Turned;
+            	end if;
+         elsif (T = 14) then
+            	if (Turnout(13) = Turned or else Turnout(14) = Turned) then
+            		Pos := Turned;
+           	 end if;
+         elsif (T = 17) then
+            	if (Turnout(17) = Turned or else Turnout(18) = Turned) then
+            		Pos := Turned;
+            	end if;
+         elsif (T = 18) then
+            	if (Turnout(17) = Turned or else Turnout(18) = Turned) then
+            		Pos := Turned;
+            	end if;
+         end if;
       S.Release;
       return Pos;
    end Get_Turnout_State;
 
-   function Get_Turnout(T : in Integer) return Turnout_Id is
+   function Get_Turnout(T : in Integer; Heading : in Polarity_Type) return Turnout_Id is
       Turnout : Turnout_Id;
    begin
       S.Acquire;
-      Turnout := Turnout_At_Sensor(T);
+      --Turnout := Turnout_At_Sensor(T);
+      if (Heading = Normal_Pol) then
+      	case T is
+        	when 35 => Turnout := Turnout_Id(12);
+        	when 37 => Turnout := Turnout_Id(13);
+        	when 39 => Turnout := Turnout_Id(15);
+        	when 45 => Turnout := Turnout_Id(16);
+       		when 47 => Turnout := Turnout_Id(17);
+         	when 49 => Turnout := Turnout_Id(19);
+         	when others => null;
+        end case;
+
+      else
+         case T is
+         	when 51 => Turnout := Turnout_Id(19);
+         	when 49 => Turnout := Turnout_Id(18);
+         	when 47 => Turnout := Turnout_Id(16);
+         	when 41 => Turnout := Turnout_Id(15);
+         	when 39 => Turnout := Turnout_Id(14);
+         	when 37 => Turnout := Turnout_Id(12);
+         	when others => null;
+         end case;
+      end if;
       S.Release;
       return Turnout;
    end Get_Turnout;
@@ -51,6 +91,26 @@ package body Turnouts is
    procedure Set_Turnout_State (T : in Turnout_Id; State : in Turnout_Pos) is
    begin
       S.Acquire;
+      if (State = Straight) then
+         turnout_driver.Set_Straight(T);
+         -- Special Considerations for turnouts which share an entry point sensor --
+         if (T = 13) then
+            turnout_driver.Set_Straight(Turnout_Id(14));
+            Turnout(14) := State;
+         elsif (T = 14) then
+            turnout_driver.Set_Straight(Turnout_Id(13));
+            Turnout(13) := State;
+         elsif (T = 17) then
+            turnout_driver.Set_Straight(Turnout_Id(18));
+            Turnout(18) := State;
+         elsif (T = 18) then
+            turnout_driver.Set_Straight(Turnout_Id(17));
+            Turnout(17) := State;
+         end if;
+      else
+        turnout_driver.Set_Turn(T);
+      end if;
+
       Turnout(T) := State;
       Ada.Integer_Text_IO.Put(Integer(T));
       Ada.Text_IO.Put_Line(" TURNOUT SET");

@@ -5,7 +5,7 @@ generic package Trains is
 
    type Route is array(1..35) of Request_Type;
 
-   procedure Set_Route ( Sensors : Route);
+   procedure Set_Route ( Sensors : Route; Sensors_Reverse : Route);
 
    procedure Set_Cab ( Cab : Cab_Type );
 
@@ -13,13 +13,23 @@ generic package Trains is
 
    procedure Hit_Sensor ( Sensor_Hit : Integer);
 
+   procedure Next_Route_Sensor ( Sensor : Integer);
+
+   procedure Process_Special_State ( Sensor : Integer );
+
+   procedure Process_Front_Hit (Sensor : in Integer);
+
+   procedure Process_Back_Hit (Sensor : in Integer);
+
 private
    type Train is tagged
       record
          Sensor_Front : Integer;
          Sensor_Back  : Integer;
-         On_Sensor : Integer;
+         On_Sensor_Front : Integer;
+         On_Sensor_Back : Integer;
          Sensors_In_Route : Route;
+         Sensors_In_Route_Reverse : Route;
          Sensor_Next : Integer;
          Route_Marker : Integer;
          Route_Marker_Back : Integer;
