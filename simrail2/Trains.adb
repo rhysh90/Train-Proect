@@ -2,6 +2,15 @@ with Ada.Integer_Text_IO, Ada.Text_IO, Turnouts, raildefs, Blocks, Turnout_Drive
 with dac_driver, Exec_Load, Unsigned_Types;
 use raildefs, Turnouts, Blocks, Unsigned_Types;
 
+-----------------------------   Trains   ---------------------------------------
+-- The Trains package provides a virtualisation of the trains which exist
+-- in the train set. It is responsible for managing the location of a train
+-- within a set route. It manages the the heading, and leading end of the train
+-- and is responsible for identifying whether or not sensor events passed in
+-- from the fat controller are meant for it and if so processing them.
+--
+--------------------------------------------------------------------------------
+
 package body Trains is
 
    Train_Info : Train;
@@ -65,18 +74,23 @@ package body Trains is
       end Remove;
    end Buffer;
 
-   ---------------------
-   --   Hit Sensor    --
-   ---------------------
+   ------------------   Hit_Sensor    ------------------------------------------
+   -- Adds a sensor event to this trains circular buffer
+   --
+   -- param Sensor_Hit : in Integer     - The sensor event to be added
+   -----------------------------------------------------------------------------
 
    procedure Hit_Sensor ( Sensor_Hit : Integer) is
    begin
        Buffer.Add(Sensor_Hit);
    end Hit_Sensor;
 
-   ---------------------
-   --    Set Route    --
-   ---------------------
+   -------------------   Set_Route    ------------------------------------------
+   -- Sets the route for this train
+   --
+   -- param Sensors : in Route     - The forward version of the route to be set
+   -- param Sensors_Reverse : in Route  - The reverse version of the route to be set
+   -----------------------------------------------------------------------------
 
    procedure Set_Route ( Sensors : Route; Sensors_Reverse : Route) is
    begin
@@ -90,9 +104,11 @@ package body Trains is
       S.Release;
    end Set_Route;
 
-   ---------------------
-   --    Set Cab      --
-   ---------------------
+   -------------------   Set_Cab    --------------------------------------------
+   -- Sets the Cab for this train
+   --
+   -- param Cab : in Cab_Type     - The cab to be set as this trains
+   -----------------------------------------------------------------------------
 
    procedure Set_Cab ( Cab : Cab_Type) is
    begin
@@ -101,9 +117,11 @@ package body Trains is
       S.Release;
    end Set_Cab;
 
-   -----------------------
-   --    Set Heading    --
-   -----------------------
+   -------------------   Set_Heading    --------------------------------------------
+   -- Sets the Heading for this train
+   --
+   -- param Heading : in Polarity_Type    - The direction to be set as this trains
+   ----------------------------------------------------------------------------------
 
    procedure Set_Heading ( Heading : Polarity_Type ) is
    begin
@@ -112,9 +130,11 @@ package body Trains is
       S.Release;
    end Set_Heading;
 
-   -----------------------
-   --    Set Facing     --
-   -----------------------
+   -------------------   Set_Facing    --------------------------------------------
+   -- Sets the Facing field for this train
+   --
+   -- param Heading : in Polarity_Type    - The direction to be set as this trains
+   ----------------------------------------------------------------------------------
 
    procedure Set_Facing ( Facing : Polarity_Type ) is
    begin
@@ -123,9 +143,11 @@ package body Trains is
       S.Release;
    end Set_Facing;
 
-   -----------------------
-   --    Get Heading    --
-   -----------------------
+   -------------------   Get_Heading    --------------------------------------------
+   -- Returns the Heading for this train
+   --
+   -- return Polarity_Type    - The heading of this train
+   ----------------------------------------------------------------------------------
 
    function Get_Heading return POlarity_Type is
       Heading : Polarity_Type;
@@ -136,9 +158,12 @@ package body Trains is
       return Heading;
    end Get_Heading;
 
-   --------------------------------
-   --    Process_Sensor_Event    --
-   --------------------------------
+   -------------------   Process_Sensor_Event    ------------------------------------
+   -- Checks if a the next sensor event in its buffer represents a new sensor
+   -- being hit. If so the event is processed, if not it is ignored.
+   --
+   -- param Request : in Request_Type	- The next sensor event in the buffer
+   ----------------------------------------------------------------------------------
 
    procedure Process_Sensor_Event(Request : in Request_Type) is
    begin
@@ -157,6 +182,13 @@ package body Trains is
       S.Release;
    end Process_Sensor_Event;
 
+
+   -------------------   Next_Route_Sensor    ---------------------------------------
+   -- Checks if the sensor hit is meant for this train. That is to say, it
+   -- checks if the sensor hit is the next sensor in this trains route.
+   --
+   -- param Sensor : in Integer	- The next sensor event in the buffer
+   ----------------------------------------------------------------------------------
 
    --ONLY SHOULD GET CALLED WHEN A LOCK HAS ALREADY BEEN ACQUIRED--
    procedure Next_Route_Sensor ( Sensor : Integer ) is
@@ -222,6 +254,12 @@ package body Trains is
       end if;
    end Next_Route_Sensor;
 
+   -------------------   Process_Special_State    -----------------------------------
+   -- Checks if the next field in the trains route is a special instruction such as
+   -- stright or turn the next turnout. This also carries out the the instruction.
+   --
+   -- param Sensor : in Integer	- The next member of the trains route
+   ----------------------------------------------------------------------------------
 
    procedure Process_Special_State ( Sensor : Integer ) is
       state : Turnout_Pos;
@@ -295,6 +333,12 @@ package body Trains is
 
    end Process_Special_State;
 
+   -------------------   Wait_For_Block    ------------------------------------------
+   -- Waits for a given block to be free before the train will move forward
+   --
+   -- param Block : in Integer	- The block to be waited for
+   ----------------------------------------------------------------------------------
+
    procedure Wait_For_Block (Block : in Integer) is
       Block_Free : Boolean;
    begin
@@ -310,6 +354,13 @@ package body Trains is
          end if;
       end loop;
    end Wait_For_Block;
+
+   -------------------   Process_Front_Hit    ------------------------------------------
+   -- Determines what action needs to be carried out when the front of the train hits
+   -- a particular sensor and carries it out.
+   --
+   -- param Sensor : in Integer	- The sensor which hit the front of the train
+   -------------------------------------------------------------------------------------
 
       procedure Process_Front_Hit (Sensor : in Integer) is
    begin
@@ -503,6 +554,13 @@ package body Trains is
             end case;
       end if;
    end Process_Front_Hit;
+
+   -------------------   Process_Back_Hit    ------------------------------------------
+   -- Determines what action needs to be carried out when the back of the train hits
+   -- a particular sensor and carries it out.
+   --
+   -- param Sensor : in Integer	- The sensor which hit the back of the train
+   -------------------------------------------------------------------------------------
 
    procedure Process_Back_Hit (Sensor : in Integer) is
    begin

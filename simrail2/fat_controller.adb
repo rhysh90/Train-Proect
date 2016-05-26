@@ -1,6 +1,15 @@
 with Projdefs, Ada.Text_Io, Exec_Load, Ada.Real_Time, Ada.Float_Text_IO, Ada.Integer_Text_IO, Trains, Raildefs, Dac_Driver, UNsigned_Types, Block_Driver;
 use Projdefs, Ada.Real_Time, Raildefs, Unsigned_Types;
 
+
+-------------------------   Fat_Controller   -----------------------------------
+-- The Fat Controller package manages the three trains that exist within the
+-- system. It contains a circular buffer which receives all sensor events and
+-- passes them on to the trains. It also passes commands from the user to the
+-- trains so that their routes can be set.
+--
+--------------------------------------------------------------------------------
+
 package body Fat_Controller is
 
    T0 : Time;
@@ -40,6 +49,11 @@ package body Fat_Controller is
    task Worker_Thread;
    ------------
 
+   ------------------------   Init    ------------------------------------------
+   -- Initialises the three trains
+   --
+   -----------------------------------------------------------------------------
+
    procedure Init is
    begin
       Train1.Set_Route((1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
@@ -62,6 +76,13 @@ package body Fat_Controller is
       Train3.Set_Facing(Normal_Pol);
    end Init;
 
+   -------------------   Start_Oval    ------------------------------------------
+   -- Sets a given train to have the oval route with a given polarity
+   --
+   -- param Train : in Integer     - The train to be given the oval route
+   -- param Heading : in Polarity_Type  - The heading the train should be given
+   -----------------------------------------------------------------------------
+
    procedure Start_Oval (Train : in Integer; Heading : in Polarity_Type) is
    begin
       if Train = 1 then
@@ -77,6 +98,13 @@ package body Fat_Controller is
       end if;
    end Start_Oval;
 
+   -------------------   Start_Figure_Eight    ---------------------------------
+   -- Sets a given train to have the figure eight route with a given polarity
+   --
+   -- param Train : in Integer     - The train to be given the figure eight route
+   -- param Heading : in Polarity_Type  - The heading the train should be given
+   -----------------------------------------------------------------------------
+
     procedure Start_Figure_Eight (Train : in Integer; Heading : in Polarity_Type) is
    begin
       if Train = 1 then
@@ -91,6 +119,12 @@ package body Fat_Controller is
          null;
       end if;
    end Start_Figure_Eight;
+
+   -------------------   Reverse_Directon    -----------------------------------
+   -- Switches the direction the train is travelling along its route
+   --
+   -- param Train : in Integer     - The train to be reversed
+   -----------------------------------------------------------------------------
 
    procedure Reverse_Direction (Train : in Integer) is
       --temp : Integer;
@@ -111,6 +145,11 @@ package body Fat_Controller is
       end if;
    end Reverse_Direction;
 
+   -------------------------   Pass_Event    -----------------------------------
+   -- Puts a sensor event on to the fat controller's buffer
+   --
+   -- param Request : in Request_Type     - The sensor event to be added
+   -----------------------------------------------------------------------------
 
    procedure Pass_Event(
          Request: in Request_Type) is
@@ -136,6 +175,12 @@ package body Fat_Controller is
       T0 := Clock;
    end Init_Time_Stamp;
 
+   ------------------------   Sporadic_Op    -----------------------------------
+   -- Puts sensor events from the fat controllers buffer on to the buffers
+   -- of the three trains
+   --
+   -- param Request : in Request_Type     - The sensor event to be added
+   -----------------------------------------------------------------------------
 
    procedure Sporadic_Op(Request : in Request_Type) is
    begin
