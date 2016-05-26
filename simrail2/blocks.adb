@@ -2,6 +2,10 @@ with Raildefs; use Raildefs;
 with Ada.Integer_Text_IO;
 with Ada.Text_IO;
 
+---------------------------------   Blocks    ------------------------------------
+-- The Blocks package provides a virtualisation of the blocks which exist in the train
+-- set. It is responsible for managing the state of the blocks
+----------------------------------------------------------------------------------
 package body Blocks is
 
     protected type Lock is
@@ -25,10 +29,12 @@ package body Blocks is
 
    S : Lock;
 
-   ---------------------
-   -- Get_Block_State --
-   ---------------------
-
+   ----------------   Get_Block_State    ---------------------------------------------
+   -- Returns the state of a block; whether or not a given block is occupied or not.
+   --
+   -- param B : in Block_Id	- The Id of the block whose state is being checked
+   -- return State : Boolean
+   ----------------------------------------------------------------------------------
    function Get_Block_State (B : in Block_Id) return Boolean is
    	State : Boolean;
    begin
@@ -38,28 +44,12 @@ package body Blocks is
       return State;
    end Get_Block_State;
 
-   --------------
-   -- Get_Block--
-   --------------
-   --STILL NEED TO DO THIS
-   function Get_Block ( Sensor : in Integer; P : in Polarity_Type) return Block_Id is
-      Block : Block_Id := 1;
-      begin
-         S.Acquire;
-         if P = Normal_Pol then
-         --Block := Block_After_Sensor_Normal(Sensor);
-         null;
-         else
-         --Block := Block_After_Sensor_Reverse(Sensor);
-         null;
-         end if;
-         S.Release;
-         return Block;
-      end Get_Block;
-
-   --------------------
-   -- Set_Block_State--
-   --------------------
+   ----------------   Set_Block_State    -------------------------------------
+   -- Sets the state of a block
+   --
+   -- param B : in Block_Id	- The Id of the block whose state is being set
+   -- param State : Boolean	- The state of the block
+   ---------------------------------------------------------------------------
    procedure Set_Block_State (B : in Block_Id; State : in Boolean) is
    begin
       S.Acquire;
@@ -73,7 +63,9 @@ package body Blocks is
       S.Release;
    end Set_Block_State;
 
-
+   ----------------   Init    -------------------------------------------------
+   -- Sets the state of a block
+   ----------------------------------------------------------------------------
    procedure Init is
    begin
       S.Acquire;

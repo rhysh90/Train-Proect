@@ -32,16 +32,17 @@ with Slogger;  -- 2.2
 with Fat_Controller, Trains, Turnouts, Blocks;
 use Turnouts, Blocks;
 
+---------------------------- Main  -------------------------------
+-- This package initializes all components needed to run the simulator
+-- as well as all objects needed to run our project. Additonally,
+-- the package provides the entry point for user input into the system via
+-- the dialogue loop procedure
+------------------------------------------------------------------
 procedure main is
    --package Iio is new Ada.Text_Io.Integer_Io(Integer);
    package Iio renames Ada.Integer_Text_IO;
 
    W_In, W_Info, W_Interrupts : Swindows.Window;
-
-   --TRAIN PROJECT CODE--
-
-   -- TRAIN OBJECTS --
-
 
    -- vars and code for dio192: -------
    --
@@ -112,9 +113,10 @@ procedure main is
    end Pull;
 
    ---------------- Oval ------------------------
+   -- Will notify Fat Controller that train 2 is to
+   -- commence an oval route
    --
-   -- p will set the direction around the oval
-   -- sets up an inner oval track for train 2
+   -- param Pol : in Polarity_Type	-The polarity of the route
    ----------------------------------------------
    procedure Oval (Pol : in Polarity_Type) is
    begin
@@ -122,9 +124,10 @@ procedure main is
    end Oval;
 
    -------- Figure Eight ------------------------
+   -- Will notify Fat Controller that train 2 is to
+   -- commence a figure eight route
    --
-   -- p will set the direction around the oval
-   -- sets up an inner figure eight track for train 2
+   -- param Pol : in Polarity_Type	-The polarity of the route
    ----------------------------------------------
    procedure Figure_Eight (Pol : in Polarity_Type) is
    begin
@@ -137,8 +140,10 @@ procedure main is
    Number : Integer := 0;  -- prefix for commands
 
    -------- Dac_Command ------------------------
+   -- Will call Set_Voltage in the dac_driver
    -- User syntax:  ndm
-   -- where n and 'd' already read, supports m in 0..9
+   -- where n (Dac number) and 'd' already read,
+   -- supports m in 0..9 (Voltage value)
    -- Here voltage is m*factor (not very nice).
    ----------------------------------------------
    procedure Dac_Command is
@@ -164,9 +169,10 @@ procedure main is
    end Dac_Command;
 
    -------- b_Command ------------------------
+   -- Will set Cab and Polarity in the block_driver
    -- User syntax:  nb{+-}m
    -- where n and 'b' already read
-   -- supports m in 1..4, n 1..24
+   -- supports m in 1..4 (cab number), n 1..24 (block number)
    ----------------------------------------------
    procedure b_command is
       C          : Character;
@@ -204,9 +210,10 @@ procedure main is
    end b_command;
 
    -------- t_Command ------------------------
+   -- Will set a turnout using turnout_driver to turned
    -- User syntax:  nt
    -- where n and 't' already read
-   -- supports n 1..19
+   -- supports n 1..19 (turnout number)
    ----------------------------------------------
    procedure t_command is
       Turnout   : Turnout_Id;
@@ -222,9 +229,10 @@ procedure main is
    end t_command;
 
    -------- s_Command ------------------------
+   -- Will set a turnout using turnout_driver to straight
    -- User syntax:  ns
    -- where n and 's' already read
-   -- supports n 1..19
+   -- supports n 1..19 (turnout number)
    ----------------------------------------------
    procedure s_command is
       Turnout   : Turnout_Id;
@@ -240,9 +248,9 @@ procedure main is
    end s_command;
 
    -------- o_Command ------------------------
+   -- Will call the Oval procedure
    -- User syntax:  o{+/-}
-   --
-   -- calls the oval function
+   -- where {+/-} is the polarity
    ----------------------------------------------
    procedure o_command is
       Polarity : Polarity_Type;
@@ -252,7 +260,7 @@ procedure main is
       if C = '+' then
       	Polarity := Normal_Pol;
       elsif C = '-' then
-      	Polarity := Reverse_Pol;      -- THIS IS GOOD ONE
+      	Polarity := Reverse_Pol;
       else
       	Number := 0;
       	Put_Line (W_In, "command ignored");
@@ -264,9 +272,9 @@ procedure main is
    end o_command;
 
     -------- e_Command ------------------------
-   -- User syntax:  e{+/-}
-   --
-   -- calls the Figure_Eight function
+   -- Will call the Figure_Eight procedure
+   -- User syntax:  o{+/-}
+   -- where {+/-} is the polarity
    ----------------------------------------------
    procedure e_command is
       Polarity : Polarity_Type;
@@ -276,7 +284,7 @@ procedure main is
       if C = '+' then
       	Polarity := Normal_Pol;
       elsif C = '-' then
-      	Polarity := Reverse_Pol;      -- THIS IS GOOD ONE
+      	Polarity := Reverse_Pol;
       else
       	Number := 0;
       	Put_Line (W_In, "command ignored");
@@ -288,9 +296,7 @@ procedure main is
    end e_command;
 
    -------- r_Command ------------------------
-   -- User syntax:  r
-   --
-   -- reverses the oval/figure eight
+   -- reverses the oval/figure eight routes
    ----------------------------------------------
    procedure r_command is
    begin
@@ -298,10 +304,9 @@ procedure main is
    end r_command;
 
    -------- Bell_Command ------------------------
+   -- Will call the Sound_Bell procedure in Sound_Manager
    -- User syntax:  nB
-   -- where n is already read
-
-   -- calls the Sound_Bell function
+   -- where n (Cab number) is already read
    ----------------------------------------------
    procedure Bell_command is
    begin
@@ -315,10 +320,9 @@ procedure main is
    end Bell_command;
 
    -------- Horn_Command ------------------------
+   -- Will call the Sound_Horn procedure in Sound_Manager
    -- User syntax:  nH
-   -- where n is already read
-
-   -- calls the Sound_Horn function
+   -- where n (Cab number) is already read
    ----------------------------------------------
    procedure Horn_command is
    begin
@@ -401,7 +405,6 @@ begin
    Blocks.Init;
    Fat_Controller.Init;
 
-   --TEST TEST TEST TEST TEST
    Dialog_Loop;
 
 end main;
