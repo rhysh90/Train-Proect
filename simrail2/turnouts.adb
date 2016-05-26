@@ -1,5 +1,13 @@
 with Ada.Text_IO, Ada.Integer_Text_IO, turnout_driver;
 
+
+---------------------------------   Turnouts    -----------------------------------------------
+-- The Turnouts package provides a virtualisation of the turnouts which exist in the train
+-- set. It is responsible for managing the position of all the turnouts and call the
+-- Turnout_Driver members.
+--
+-----------------------------------------------------------------------------------------------
+
 package body Turnouts is
 
    protected type Lock is
@@ -23,9 +31,15 @@ package body Turnouts is
 
    S : Lock;
 
-   -----------------------
-   -- Get_Turnout_State --
-   -----------------------
+
+   ----------------   Get_Turnout_State    ---------------------------------------------
+   -- Returns what position a given turnout is in. This can
+   -- be straight or turned. Its contains some special
+   -- considerations for turnouts which share an entry.
+   --
+   -- param T : in Turnout_Id	- The Id of the turnout whose position is being checked
+   -- return Turnout_Pos
+   --------------------------------------------------------------------------------------
 
    function Get_Turnout_State (T : in Turnout_Id) return Turnout_Pos is
       Pos : Turnout_Pos;
@@ -53,6 +67,18 @@ package body Turnouts is
       S.Release;
       return Pos;
    end Get_Turnout_State;
+
+
+   -------------------   Get_Turnout    -----------------------------------------
+   -- Returns what turnout is ahead of the given the train
+   -- depending on the direction the train is travelling
+   -- and whether the front or back of the train is leading
+   --
+   -- param T : in Integer   - The number of the sensor just hit
+   -- param Heading : in Polarity_Type	  - The trains heading
+   -- param Facing : in Polarity_Type    - Which end of the train is leading
+   -- return Turnout_Id
+   ------------------------------------------------------------------------------
 
    function Get_Turnout(T : in Integer; Heading : in Polarity_Type; Facing : in Polarity_Type) return Turnout_Id is
       Turnout : Turnout_Id;
@@ -106,9 +132,16 @@ package body Turnouts is
       return Turnout;
    end Get_Turnout;
 
-   ----------------------
-   -- Set_Turnout_State--
-   ----------------------
+
+   ----------------   Set_Turnout_State    -----------------------------------------------
+   -- Set the position of a given turnout to a given
+   -- position. Contains some special consideration for
+   -- sensors which share an entry.
+   --
+   -- param T : in Turnout_Id     - The Id of the sensor to be changed
+   -- param State : in Turnout_Pos	 - The position the turnout should be changed to
+   ---------------------------------------------------------------------------------------
+
    procedure Set_Turnout_State (T : in Turnout_Id; State : in Turnout_Pos) is
    begin
       S.Acquire;
@@ -137,6 +170,12 @@ package body Turnouts is
       Ada.Text_IO.Put_Line(" TURNOUT SET");
       S.Release;
    end Set_Turnout_State;
+
+
+   ----------------------   Init    -------------------------
+   -- Sets up the turnout at sensor array
+   --
+   -----------------------------------------------------------
 
    procedure Init is
    begin
