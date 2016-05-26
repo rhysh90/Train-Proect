@@ -162,128 +162,62 @@ package body Trains is
    procedure Next_Route_Sensor ( Sensor : Integer ) is
    begin
       if Train_Info.Heading = Normal_Pol then
-         if Train_Info.Facing = Normal_Pol then
-            if Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = Sensor then --LEADING SENSOR HIT
-               Ada.Text_IO.Put_Line("");
-               Ada.Text_IO.Put_Line("ON SENSOR FRONT");
-               Train_Info.On_Sensor_Front := Sensor;
-               Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
-               Process_Special_State(Sensor);
-               --FRONT SENSOR HIT
-               Process_Front_Hit(Sensor);
-               Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route(Train_Info.Route_Marker));
-               Ada.Text_IO.Put_Line(" IS NEXT FRONT SENSOR");
-            elsif Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = Sensor then --TRAILING SENSOR HIT
-               Ada.Text_IO.Put_Line("");
-               Ada.Text_IO.Put_Line("ON SENSOR BACK");
-               Train_Info.On_Sensor_Back := Sensor;
+         if Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = Sensor then --LEADING SENSOR HIT
+            Ada.Text_IO.Put_Line("");
+            Ada.Text_IO.Put_Line("ON SENSOR FRONT");
+            Train_Info.On_Sensor_Front := Sensor;
+            Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
+            Process_Special_State(Sensor);
+            --FRONT SENSOR HIT
+            Process_Front_Hit(Sensor);
+            Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route(Train_Info.Route_Marker));
+            Ada.Text_IO.Put_Line(" IS NEXT FRONT SENSOR");
+         elsif Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = Sensor then --TRAILING SENSOR HIT
+            Ada.Text_IO.Put_Line("");
+            Ada.Text_IO.Put_Line("ON SENSOR BACK");
+            Train_Info.On_Sensor_Back := Sensor;
+            Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
+            --CHECK IF SPECIAL STATE NEXT IF SO DISREGARD
+            if Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 2 then
                Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
-               --CHECK IF SPECIAL STATE NEXT IF SO DISREGARD
-               if Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 2 then
-                  Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
-               elsif Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 3 then
-                  Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
-               elsif Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 1 then
-                  Train_Info.Route_Marker_Back := 1;
-               end if;
-               --BACK SENSOR HIT
-               Process_Back_Hit(Sensor);
-               Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back));
-               Ada.Text_IO.Put_Line(" IS NEXT BACK SENSOR");
-            end if;
-         else
-            if Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker_Back) = Sensor then --LEADING SENSOR HIT
-               Ada.Text_IO.Put_Line("");
-               Ada.Text_IO.Put_Line("ON SENSOR BACK");
-               Train_Info.On_Sensor_Back := Sensor;
+            elsif Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 3 then
                Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
-               Process_Special_State(Sensor);
-               --BACK SENSOR HIT
-               Process_Back_Hit(Sensor);
-               Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker_Back));
-               Ada.Text_IO.Put_Line(" IS NEXT BACK SENSOR");
-            elsif Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = Sensor then --TRAILING SENSOR HIT
-               Ada.Text_IO.Put_Line("");
-               Ada.Text_IO.Put_Line("ON SENSOR FRONT");
-               Train_Info.On_Sensor_Front := Sensor;
-               Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
-               --CHECK IF SPECIAL STATE NEXT IF SO DISREGARD
-               if Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = 2 then
-                  Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
-               elsif Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = 3 then
-                  Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
-               elsif Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = 1 then
-                  Train_Info.Route_Marker := 1;
-               end if;
-               --FRONT SENSOR HIT
-               Process_Front_Hit(Sensor);
-               Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker));
-               Ada.Text_IO.Put_Line(" IS NEXT FRONT SENSOR");
+            elsif Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 1 then
+               Train_Info.Route_Marker_Back := 1;
             end if;
+            --BACK SENSOR HIT
+            Process_Back_Hit(Sensor);
+            Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back));
+            Ada.Text_IO.Put_Line(" IS NEXT BACK SENSOR");
          end if;
       else
-         if Train_Info.Facing = Normal_Pol then
-            if Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = Sensor then --TRAILING SENSOR HIT
-               --BACK SENSOR HIT
-               Ada.Text_IO.Put_Line("");
-               Ada.Text_IO.Put_Line("ON SENSOR BACK");
-               Train_Info.On_Sensor_Back := Sensor;
-               Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
-               --CHECK IF SPECIAL STATE NEXT IF SO DISREGARD
-               if Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 2 then
-                  Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
-               elsif Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 3 then
-                  Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
-               elsif Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = 1 then
-                  Train_Info.Route_Marker_Back := 1;
-               end if;
-               --BACK SENSOR HIT
-               Process_Back_Hit(Sensor);
-               Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back));
-               Ada.Text_IO.Put_Line(" IS NEXT BACK SENSOR");
-            elsif Train_Info.Sensors_In_Route(Train_Info.Route_Marker_Back) = Sensor then --LEADING SENSOR HIT
-               --FRONT SENSOR HIT
-               Ada.Text_IO.Put_Line("");
-               Ada.Text_IO.Put_Line("ON SENSOR FRONT");
-               Train_Info.On_Sensor_Front := Sensor;
+         if Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker_Back) = Sensor then --LEADING SENSOR HIT
+            Ada.Text_IO.Put_Line("");
+            Ada.Text_IO.Put_Line("ON SENSOR BACK");
+            Train_Info.On_Sensor_Back := Sensor;
+            Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
+            Process_Special_State(Sensor);
+            --BACK SENSOR HIT
+            Process_Back_Hit(Sensor);
+            Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker_Back));
+            Ada.Text_IO.Put_Line(" IS NEXT BACK SENSOR");
+         elsif Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = Sensor then --TRAILING SENSOR HIT
+            Ada.Text_IO.Put_Line("");
+            Ada.Text_IO.Put_Line("ON SENSOR FRONT");
+            Train_Info.On_Sensor_Front := Sensor;
+            Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
+            --CHECK IF SPECIAL STATE NEXT IF SO DISREGARD
+            if Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = 2 then
                Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
-               Process_Special_State(Sensor);
-               --FRONT SENSOR HIT
-               Process_Front_Hit(Sensor);
-               Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route(Train_Info.Route_Marker));
-               Ada.Text_IO.Put_Line(" IS NEXT FRONT SENSOR");
-            end if;
-         else
-            if Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker_Back) = Sensor then --TRAILING SENSOR HIT
-               --FRONT SENSOR HIT
-               Ada.Text_IO.Put_Line("");
-               Ada.Text_IO.Put_Line("ON SENSOR FRONT");
-               Train_Info.On_Sensor_Front := Sensor;
+            elsif Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = 3 then
                Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
-               --CHECK IF SPECIAL STATE NEXT IF SO DISREGARD
-               if Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = 2 then
-                  Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
-               elsif Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = 3 then
-                  Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
-               elsif Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = 1 then
-                  Train_Info.Route_Marker := 1;
-               end if;
-               --FRONT SENSOR HIT
-               Process_Front_Hit(Sensor);
-               Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker));
-               Ada.Text_IO.Put_Line(" IS NEXT FRONT SENSOR");
-            elsif Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = Sensor then --LEADING SENSOR HIT
-               --BACK SENSOR HIT
-              Ada.Text_IO.Put_Line("");
-               Ada.Text_IO.Put_Line("ON SENSOR BACK");
-               Train_Info.On_Sensor_Back := Sensor;
-               Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
-               Process_Special_State(Sensor);
-               --BACK SENSOR HIT
-               Process_Back_Hit(Sensor);
-               Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker_Back));
-               Ada.Text_IO.Put_Line(" IS NEXT BACK SENSOR");
+            elsif Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker) = 1 then
+               Train_Info.Route_Marker := 1;
             end if;
+            --FRONT SENSOR HIT
+            Process_Front_Hit(Sensor);
+            Ada.Integer_Text_IO.Put(Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker));
+            Ada.Text_IO.Put_Line(" IS NEXT FRONT SENSOR");
          end if;
       end if;
    end Next_Route_Sensor;
@@ -297,10 +231,10 @@ package body Trains is
             Train_Info.Route_Marker := 1;
          elsif (Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = 2) then
             --Straight the next turnout
-	    state := Turnouts.Get_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading));
+	    state := Turnouts.Get_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading, Train_Info.Facing));
             if (state = Turned) then
                Dac_Driver.Set_Voltage(Dac_Id(Train_Info.Cab), 2#00000000#);
-               Turnouts.Set_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading), Straight);
+               Turnouts.Set_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading, Train_Info.Facing), Straight);
                Ada.Text_IO.Put_Line("WAIT FOR TURNOUT TO BE CHANGED");
                   Exec_Load.Eat(6.0); --Wait for set time; the time taken to change a turn
                   Ada.Text_IO.Put_Line("TURNOUT IS NOW STRAIGHT");
@@ -310,11 +244,11 @@ package body Trains is
             Train_Info.Route_Marker := Train_Info.Route_Marker + 1;
          elsif (Train_Info.Sensors_In_Route(Train_Info.Route_Marker) = 3) then
             --Turn the next turnout
-   	    state := Turnouts.Get_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading));
+   	    state := Turnouts.Get_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading, Train_Info.Facing));
             if (state = Straight) then
               --NEW CODE--
-                  Dac_Driver.Set_Voltage(Dac_Id(Train_Info.Cab), 2#00000000#);
-               Turnouts.Set_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading), Turned);
+               Dac_Driver.Set_Voltage(Dac_Id(Train_Info.Cab), 2#00000000#);
+               Turnouts.Set_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading, Train_Info.Facing), Turned);
                Ada.Text_IO.Put_Line("WAIT FOR TURNOUT TO BE CHANGED");
                Exec_Load.Eat(6.0); --Wait for set time; the time taken to change a turn
                Ada.Text_IO.Put_Line("TURNOUT IS NOW TURNED");
@@ -328,12 +262,12 @@ package body Trains is
             Train_Info.Route_Marker_Back := 1;
          elsif (Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker_Back) = 2) then
             --Straight the next turnout
-	    state := Turnouts.Get_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading));
+	    state := Turnouts.Get_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading, Train_Info.Facing));
             if (state = Turned) then
                --NEW CODE--
                   Dac_Driver.Set_Voltage(Dac_Id(Train_Info.Cab), 2#00000000#);
                --Turnout_Driver.Set_Straight(Get_Turnout(Request));
-               Turnouts.Set_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading), Straight);
+               Turnouts.Set_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading, Train_Info.Facing), Straight);
                Ada.Text_IO.Put_Line("WAIT FOR TURNOUT TO BE CHANGED");
                   Exec_Load.Eat(6.0); --Wait for set time; the time taken to change a turn
                   Ada.Text_IO.Put_Line("TURNOUT IS NOW STRAIGHT");
@@ -343,12 +277,12 @@ package body Trains is
             Train_Info.Route_Marker_Back := Train_Info.Route_Marker_Back + 1;
          elsif (Train_Info.Sensors_In_Route_Reverse(Train_Info.Route_Marker_Back) = 3) then
             --Turn the next turnout
-   	    state := Turnouts.Get_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading));
+   	    state := Turnouts.Get_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading, Train_Info.Facing));
             if (state = Straight) then
               --NEW CODE--
                   Dac_Driver.Set_Voltage(Dac_Id(Train_Info.Cab), 2#00000000#);
                --Turnout_Driver.Set_Turn(Get_Turnout(Request));
-               Turnouts.Set_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading), Turned);
+               Turnouts.Set_Turnout_State(Get_Turnout(Sensor, Train_Info.Heading, Train_Info.Facing), Turned);
                Ada.Text_IO.Put_Line("WAIT FOR TURNOUT TO BE CHANGED");
                Exec_Load.Eat(6.0); --Wait for set time; the time taken to change a turn
                Ada.Text_IO.Put_Line("TURNOUT IS NOW TURNED");
@@ -377,7 +311,7 @@ package body Trains is
       end loop;
    end Wait_For_Block;
 
-   procedure Process_Front_Hit (Sensor : in Integer) is
+      procedure Process_Front_Hit (Sensor : in Integer) is
    begin
       if Train_Info.Heading = Normal_Pol then
          --Get Blocks--
@@ -389,60 +323,98 @@ package body Trains is
                      Block_Driver.Set_Cab_And_Polarity(13, Train_Info.Cab, Train_Info.Heading);
                   --grab block 22 if turnout 12 is turned
                   elsif Turnouts.Get_Turnout_State(12) = Turned then
+                     Wait_For_Block(22);
                      Block_Driver.Set_Cab_And_Polarity(22, Train_Info.Cab, Train_Info.Heading);
                   end if;
 
                when 37 => --we already own block 13
                   --grab block 14 if turnout 13 is straight
 	          if Turnouts.Get_Turnout_State(13) = Straight then
+                     Wait_For_Block(14);
                      Block_Driver.Set_Cab_And_Polarity(14, Train_Info.Cab, Train_Info.Heading);
                   --grab block 7 if turnout 13 is turned
                   elsif Turnouts.Get_Turnout_State(13) = Turned then
+                     Wait_For_Block(7);
                      Block_Driver.Set_Cab_And_Polarity(7, Train_Info.Cab, Train_Info.Heading);
                   end if;
 
                when 39 => --we already own block 14
                   --grab block 15
+                  Wait_For_Block(15);
                   Block_Driver.Set_Cab_And_Polarity(15, Train_Info.Cab, Train_Info.Heading);
 
                when 41 => --we already own block 15
                   --grab block 16
-                  Block_Driver.Set_Cab_And_Polarity(16, Train_Info.Cab, Train_Info.Heading);
+                  If Train_info.Facing = Normal_Pol then
+                     Wait_For_Block(16);
+                     Block_Driver.Set_Cab_And_Polarity(16, Train_Info.Cab, Train_Info.Heading);
+                  else
+                     --grab block 14 if turnout 15 is straight
+                     if Turnouts.Get_Turnout_State(15) = Straight then
+                        Wait_For_Block(14);
+                        Block_Driver.Set_Cab_And_Polarity(14, Train_Info.Cab, Reverse_Pol);
+                     --grab block 23 if turnout 15 is turned
+                     elsif Turnouts.Get_Turnout_State(15) = Turned then
+                        Wait_For_Block(23);
+                        Block_Driver.Set_Cab_And_Polarity(23, Train_Info.Cab, Reverse_Pol);
+                     end if;
+                  end if;
+
+               when 43 =>
+                  If Train_info.Facing = Reverse_Pol then
+                     Wait_For_Block(15);
+                     Block_Driver.Set_Cab_And_Polarity(15, Train_Info.Cab, Reverse_Pol);
+                  end if;
 
                when 45 => --we already own block 16
                   --grab block 17 if turnout 16 is straight
-                  if Turnouts.Get_Turnout_State(16) = Straight then
-                     Block_Driver.Set_Cab_And_Polarity(17, Train_Info.Cab, Train_Info.Heading);
-                  --grab block 22 if turnout 16 is turned
-                  elsif Turnouts.Get_Turnout_State(16) = Turned then
-                     Block_Driver.Set_Cab_And_Polarity(22, Train_Info.Cab, Train_Info.Heading);
+                  If Train_info.Facing = Normal_Pol then
+                     if Turnouts.Get_Turnout_State(16) = Straight then
+                        Wait_For_Block(17);
+                        Block_Driver.Set_Cab_And_Polarity(17, Train_Info.Cab, Train_Info.Heading);
+                     --grab block 22 if turnout 16 is turned
+                     elsif Turnouts.Get_Turnout_State(16) = Turned then
+                        Wait_For_Block(22);
+                        Block_Driver.Set_Cab_And_Polarity(22, Train_Info.Cab, Train_Info.Heading);
+                     end if;
                   end if;
 
                when 47 => --we already own block 17
                   --grab block 18 if turnout 17 is straight
                   if Turnouts.Get_Turnout_State(17) = Straight then
+                     Wait_For_Block(18);
                      Block_Driver.Set_Cab_And_Polarity(18, Train_Info.Cab, Train_Info.Heading);
                   --grab block 10 if turnout 17 is turned
                   elsif Turnouts.Get_Turnout_State(17) = Turned then
+                     Wait_For_Block(10);
                      Block_Driver.Set_Cab_And_Polarity(10, Train_Info.Cab, Train_Info.Heading);
                   end if;
 
 
                when 49 => --we already own block 18
                   --grab block 19
+                  Wait_For_Block(19);
                   Block_Driver.Set_Cab_And_Polarity(19, Train_Info.Cab, Train_Info.Heading);
 
                when 19 => --we already own block 19
                   --grab block 12
+                  Wait_For_Block(12);
                   Block_Driver.Set_Cab_And_Polarity(12, Train_Info.Cab, Train_Info.Heading);
 
                when 48 => --we already own block 22
                   --grab block 16
                   If Train_info.Facing = Normal_Pol then
                      Train_info.Facing := Reverse_Pol;
+                     Wait_For_Block(16);
                      Block_Driver.Set_Cab_And_Polarity(16, Train_Info.Cab, Reverse_Pol);
                   end if;
 
+               when 53 =>
+                  If Train_info.Facing = Reverse_Pol then
+                     Train_info.Facing := Normal_Pol;
+                     Wait_For_Block(19);
+                     Block_Driver.Set_Cab_And_Polarity(19, Train_Info.Cab, Train_Info.Heading);
+                  end if;
 
                when others =>
                   null;
@@ -466,16 +438,25 @@ package body Trains is
                   end if;
 
                when 45 =>
-                  --if turnout 16 is straight we owned block 17
-	          if Turnouts.Get_Turnout_State(16) = Straight then
-                     Block_Driver.Set_Cab_And_Polarity(17, 0, Train_Info.Heading);
-                  --if turnout 16 is turned we owned block 22
-                  elsif Turnouts.Get_Turnout_State(16) = Turned then
-                     Block_Driver.Set_Cab_And_Polarity(22, 0, Train_Info.Heading);
+                  if Train_Info.Facing = Normal_Pol then
+                     --if turnout 16 is straight we owned block 17
+	             if Turnouts.Get_Turnout_State(16) = Straight then
+                        Block_Driver.Set_Cab_And_Polarity(17, 0, Train_Info.Heading);
+                     --if turnout 16 is turned we owned block 22
+                     elsif Turnouts.Get_Turnout_State(16) = Turned then
+                        Block_Driver.Set_Cab_And_Polarity(22, 0, Train_Info.Heading);
+                     end if;
+                  else
+                     Train_Info.Facing := Normal_Pol; --THIS NEEDS TO BE CHANGED IF WE IMPLEMENT
+                     --BACK FACING AND FRONT FACING (THIS IS NEEDED TO EXTEND THE PROGRAM FUNCTIONALITY)
                   end if;
 
                when 43 => --we owned block 16 turn it off
-                  Block_Driver.Set_Cab_And_Polarity(16, 0, Train_Info.Heading);
+                  If Train_Info.Facing = Normal_Pol then
+                     Block_Driver.Set_Cab_And_Polarity(16, 0, Train_Info.Heading);
+                  else
+                     Block_Driver.Set_Cab_And_Polarity(15, 0, Train_Info.Heading);
+                  end if;
 
                when 39 => --we owned block 15 turn it off
                   Block_Driver.Set_Cab_And_Polarity(15, 0, Train_Info.Heading);
@@ -496,6 +477,25 @@ package body Trains is
                   --if turnout 12 is turned we owned block 22
                   elsif Turnouts.Get_Turnout_State(12) = Turned then
                      Block_Driver.Set_Cab_And_Polarity(22, 0, Train_Info.Heading);
+                  end if;
+
+               when 41 =>
+                  if Train_Info.Facing = Reverse_Pol then
+                     if Turnouts.Get_Turnout_State(15) = Straight then
+                        Block_Driver.Set_Cab_And_Polarity(14, 0, Train_Info.Heading);
+                     elsif Turnouts.Get_Turnout_State(15) = Turned then
+                        Block_Driver.Set_Cab_And_Polarity(23, 0, Train_Info.Heading);
+                     end if;
+                  end if;
+
+               when 53 =>
+                  if Train_Info.Facing = Reverse_Pol then
+                     Block_Driver.Set_Cab_And_Polarity(19, 0, Train_Info.Heading);
+                  end if;
+
+               when 48 =>
+                  if Train_Info.Facing = Normal_Pol then
+                     Block_Driver.Set_Cab_And_Polarity(16, 0, Train_Info.Heading);
                   end if;
 
                when others =>
@@ -521,19 +521,27 @@ package body Trains is
                   end if;
 
                when 41 =>
-                  --if turnout 15 is straight we owned block 14
-	          if Turnouts.Get_Turnout_State(15) = Straight then
-                     Block_Driver.Set_Cab_And_Polarity(14, 0, Train_Info.Heading);
-                  --if turnout 15 is turned we owned block 23
-                  elsif Turnouts.Get_Turnout_State(15) = Turned then
-                     Block_Driver.Set_Cab_And_Polarity(23, 0, Train_Info.Heading);
+                  if Train_Info.Facing = Normal_Pol then
+                     --if turnout 15 is straight we owned block 14
+	             if Turnouts.Get_Turnout_State(15) = Straight then
+                        Block_Driver.Set_Cab_And_Polarity(14, 0, Train_Info.Heading);
+                     --if turnout 15 is turned we owned block 23
+                     elsif Turnouts.Get_Turnout_State(15) = Turned then
+                        Block_Driver.Set_Cab_And_Polarity(23, 0, Train_Info.Heading);
+                     end if;
                   end if;
 
-               when 43 => --we owned block 15 turn it off
-                  Block_Driver.Set_Cab_And_Polarity(15, 0, Train_Info.Heading);
+               when 43 =>
+                  If Train_Info.Facing = Normal_Pol then
+                     Block_Driver.Set_Cab_And_Polarity(15, 0, Train_Info.Heading);
+                  else
+                     Block_Driver.Set_Cab_And_Polarity(16, 0, Train_Info.Heading);
+                  end if;
 
                when 48 | 47 => --we owned block 16 turn it off
-                  Block_Driver.Set_Cab_And_Polarity(16, 0, Train_Info.Heading);
+                  If Train_info.Facing = Normal_Pol then
+                     Block_Driver.Set_Cab_And_Polarity(16, 0, Train_Info.Heading);
+                  end if;
 
                when 49 =>
                   --if turnout 18 is straight we owned block 17
@@ -546,7 +554,7 @@ package body Trains is
 
                when 51 =>
                   --if turnout 19 is straight we owned block 18
-	          if Turnouts.Get_Turnout_State(15) = Straight then
+                  if Turnouts.Get_Turnout_State(15) = Straight then
                      Block_Driver.Set_Cab_And_Polarity(18, 0, Train_Info.Heading);
                   --if turnout 19 is turned we owned block 23
                   elsif Turnouts.Get_Turnout_State(15) = Turned then
@@ -556,6 +564,25 @@ package body Trains is
                when 21 => --we owned block 19 turn it off
                     Block_Driver.Set_Cab_And_Polarity(19, 0, Train_Info.Heading);
 
+               when 58 =>
+                  If Train_Info.Facing = Normal_Pol then
+                     Block_Driver.Set_Cab_And_Polarity(12, 0, Train_Info.Heading);
+                  end if;
+
+               when 45 =>
+                  If Train_Info.Facing = Reverse_Pol then
+                     if Turnouts.Get_Turnout_State(16) = Straight then
+                        Block_Driver.Set_Cab_And_Polarity(17, 0, Train_Info.Heading);
+                     elsif Turnouts.Get_Turnout_State(16) = Turned then
+                        Block_Driver.Set_Cab_And_Polarity(22, 0, Train_Info.Heading);
+                     end if;
+                  end if;
+
+               when 63 =>
+                  If Train_Info.Facing = Reverse_Pol then
+                     Block_Driver.Set_Cab_And_Polarity(15, 0, Train_Info.Heading);
+                  end if;
+
                when others =>
                   null;
             end case;
@@ -564,50 +591,94 @@ package body Trains is
          case Sensor is
                when 23 => --we already own block 12
                   --grab block 19
+                  Wait_For_Block(19);
                   Block_Driver.Set_Cab_And_Polarity(19, Train_Info.Cab, Train_Info.Heading);
 
                when 51 => --we already own block 19
                   --grab block 18 if turnout 19 is straight
                   if Turnouts.Get_Turnout_State(19) = Straight then
+                     Wait_For_Block(18);
                      Block_Driver.Set_Cab_And_Polarity(18, Train_Info.Cab, Train_Info.Heading);
                   --grab block 23 if turnout 19 is turned
                   elsif Turnouts.Get_Turnout_State(19) = Turned then
-                     Block_Driver.Set_Cab_And_Polarity(23, Train_Info.Cab, Train_Info.Heading);
+                     if Train_Info.Facing = Normal_Pol then
+                        Train_Info.Facing := Reverse_Pol;
+                        Wait_For_Block(23);
+                        Block_Driver.Set_Cab_And_Polarity(23, Train_Info.Cab, Normal_Pol);
+                     end if;
                   end if;
 
                when 49 => --we already own block 18
                   --grab block 17 if turnout 18 is straight
                   if Turnouts.Get_Turnout_State(19) = Straight then
+                     Wait_For_Block(17);
                      Block_Driver.Set_Cab_And_Polarity(17, Train_Info.Cab, Train_Info.Heading);
                   --grab block 9 if turnout 18 is turned
                   elsif Turnouts.Get_Turnout_State(19) = Turned then
+                     Wait_For_Block(9);
                      Block_Driver.Set_Cab_And_Polarity(9, Train_Info.Cab, Train_Info.Heading);
                   end if;
 
                when 47 => --we already own block 17
                   --grab block 16
+                  Wait_For_Block(16);
                   Block_Driver.Set_Cab_And_Polarity(16, Train_Info.Cab, Train_Info.Heading);
 
                when 43 => --we already own block 16
-                  --grab block 15
-                  Block_Driver.Set_Cab_And_Polarity(15, Train_Info.Cab, Train_Info.Heading);
+                  if Train_Info.Facing = Normal_Pol then
+                     Wait_For_Block(15);
+                     Block_Driver.Set_Cab_And_Polarity(15, Train_Info.Cab, Train_Info.Heading);
+                  else
+                     Wait_For_Block(16);
+                     Block_Driver.Set_Cab_And_Polarity(16, Train_Info.Cab, Normal_Pol);
+                  end if;
 
                when 41 => --we already own block 15
-                  --grab block 14 if turnout 15 is straight
-                  if Turnouts.Get_Turnout_State(15) = Straight then
-                     Block_Driver.Set_Cab_And_Polarity(14, Train_Info.Cab, Train_Info.Heading);
-                  --grab block 23 if turnout 15 is turned
-                  elsif Turnouts.Get_Turnout_State(15) = Turned then
-                     Block_Driver.Set_Cab_And_Polarity(23, Train_Info.Cab, Train_Info.Heading);
+                  if Train_Info.Facing = Normal_Pol then
+                     --grab block 14 if turnout 15 is straight
+                     if Turnouts.Get_Turnout_State(15) = Straight then
+                        Wait_For_Block(14);
+                        Block_Driver.Set_Cab_And_Polarity(14, Train_Info.Cab, Train_Info.Heading);
+                     --grab block 23 if turnout 15 is turned
+                     elsif Turnouts.Get_Turnout_State(15) = Turned then
+                        Wait_For_Block(23);
+                        Block_Driver.Set_Cab_And_Polarity(23, Train_Info.Cab, Train_Info.Heading);
+                     end if;
                   end if;
 
                when 39 => --we already own block 14
                   --grab block 13
+                  Wait_For_Block(13);
                   Block_Driver.Set_Cab_And_Polarity(13, Train_Info.Cab, Train_Info.Heading);
 
                when 37 => --we already own block 13
                   --grab block 12
+                  Wait_For_Block(12);
                   Block_Driver.Set_Cab_And_Polarity(12, Train_Info.Cab, Train_Info.Heading);
+
+               when 63 =>
+                  If Train_Info.Facing = Reverse_Pol then
+                     Wait_For_Block(15);
+                     Block_Driver.Set_Cab_And_Polarity(15, Train_Info.Cab, Normal_Pol);
+                  end if;
+
+               when 45 =>
+                  If Train_Info.Facing = Reverse_Pol then
+                     if Turnouts.Get_Turnout_State(16) = Straight then
+                        Wait_For_Block(17);
+                        Block_Driver.Set_Cab_And_Polarity(17, Train_Info.Cab, Train_Info.Heading);
+                     --grab block 23 if turnout 15 is turned
+                     elsif Turnouts.Get_Turnout_State(16) = Turned then
+                        Wait_For_Block(22);
+                        Block_Driver.Set_Cab_And_Polarity(22, Train_Info.Cab, Train_Info.Heading);
+                     end if;
+                  end if;
+
+               when 58 =>
+                  If Train_Info.Facing = Normal_Pol then
+                     Wait_For_Block(12);
+                     Block_Driver.Set_Cab_And_Polarity(12, Train_Info.Cab, Train_Info.Heading);
+                  end if;
 
                when others =>
                   null;

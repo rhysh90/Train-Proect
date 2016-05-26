@@ -54,36 +54,53 @@ package body Turnouts is
       return Pos;
    end Get_Turnout_State;
 
-   function Get_Turnout(T : in Integer; Heading : in Polarity_Type) return Turnout_Id is
+   function Get_Turnout(T : in Integer; Heading : in Polarity_Type; Facing : in Polarity_Type) return Turnout_Id is
       Turnout : Turnout_Id;
    begin
       S.Acquire;
       --Turnout := Turnout_At_Sensor(T);
       if (Heading = Normal_Pol) then
-      	case T is
-        	when 35 => Turnout := Turnout_Id(12);
-        	when 37 => Turnout := Turnout_Id(13);
-        	when 39 => Turnout := Turnout_Id(15);
-        	when 45 => Turnout := Turnout_Id(16);
-                when 47 => Turnout := Turnout_Id(17);
-                when 48 => Turnout := Turnout_Id(16);
-                when 49 => Turnout := Turnout_Id(19);
-                when 53 => Turnout := Turnout_Id(19);
-         	when others => null;
-        end case;
+         if (Facing = Normal_Pol) then
+      	    case T is
+               when 35 => Turnout := Turnout_Id(12);
+               when 37 => Turnout := Turnout_Id(13);
+               when 39 => Turnout := Turnout_Id(15);
+               when 45 => Turnout := Turnout_Id(16);
+               when 47 => Turnout := Turnout_Id(17);
+               when 48 => Turnout := Turnout_Id(16);
+               when 49 => Turnout := Turnout_Id(19);
+               when 53 => Turnout := Turnout_Id(19);
+               when others => null;
+           end case;
+         else
+            case T is
+               when 41 => Turnout := Turnout_Id(15);
+               when 53 => Turnout := Turnout_Id(19);
+               when others => null;
+            end case;
+         end if;
 
       else
-         case T is
-                when 58 => Turnout := Turnout_Id(12);
-         	when 51 => Turnout := Turnout_Id(19);
-         	when 49 => Turnout := Turnout_Id(18);
-         	when 47 => Turnout := Turnout_Id(16);
-         	when 41 => Turnout := Turnout_Id(15);
-         	when 39 => Turnout := Turnout_Id(14);
-                when 37 => Turnout := Turnout_Id(12);
-                when 63 => Turnout := Turnout_Id(15);
-         	when others => null;
-         end case;
+         if (Facing = Normal_Pol) then
+            case T is
+               when 58 => Turnout := Turnout_Id(12);
+               when 51 => Turnout := Turnout_Id(19);
+               when 49 => Turnout := Turnout_Id(18);
+               when 47 => Turnout := Turnout_Id(16);
+               when 41 => Turnout := Turnout_Id(15);
+               when 39 => Turnout := Turnout_Id(14);
+               when 37 => Turnout := Turnout_Id(12);
+               when 63 => Turnout := Turnout_Id(15);
+               when others => null;
+            end case;
+         else
+            case T is
+               when 63 => Turnout := Turnout_Id(15);
+               when 45 => Turnout := Turnout_Id(16);
+               --when 58 => Turnout :=
+               when others => null;
+            end case;
+         end if;
       end if;
       S.Release;
       return Turnout;

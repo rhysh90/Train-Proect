@@ -26,7 +26,8 @@ package body block_driver is
       Value := Value OR Block_Regs;
       Block_Reg_Array(Index) := Value;
       IO_Ports.Write_IO_Port(Block_Addr(Index), Block_Reg_Array(Index));
-       --new
+
+      --new
       if Integer(Cab) = 0 then
          Blocks.Set_Block_State(B,false);
       else
@@ -72,13 +73,6 @@ package body block_driver is
    begin
       Set_Cab(B, Cab);
       Set_Polarity(B, Pol);
-
-      --new
-      if Integer(Cab) = 0 then
-         Blocks.Set_Block_State(B,false);
-      else
-         Blocks.Set_Block_State(B, true);
-      end if;
    end Set_Cab_And_Polarity;
 
 end block_driver;
