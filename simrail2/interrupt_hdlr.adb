@@ -128,7 +128,15 @@ package body Interrupt_Hdlr is
       begin
 
 
-         -------------------------TRAIN PROJECT---------------------------------
+         ------------------   Changes to Analyze    ----------------------------
+         -- Analyse keeps a register of the previous sensor states. On a sensor
+         -- interrupt event the new sensor values are loaded into another
+         -- register. Or-ing these registers produces the changed value and
+         -- therefore gives which sensor was hit. This change is then passed to
+         -- the fat controller.
+   	 --
+     	 ---------------------------------------------------------------------------
+
          if Offset < 32 then
             null;
             --check what changed in reg1

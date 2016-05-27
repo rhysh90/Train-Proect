@@ -157,6 +157,13 @@ package body Fat_Controller is
       Buffer.Add(Request);
    end Pass_Event;
 
+   -------------------------   Time_Stamp    -----------------------------------
+   -- Returns a string containing the time stamp when called. Note, this
+   -- is the time after Init_Time_Stamp has been called.
+   --
+   -- return  String     - The time stamp string
+   -----------------------------------------------------------------------------
+
    function Time_Stamp return String is
       Dt : Time_Span;
       D : Duration;
@@ -169,6 +176,12 @@ package body Fat_Controller is
       Ada.Float_Text_IO.Put(time_stamp, Tf, 6, 0);
       return time_stamp;
    end Time_Stamp;
+
+   -----------------------   Init_Time_Stamp    --------------------------------
+   -- Initialises the clock used for time stamps. This is done by saving the
+   -- current system time through Clock.
+   --
+   -----------------------------------------------------------------------------
 
    procedure Init_Time_Stamp is
    begin

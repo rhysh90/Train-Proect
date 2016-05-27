@@ -8,8 +8,6 @@ package Blocks is
 
    function Get_Block_State(B : in Block_Id) return Boolean;
 
-   function Get_Block ( Sensor : in Integer; P : in Polarity_Type) return Block_Id;
-
    procedure Set_Block_State (B : in Block_Id; State : in Boolean);
 
    procedure Init;
